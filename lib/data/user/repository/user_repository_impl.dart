@@ -15,6 +15,15 @@ class UserRepository {
     return loginModel;
   }
 
+  Future forgotPassword(String email) async {
+    return remoteDataSource.forgotPassword(email);
+  }
+
+  Future register(
+      String email, String name, String phone, String password) async {
+    return remoteDataSource.register(email, name, phone, password);
+  }
+
   Future<UserModel> getProfile() async {
     UserModel model = await remoteDataSource.profile();
     await authManager.saveUser(model);

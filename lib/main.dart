@@ -3,11 +3,11 @@ import 'package:ecommerce_mobile/presentation/base/controller/user_controller.da
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/style/theme.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/app_bindings.dart';
-import 'package:ecommerce_mobile/presentation/home/screen/home_screen.dart';
-import 'package:ecommerce_mobile/presentation/login/screen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
+import 'presentation/usermanagement/login/screen/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,17 +55,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: theme,
       darkTheme: theme,
-      home: GetX<UserController>(
-          init: _userController, //here
-          builder: (controller) {
-            Widget widget = Container();
-            if (_userController.userState.value == null) {
-              widget = const LoginScreen();
-            } else {
-              widget = const HomeScreen();
-            }
-            return widget;
-          }),
+      home: LoginScreen(),
       translations: Language(),
     );
   }

@@ -26,4 +26,27 @@ class UserEndPoints {
         method: HttpMethod.get);
   }
 
+  static EndPoint forgotEndPoint({
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? data,
+  }) {
+    return EndPoint(
+        endpoint: "auth/forgotPassword",
+        headers: headers,
+        data: data,
+        method: HttpMethod.post);
+  }
+
+  static EndPoint registerEndPoint({
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? data,
+  }) {
+    return EndPoint(
+        endpoint: "auth/register",
+        headers: headers,
+        data: data,
+        method: HttpMethod.post);
+  }
+
+
 }

@@ -1,12 +1,7 @@
-import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/data/categories/interactor/category_interactor.dart';
 import 'package:ecommerce_mobile/data/categories/model/category_model.dart';
 import 'package:ecommerce_mobile/data/products/interactor/products_interactor.dart';
-import 'package:ecommerce_mobile/data/products/model/product_model.dart';
-import 'package:ecommerce_mobile/presentation/base/language/language.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 
 import '../../../data/base/utils/app_logger.dart';
 import '../../base/utils/result.dart';

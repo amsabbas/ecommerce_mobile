@@ -1,5 +1,4 @@
 import 'package:ecommerce_mobile/data/categories/interactor/category_interactor.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/base/utils/app_logger.dart';

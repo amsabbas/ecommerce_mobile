@@ -13,9 +13,9 @@ class CustomTheme {
         indicatorColor: Colors.transparent,
         primaryColor: AppColors.whiteColor,
         useMaterial3: false,
-        scaffoldBackgroundColor: AppColors.lightGrayColor20,
+        scaffoldBackgroundColor: AppColors.whiteColor,
         radioTheme: RadioThemeData(
-          fillColor: MaterialStateProperty.all(AppColors.ceruleanBlueColor),
+          fillColor: WidgetStateProperty.all(AppColors.ceruleanBlueColor),
         ),
         appBarTheme: const AppBarTheme(
             systemOverlayStyle: SystemUiOverlayStyle(
@@ -30,7 +30,7 @@ class CustomTheme {
             foregroundColor: AppColors.blackColor,
             centerTitle: true),
         navigationBarTheme: NavigationBarThemeData(
-            labelTextStyle: MaterialStateProperty.all<TextStyle>(TextStyle(
+            labelTextStyle: WidgetStateProperty.all<TextStyle>(TextStyle(
                 fontFamily: appFont,
                 fontSize: 12,
                 color: AppColors.ceruleanBlueColor))),
@@ -62,8 +62,6 @@ class CustomTheme {
             ),
             side: const BorderSide(color: AppColors.ceruleanBlueColor),
           ),
-        ),dataTableTheme: const DataTableThemeData(
-          dividerThickness: 0.4,
         ));
   }
 }

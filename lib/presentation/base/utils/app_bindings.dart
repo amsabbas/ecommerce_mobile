@@ -15,17 +15,11 @@ import 'package:ecommerce_mobile/data/categories/repository/categories_repositor
 import 'package:ecommerce_mobile/data/products/datasource/products_remote_data_source.dart';
 import 'package:ecommerce_mobile/data/products/interactor/products_interactor.dart';
 import 'package:ecommerce_mobile/data/products/repository/products_repository_impl.dart';
-
-import 'package:ecommerce_mobile/data/user/datasource/user_remote_data_source.dart';
-import 'package:ecommerce_mobile/data/user/interactor/user_interactor.dart';
-import 'package:ecommerce_mobile/data/user/repository/user_repository_impl.dart';
 import 'package:ecommerce_mobile/presentation/ads/controller/ads_controller.dart';
 import 'package:ecommerce_mobile/presentation/areas/controller/areas_controller.dart';
-import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/categories/controller/categories_controller.dart';
-import 'package:ecommerce_mobile/presentation/login/controller/login_controller.dart';
-import 'package:ecommerce_mobile/presentation/orders/controller/orders_controller.dart';
 import 'package:ecommerce_mobile/presentation/products/controller/products_controller.dart';
+import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -34,7 +28,7 @@ import '../controller/app_settings_controller.dart';
 class AppBindings extends Bindings {
   @override
   Future<void> dependencies() async {
-    await _addGeneralDependencies();
+    await addGeneralDependencies();
     await _addAdsDependencies();
     await _addAreasDependencies();
     await _addCategoriesDependencies();
@@ -42,7 +36,7 @@ class AppBindings extends Bindings {
     await _addOrdersDependencies();
   }
 
-  Future<void> _addGeneralDependencies() async {
+  Future<void> addGeneralDependencies() async {
     await Get.putAsync(() => SharedPreferences.getInstance(), permanent: true);
     Get.lazyPut(
         () => AuthManager(sharedPreferences: Get.find<SharedPreferences>()));
@@ -56,27 +50,11 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => AppSettingsController(
         settingsInteractor: Get.find<SettingsInteractor>()));
 
-    Get.lazyPut(() => ServiceGenerator("http://localhost:3000/",
+    Get.lazyPut(() => ServiceGenerator("http://192.168.1.106:3000/",
         Get.find<AuthManager>(), Get.find<SettingsLocalDataSource>()));
 
-    Get.lazyPut(() => UserRemoteDataSource(
-        service: Get.find<ServiceGenerator>(),
-        authManager: Get.find<AuthManager>()));
-    Get.lazyPut(() => UserRepository(
-        authManager: Get.find<AuthManager>(),
-        remoteDataSource: Get.find<UserRemoteDataSource>()));
-    Get.lazyPut(() => UserInteractor(repository: Get.find<UserRepository>()));
-
-    Get.lazyPut(
-      () => UserController(userInteractor: Get.find<UserInteractor>()),
-    );
-
-    Get.lazyPut(
-      () => LoginController(userInteractor: Get.find<UserInteractor>()),
-    );
+    await UserBindings().dependencies();
   }
-
-
 
   Future<void> _addAdsDependencies() async {
     Get.lazyPut(() => AdsRemoteDataSource(
@@ -85,8 +63,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(
         () => AdsRepository(remoteDataSource: Get.find<AdsRemoteDataSource>()));
     Get.lazyPut(() => AdsInteractor(repository: Get.find<AdsRepository>()));
-    Get.lazyPut(() => AdsController(
-        adsInteractor: Get.find<AdsInteractor>()));
+    Get.lazyPut(() => AdsController(adsInteractor: Get.find<AdsInteractor>()));
   }
 
   Future<void> _addAreasDependencies() async {
@@ -127,9 +104,5 @@ class AppBindings extends Bindings {
     );
   }
 
-  Future<void> _addOrdersDependencies() async {
-
-  }
-
-
+  Future<void> _addOrdersDependencies() async {}
 }

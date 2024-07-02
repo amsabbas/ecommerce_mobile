@@ -1,9 +1,8 @@
+import 'package:ecommerce_mobile/data/base/utils/app_logger.dart';
 import 'package:ecommerce_mobile/data/user/interactor/user_interactor.dart';
+import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../data/base/utils/app_logger.dart';
-import '../../base/utils/result.dart';
 
 class LoginController extends GetxController {
   final loginState = ResultState();

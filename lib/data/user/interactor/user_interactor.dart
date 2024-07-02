@@ -11,6 +11,13 @@ class UserInteractor {
   Future<LoginModel> login(String email, String password) async =>
       await repository.login(email, password);
 
+  Future forgotPassword(String email) async =>
+      await repository.forgotPassword(email);
+
+  Future register(
+          String email, String name, String phone, String password) async =>
+      await repository.register(email, name, phone, password);
+
   Future<UserModel> getProfile() async => await repository.getProfile();
 
   Future<UserModel?> getSavedUser() async => await repository.getSavedUser();

@@ -17,7 +17,8 @@ class CustomSnackBar {
             message,
             style: const TextStyle(fontSize: 14, color: AppColors.whiteColor),
           ),
-          maxWidth: Get.width/4);
+          margin: const EdgeInsets.all(4),
+          maxWidth: Get.width);
     });
   }
 
@@ -28,7 +29,6 @@ class CustomSnackBar {
           backgroundColor: AppColors.redColor,
           colorText: AppColors.whiteColor,
           snackPosition: SnackPosition.TOP,
-          snackStyle: SnackStyle.FLOATING,
           titleText: Text(
             title,
             style: const TextStyle(fontSize: 14, color: AppColors.whiteColor),
@@ -37,7 +37,8 @@ class CustomSnackBar {
             message,
             style: const TextStyle(fontSize: 14, color: AppColors.whiteColor),
           ),
-          maxWidth: Get.width/4);
+          margin: const EdgeInsets.all(4),
+          maxWidth: Get.width);
     });
   }
 }
