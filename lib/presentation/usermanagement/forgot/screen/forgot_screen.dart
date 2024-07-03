@@ -43,7 +43,10 @@ class _ForgotScreenState extends State<ForgotScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppTopBarWidget(title: "",showBackIcon: true,),
+      appBar: const AppTopBarWidget(
+        title: "",
+        showBackIcon: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 24.0),
@@ -95,8 +98,13 @@ class _ForgotScreenState extends State<ForgotScreen> {
             }
           },
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(MessageKeys.submitButtonTitle.tr),
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              MessageKeys.submitButtonTitle.tr,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: AppColors.whiteColor,
+                  ),
+            ),
           ),
         ),
       ),

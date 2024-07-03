@@ -21,9 +21,7 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: showBackIcon
           ? IconButton(
-              icon: Transform.flip(
-                  flipX: isRTL ? true : false,
-                  child: const Icon(Icons.arrow_back,color: AppColors.ceruleanBlueColor,)),
+              icon: const Icon(Icons.arrow_back,color: AppColors.ceruleanBlueColor,),
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,

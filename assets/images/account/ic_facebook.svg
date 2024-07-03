@@ -1,0 +1,21 @@
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="26" height="26" fill="#F5F5F5"/>
+<g id="account" clip-path="url(#clip0_1_50)">
+<rect width="412" height="852" transform="translate(-134 -816)" fill="white"/>
+<g id="Frame 45">
+<g id="Frame 40">
+<g id="social">
+<g id="facebook">
+<path id="Vector" d="M12.7059 25.4118C19.7231 25.4118 25.4118 19.7231 25.4118 12.7059C25.4118 5.68862 19.7231 0 12.7059 0C5.68862 0 0 5.68862 0 12.7059C0 19.7231 5.68862 25.4118 12.7059 25.4118Z" fill="#A6A6A6"/>
+<path id="Vector_2" d="M16.0713 13.2033H13.8041V21.5093H10.3691V13.2033H8.73535V10.2842H10.3691V8.39524C10.3691 7.04443 11.0107 4.9292 13.8346 4.9292L16.3791 4.93984V7.77329H14.5329C14.2301 7.77329 13.8043 7.92459 13.8043 8.56896V10.2869H16.3714L16.0713 13.2033Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1_50">
+<rect width="412" height="852" fill="white" transform="translate(-134 -816)"/>
+</clipPath>
+</defs>
+</svg>

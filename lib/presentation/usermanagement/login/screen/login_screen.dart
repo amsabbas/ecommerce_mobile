@@ -1,4 +1,5 @@
 import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
+import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
@@ -6,7 +7,6 @@ import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/empty_app_bar.dart';
-import 'package:ecommerce_mobile/presentation/home/screen/home_screen.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/forgot/screen/forgot_screen.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/login/controller/login_controller.dart';
@@ -15,7 +15,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -26,6 +25,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   late final LoginController _loginController;
+  late final UserController _userController;
   late final Worker _loginWorker;
   final _formKey = GlobalKey<FormBuilderState>();
 
@@ -33,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     super.initState();
     _loginController = Get.find<LoginController>();
+    _userController = Get.find<UserController>();
     _loginWorker = ever(
         _loginController.loginState,
         (ResultData res) => {
@@ -94,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
         TextButton(
           onPressed: () {
-            Get.to(() => const ForgotScreen(),binding: UserBindings());
+            Get.to(() => const ForgotScreen(), binding: UserBindings());
           },
           child: Text(
             MessageKeys.forgotPasswordButtonTitle.tr,
@@ -119,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         TextButton(
           onPressed: () {
-            Get.to(() => const RegisterScreen(),binding: UserBindings());
+            Get.to(() => const RegisterScreen(), binding: UserBindings());
           },
           child: Text(
             MessageKeys.registerButtonTitle.tr,
@@ -146,8 +147,13 @@ class _LoginScreenState extends State<LoginScreen> {
             }
           },
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(MessageKeys.loginButtonTitle.tr),
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              MessageKeys.loginButtonTitle.tr,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: AppColors.whiteColor,
+                  ),
+            ),
           ),
         ),
       ),
@@ -208,7 +214,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _showLoginSuccess() {
-    Get.to(() => const HomeScreen());
+    _userController.getProfile();
+    Get.back();
   }
 
   @override

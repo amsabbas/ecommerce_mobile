@@ -97,8 +97,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
             }
           },
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(MessageKeys.registerButtonTitle.tr),
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              MessageKeys.registerButtonTitle.tr,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: AppColors.whiteColor,
+                  ),
+            ),
           ),
         ),
       ),

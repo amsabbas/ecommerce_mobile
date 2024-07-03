@@ -1,3 +1,4 @@
+import 'package:ecommerce_mobile/data/appsettings/model/setting_model.dart';
 
 import '../repository/settings_repository.dart';
 
@@ -22,6 +23,7 @@ class SettingsInteractor {
     return repository.getLanguage();
   }
 
-
-
+  Future<SettingModel> getAppSettings() async {
+    return repository.getAppSettings();
+  }
 }

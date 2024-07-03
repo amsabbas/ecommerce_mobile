@@ -2,6 +2,7 @@ import 'package:ecommerce_mobile/data/ads/datasource/ads_remote_data_source.dart
 import 'package:ecommerce_mobile/data/ads/interactor/ads_interactor.dart';
 import 'package:ecommerce_mobile/data/ads/repository/ads_repository_impl.dart';
 import 'package:ecommerce_mobile/data/appsettings/datasource/local/settings_local_data_source.dart';
+import 'package:ecommerce_mobile/data/appsettings/datasource/remote/settings_remote_data_source.dart';
 import 'package:ecommerce_mobile/data/appsettings/interactor/settings_interactor.dart';
 import 'package:ecommerce_mobile/data/appsettings/repository/settings_repository.dart';
 import 'package:ecommerce_mobile/data/areas/datasource/areas_remote_data_source.dart';
@@ -29,6 +30,7 @@ class AppBindings extends Bindings {
   @override
   Future<void> dependencies() async {
     await addGeneralDependencies();
+    await UserBindings().dependencies();
     await _addAdsDependencies();
     await _addAreasDependencies();
     await _addCategoriesDependencies();
@@ -41,10 +43,14 @@ class AppBindings extends Bindings {
     Get.lazyPut(
         () => AuthManager(sharedPreferences: Get.find<SharedPreferences>()));
 
+    Get.lazyPut(() => SettingsRemoteDataSource(
+        service: Get.find<ServiceGenerator>(),
+        authManager: Get.find<AuthManager>()));
     Get.lazyPut(() => SettingsLocalDataSource(
         sharedPreferences: Get.find<SharedPreferences>()));
     Get.lazyPut(() => SettingsRepositoryImpl(
-        localDataSource: Get.find<SettingsLocalDataSource>()));
+        localDataSource: Get.find<SettingsLocalDataSource>(),
+        remoteDataSource: Get.find<SettingsRemoteDataSource>()));
     Get.lazyPut(() =>
         SettingsInteractor(repository: Get.find<SettingsRepositoryImpl>()));
     Get.lazyPut(() => AppSettingsController(
@@ -52,8 +58,6 @@ class AppBindings extends Bindings {
 
     Get.lazyPut(() => ServiceGenerator("http://192.168.1.106:3000/",
         Get.find<AuthManager>(), Get.find<SettingsLocalDataSource>()));
-
-    await UserBindings().dependencies();
   }
 
   Future<void> _addAdsDependencies() async {

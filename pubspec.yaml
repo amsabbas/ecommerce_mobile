@@ -45,6 +45,8 @@ dependencies:
   image_picker: ^1.1.2
   toggle_switch: ^2.3.0
   async: ^2.11.0
+  url_launcher: ^6.3.0
+  flutter_animate: ^4.5.0
   cupertino_icons: ^1.0.6
 
 dev_dependencies:
@@ -66,6 +68,8 @@ flutter:
   assets:
       - assets/images/
       - assets/images/base/
+      - assets/images/home/
+      - assets/images/account/
   fonts:
     - family: poppins
       fonts:

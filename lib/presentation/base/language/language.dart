@@ -22,9 +22,13 @@ class MessageKeys {
   static const String viewMore = "viewMore";
   static const String noData = "noData";
   static const String noFound = "noFound";
-  static const String logoutButtonTitle = "logoutButtonTitle";
-  static const String submitButtonTitle = "submitButtonTitle";
+  static const String pending = "pending";
+  static const String accepted = "accepted";
+  static const String rejected = "rejected";
 
+  static const String logoutButtonTitle = "logoutButtonTitle";
+  static const String logoutMessage = "logoutMessage";
+  static const String submitButtonTitle = "submitButtonTitle";
   static const String loginButtonTitle = "loginButtonTitle";
   static const String password = "password";
   static const String username = "username";
@@ -40,10 +44,21 @@ class MessageKeys {
   static const String forgotPasswordTitle = "forgotPasswordTitle";
   static const String forgotPasswordSuccessMessage = "forgotPasswordSuccessMessage";
 
-  static const String pending = "pending";
-  static const String accepted = "accepted";
-  static const String rejected = "rejected";
+  static const String homeTitle = "homeTitle";
+  static const String ordersTitle = "ordersTitle";
+  static const String accountTitle = "accountTitle";
 
+
+  static const String changeLanguageDialogTitle = "changeLanguageDialogTitle";
+  static const String englishTitle = "englishTitle";
+  static const String arabicTitle = "arabicTitle";
+  static const String profileNotLoggedTitle = "profileNotLoggedTitle";
+  static const String profileTitle = "profileTitle";
+  static const String myAddressesTitle = "myAddressesTitle";
+  static const String settingsTitle = "settingsTitle";
+  static const String languageTitle = "languageTitle";
+  static const String callUsTitle = "callUsTitle";
+  static const String reachOutTitle = "reachOutTitle";
 
 }
 
@@ -74,6 +89,7 @@ class Language extends Translations {
           MessageKeys.viewMore: "Show more",
           MessageKeys.noFound: "Not found",
           MessageKeys.logoutButtonTitle: "Logout",
+          MessageKeys.logoutMessage: "Are you sure you want to logout?",
           MessageKeys.loginButtonTitle: "Login",
           MessageKeys.password: "Password",
           MessageKeys.username: "Username",
@@ -92,9 +108,24 @@ class Language extends Translations {
           MessageKeys.accepted: "Accepted",
           MessageKeys.rejected: "Rejected",
 
+          MessageKeys.homeTitle: "Home",
+          MessageKeys.ordersTitle: "Orders",
+          MessageKeys.accountTitle: "Account",
+
+          MessageKeys.changeLanguageDialogTitle: "Change Language",
+          MessageKeys.englishTitle: "English",
+          MessageKeys.arabicTitle: "Arabic",
+          MessageKeys.profileNotLoggedTitle: "You are not logged in",
+          MessageKeys.profileTitle: "Profile",
+          MessageKeys.myAddressesTitle: "My Addresses",
+          MessageKeys.settingsTitle: "Settings",
+          MessageKeys.languageTitle: "Language",
+          MessageKeys.callUsTitle: "Call Us",
+          MessageKeys.reachOutTitle: "Reach Out",
+
         },
         'ar': {
-          MessageKeys.appName: 'Ecommerce Mobile',
+          MessageKeys.appName: 'متجر الكتروني',
           MessageKeys.alert: 'تنبيه',
           MessageKeys.networkError: "الرجاء التأكد من الإتصال بالشبكة",
           MessageKeys.unKnown: "حدث خطأ غير معروف الرجاء إعادة المحاولة",
@@ -116,6 +147,7 @@ class Language extends Translations {
           MessageKeys.viewMore: "عرض المزيد",
           MessageKeys.noFound: "لا يوجد",
           MessageKeys.logoutButtonTitle: "تسجيل الخروج",
+          MessageKeys.logoutMessage: "هل أنت متأكد من تسجيل الخروج؟",
           MessageKeys.loginButtonTitle: "تسجيل الدخول",
           MessageKeys.password: "كلمة المرور",
           MessageKeys.username: "اسم المستخدم",
@@ -135,9 +167,20 @@ class Language extends Translations {
           MessageKeys.accepted: "مقبول",
           MessageKeys.rejected: "مرفوض",
 
+          MessageKeys.homeTitle: "الرئيسية",
+          MessageKeys.ordersTitle: "الطلبات",
+          MessageKeys.accountTitle: "الحساب",
 
-
-
+          MessageKeys.changeLanguageDialogTitle: "تغيير اللغة",
+          MessageKeys.englishTitle: "الإنجليزية",
+          MessageKeys.arabicTitle: "العربية",
+          MessageKeys.profileNotLoggedTitle: "لم تقم بتسجيل الدخول بعد",
+          MessageKeys.profileTitle: "الملف الشخصي",
+          MessageKeys.myAddressesTitle: "عناويني",
+          MessageKeys.settingsTitle: "الإعدادات",
+          MessageKeys.languageTitle: "اللغة",
+          MessageKeys.callUsTitle: "اتصل بنا",
+          MessageKeys.reachOutTitle: "تواصل معنا",
         }
 
       };

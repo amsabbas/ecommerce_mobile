@@ -1,13 +1,11 @@
 import 'package:ecommerce_mobile/presentation/base/controller/app_settings_controller.dart';
-import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/style/theme.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/app_bindings.dart';
+import 'package:ecommerce_mobile/presentation/home/screen/home_container_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import 'presentation/usermanagement/login/screen/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +27,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   late Locale _locale;
   late final AppSettingsController _settingsController;
-  late final UserController _userController;
 
   void setLocale(Locale locale) {
     setState(() {
@@ -41,8 +38,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _settingsController = Get.find();
-    _userController = Get.find();
-    _userController.getSavedUser();
+    _settingsController.getSettings();
     setLocale(Locale(_settingsController.getLanguage()));
   }
 
@@ -55,7 +51,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: theme,
       darkTheme: theme,
-      home: LoginScreen(),
+      home: HomeContainerScreen(),
       translations: Language(),
     );
   }

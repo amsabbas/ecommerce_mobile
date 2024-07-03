@@ -15,6 +15,7 @@ class UserController extends GetxController {
   void getProfile() async {
     profileState.value = await userInteractor.getProfile();
     profileState.refresh();
+    getSavedUser();
   }
 
   void getSavedUser() async {
@@ -26,6 +27,7 @@ class UserController extends GetxController {
     try {
       logoutState.setLoading();
       logoutState.setSuccess(await userInteractor.logout());
+      getSavedUser();
     } catch (error) {
       logoutState.setError(error);
     }
