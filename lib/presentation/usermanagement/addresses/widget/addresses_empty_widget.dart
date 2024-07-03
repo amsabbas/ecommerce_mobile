@@ -17,7 +17,7 @@ class AddressesEmptyWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SvgPicture.asset(
-          AssetResource.profileNotLoggedImagePath,
+          AssetResource.noDataImagePath,
           width: 130,
           height: 130,
         ),

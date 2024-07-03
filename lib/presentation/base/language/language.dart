@@ -89,6 +89,21 @@ class MessageKeys {
       "deleteAddressConfirmationMessage";
   static const String changeDefaultAddressTitle = "changeDefaultAddressTitle";
   static const String shippingAddressTitle = "shippingAddressTitle";
+
+  static const String myOrdersTitle = "myOrdersTitle";
+  static const String noOrdersTitle = "noOrdersTitle";
+  static const String orderNumberTitle = "orderNumberTitle";
+  static const String orderQuantityTitle = "orderQuantityTitle";
+  static const String orderDateTitle = "orderDateTitle";
+  static const String orderDetailsTitle = "orderDetailsTitle";
+  static const String subTotalTitle = "subTotalTitle";
+  static const String deliveryFeesTitle = "deliveryFeesTitle";
+  static const String discountTitle = "discountTitle";
+  static const String totalAmountTitle = "totalAmountTitle";
+  static const String paymentTitle = "paymentTitle";
+  static const String deliveryDateTitle = "deliveryDateTitle";
+
+  static const String productsTitle = "productsTitle";
 }
 
 class Language extends Translations {
@@ -181,9 +196,23 @@ class Language extends Translations {
           "Address is deleted successfully",
           MessageKeys.deleteAddressConfirmationMessage:
           "Are you sure to delete this address ?",
-          MessageKeys.changeDefaultAddressTitle: "Use as the shipping address",
+          MessageKeys.changeDefaultAddressTitle: "Use as the primary address",
           MessageKeys.shippingAddressTitle: "Shipping address",
 
+          MessageKeys.myOrdersTitle: "My Orders",
+          MessageKeys.noOrdersTitle: "No Orders found\nLooks like you haven't placed any orders yet.",
+          MessageKeys.orderNumberTitle: "Order no:",
+          MessageKeys.orderQuantityTitle: "Quantity:",
+          MessageKeys.orderDateTitle: "Order date:",
+          MessageKeys.orderDetailsTitle: "Order details",
+          MessageKeys.subTotalTitle: "Subtotal",
+          MessageKeys.discountTitle: "Discount",
+          MessageKeys.deliveryFeesTitle: "Delivery fees",
+          MessageKeys.totalAmountTitle: "Total amount",
+          MessageKeys.paymentTitle: "Payment",
+          MessageKeys.deliveryDateTitle: "Delivery date/time",
+
+          MessageKeys.productsTitle: "Products",
         },
         'ar': {
           MessageKeys.appName: 'متجر الكتروني',
@@ -272,6 +301,22 @@ class Language extends Translations {
           "هل انت متاكد من حذف هذا العنوان ؟",
           MessageKeys.changeDefaultAddressTitle: "استخدم كعنوان الشحن",
           MessageKeys.shippingAddressTitle: "عنوان الشحن",
+
+          MessageKeys.myOrdersTitle: "الطلبات",
+          MessageKeys.noOrdersTitle: "لم يتم العثور على طلبات، يبدو أنك لم تقم بإجراء أي طلب بعد.",
+          MessageKeys.orderNumberTitle: "رقم الطلب:",
+          MessageKeys.orderQuantityTitle: "الكمية:",
+          MessageKeys.discountTitle: "الخصم:",
+          MessageKeys.orderDateTitle: "تاريخ الطلب:",
+          MessageKeys.orderDetailsTitle: "تفاصيل الطلب",
+          MessageKeys.subTotalTitle: "المجموع الفرعي",
+          MessageKeys.deliveryFeesTitle: "رسوم التوصيل",
+          MessageKeys.totalAmountTitle: "المبلغ الإجمالي",
+          MessageKeys.paymentTitle: "طريقة الدفع",
+          MessageKeys.deliveryDateTitle: "تاريخ/وقت التسليم",
+
+          MessageKeys.productsTitle: "المنتجات",
+
         }
 
       };

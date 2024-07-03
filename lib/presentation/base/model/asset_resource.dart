@@ -8,13 +8,14 @@ class AssetResource {
   static const String imagePlaceHolderImagePath = "${imagePath}base/image_placeholder.svg";
   static const String profileNotLoggedImagePath = "${imagePath}base/ic_account_not_logged.svg";
   static const String errorImagePath = "${imagePath}base/ic_error.svg";
-
+  static const String noDataImagePath = "${imagePath}base/ic_account_not_logged.svg";
   //home
   static const String homeImagePath = "${imagePath}home/ic_home.svg";
   static const String homeAccountImagePath = "${imagePath}home/ic_account.svg";
   static const String homeOrdersImagePath = "${imagePath}home/ic_orders.svg";
 
   //account
+  static const String accountUserImagePath = "${imagePath}account/ic_user.svg";
   static const String accountImagePath = "${imagePath}account/ic_profile.svg";
   static const String accountLanguageImagePath =
       "${imagePath}account/ic_language.svg";

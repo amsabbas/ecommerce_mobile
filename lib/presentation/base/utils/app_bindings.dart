@@ -15,6 +15,7 @@ import 'package:ecommerce_mobile/data/products/interactor/products_interactor.da
 import 'package:ecommerce_mobile/data/products/repository/products_repository_impl.dart';
 import 'package:ecommerce_mobile/presentation/ads/controller/ads_controller.dart';
 import 'package:ecommerce_mobile/presentation/categories/controller/categories_controller.dart';
+import 'package:ecommerce_mobile/presentation/orders/base/utils/orders_bindings.dart';
 import 'package:ecommerce_mobile/presentation/products/controller/products_controller.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
 import 'package:get/get.dart';
@@ -30,7 +31,7 @@ class AppBindings extends Bindings {
     await _addAdsDependencies();
     await _addCategoriesDependencies();
     await _addProductsDependencies();
-    await _addOrdersDependencies();
+    await OrdersBindings().dependencies();
   }
 
   Future<void> addGeneralDependencies() async {
@@ -65,7 +66,6 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => AdsController(adsInteractor: Get.find<AdsInteractor>()));
   }
 
-
   Future<void> _addCategoriesDependencies() async {
     Get.lazyPut(() => CategoriesRemoteDataSource(
         service: Get.find<ServiceGenerator>(),
@@ -92,6 +92,4 @@ class AppBindings extends Bindings {
           productsInteractor: Get.find<ProductsInteractor>()),
     );
   }
-
-  Future<void> _addOrdersDependencies() async {}
 }

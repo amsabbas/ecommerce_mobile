@@ -28,7 +28,7 @@ class AccountUserWidget extends StatelessWidget {
               children: [
 
                 SvgPicture.asset(
-                 AssetResource.accountImagePath,
+                 AssetResource.accountUserImagePath,
                   width: 50,
                   height: 50,
                 ),

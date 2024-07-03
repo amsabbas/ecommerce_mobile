@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/empty_app_bar.dart';
+import 'package:ecommerce_mobile/presentation/orders/main/screen/my_orders_screen.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/screen/account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -77,7 +78,7 @@ class _HomeContainerScreenState extends State<HomeContainerScreen> {
       case 0:
         return const HomeScreen();
       case 1:
-        return const HomeScreen();
+        return const MyOrdersScreen();
       default:
         return const AccountScreen();
     }

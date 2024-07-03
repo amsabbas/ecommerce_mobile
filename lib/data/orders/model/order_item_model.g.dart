@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'order_info_model.dart';
+part of 'order_item_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-OrderInfoModel _$OrderInfoModelFromJson(Map<String, dynamic> json) =>
-    OrderInfoModel(
-      id: (json['id'] as num).toInt(),
+OrderItemModel _$OrderItemModelFromJson(Map<String, dynamic> json) =>
+    OrderItemModel(
       quantity: (json['quantity'] as num).toInt(),
+      product: ProductModel.fromJson(json['product'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$OrderInfoModelToJson(OrderInfoModel instance) =>
+Map<String, dynamic> _$OrderItemModelToJson(OrderItemModel instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'quantity': instance.quantity,
+      'product': instance.product,
     };

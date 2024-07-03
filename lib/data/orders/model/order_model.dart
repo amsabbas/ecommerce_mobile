@@ -1,7 +1,4 @@
-import 'package:ecommerce_mobile/data/orders/model/order_info_model.dart';
-import 'package:ecommerce_mobile/data/products/model/product_model.dart';
-import 'package:ecommerce_mobile/data/user/model/user_address_model.dart';
-import 'package:ecommerce_mobile/data/user/model/user_model.dart';
+import 'package:ecommerce_mobile/data/orders/model/order_item_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'order_model.g.dart';
@@ -28,17 +25,8 @@ class OrderModel {
   @JsonKey(name: "deliveryFees")
   final double deliveryFees;
 
-  @JsonKey(name: "products")
-  final List<ProductModel>? products;
-
-  @JsonKey(name: "info")
-  final List<OrderInfoModel>? info;
-
-  @JsonKey(name: "user")
-  final UserModel? userModel;
-
-  @JsonKey(name: "user_address")
-  final UserAddressModel? address;
+  @JsonKey(name: "orderItem")
+  final List<OrderItemModel> orderItems;
 
   OrderModel({
     required this.id,
@@ -48,10 +36,7 @@ class OrderModel {
     required this.discount,
     required this.total,
     required this.deliveryFees,
-    required this.products,
-    required this.info,
-    required this.userModel,
-    required this.address,
+    required this.orderItems,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) =>

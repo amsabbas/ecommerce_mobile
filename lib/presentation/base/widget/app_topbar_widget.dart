@@ -1,6 +1,7 @@
 
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -22,7 +23,7 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
       leading: showBackIcon
           ? IconButton(
               icon: const Icon(Icons.arrow_back,color: AppColors.ceruleanBlueColor,),
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => Get.back(),
             )
           : null,
       title: Row(
