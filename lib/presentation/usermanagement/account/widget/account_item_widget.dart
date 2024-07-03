@@ -48,6 +48,8 @@ class AccountItemWidget extends StatelessWidget {
                 flipX: isRTL ? true : false,
                 child: SvgPicture.asset(
                   AssetResource.accountNextImagePath,
+                  width: 10,
+                  height: 10,
                 )),
           ],
         ),

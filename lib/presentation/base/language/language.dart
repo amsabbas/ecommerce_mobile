@@ -13,6 +13,8 @@ class MessageKeys {
   static const String cancel = "cancel";
   static const String accept = "accept";
   static const String success = 'success';
+  static const String submitButtonTitle = "submitButtonTitle";
+  static const String saveButtonTitle = "saveButtonTitle";
   static const String alert = 'alert';
   static const String yes = 'yes';
   static const String no = 'no';
@@ -28,7 +30,7 @@ class MessageKeys {
 
   static const String logoutButtonTitle = "logoutButtonTitle";
   static const String logoutMessage = "logoutMessage";
-  static const String submitButtonTitle = "submitButtonTitle";
+
   static const String loginButtonTitle = "loginButtonTitle";
   static const String password = "password";
   static const String username = "username";
@@ -59,7 +61,34 @@ class MessageKeys {
   static const String languageTitle = "languageTitle";
   static const String callUsTitle = "callUsTitle";
   static const String reachOutTitle = "reachOutTitle";
+  static const String updateProfileSuccessMessage= "updateProfileSuccessMessage";
 
+  static const String emptyTextFieldValidationMessage = "emptyTextFieldValidationMessage";
+
+  static const String locationDisabledTitle = "locationDisabledTitle";
+  static const String noAddresses = "noAddresses";
+  static const String addAddressButtonTitle = "addAddressButtonTitle";
+  static const String selectLocationTitle = "selectLocationTitle";
+  static const String areasTitle = "areasTitle";
+  static const String areaValidationEmpty = "areaValidationEmpty";
+  static const String cityValidationEmpty = "cityValidationEmpty";
+  static const String selectAddressButtonTitle = "selectAddressButtonTitle";
+  static const String deliveryLocationTitle = "deliveryLocationTitle";
+  static const String buildingNoTitle = "buildingNoTitle";
+  static const String buildNoHintTitle = "buildNoHintTitle";
+  static const String apartmentNoTitle = "apartmentNoTitle";
+  static const String apartmentNoHintTitle = "apartmentNoHintTitle";
+  static const String floorNoTitle = "floorNoTitle";
+  static const String floorNoHintTitle = "floorNoHintTitle";
+  static const String streetNameTitle = "streetNameTitle";
+  static const String streetNameHintTitle = "addressNameHintTitle";
+  static const String addAddressSuccessMessage = "addAddressSuccessMessage";
+  static const String deleteAddressSuccessMessage =
+      "deleteAddressSuccessMessage";
+  static const String deleteAddressConfirmationMessage =
+      "deleteAddressConfirmationMessage";
+  static const String changeDefaultAddressTitle = "changeDefaultAddressTitle";
+  static const String shippingAddressTitle = "shippingAddressTitle";
 }
 
 class Language extends Translations {
@@ -102,6 +131,7 @@ class Language extends Translations {
           MessageKeys.registerButtonTitle: "Register",
           MessageKeys.forgotPasswordTitle : "Forgot Password",
           MessageKeys.submitButtonTitle: "Submit",
+          MessageKeys.saveButtonTitle: "Save",
           MessageKeys.forgotPasswordSuccessMessage: "Email is sent successfully",
           MessageKeys.registerSuccessMessage: "Congratulations! Your account has been successfully created",
           MessageKeys.pending: "Pending",
@@ -122,6 +152,37 @@ class Language extends Translations {
           MessageKeys.languageTitle: "Language",
           MessageKeys.callUsTitle: "Call Us",
           MessageKeys.reachOutTitle: "Reach Out",
+
+          MessageKeys.updateProfileSuccessMessage: "Profile updated successfully",
+
+          MessageKeys.emptyTextFieldValidationMessage: "This field is required",
+
+
+          MessageKeys.noAddresses: "No addresses found",
+          MessageKeys.addAddressButtonTitle: "Add address",
+          MessageKeys.selectLocationTitle: "Select Location",
+          MessageKeys.locationDisabledTitle:
+          "Location service on the device is disabled, please enable it",
+          MessageKeys.areasTitle: "Areas",
+          MessageKeys.cityValidationEmpty: "You must select city name",
+          MessageKeys.areaValidationEmpty: "You must select area name",
+          MessageKeys.selectAddressButtonTitle: "Add",
+          MessageKeys.deliveryLocationTitle: "Delivery Location",
+          MessageKeys.buildingNoTitle: "Building No",
+          MessageKeys.buildNoHintTitle: "Write here your building number",
+          MessageKeys.apartmentNoTitle: "Apartment No",
+          MessageKeys.apartmentNoHintTitle: "Write here your apartment number",
+          MessageKeys.floorNoTitle: "Floor No",
+          MessageKeys.floorNoHintTitle: "Write here your floor number",
+          MessageKeys.streetNameTitle: "Street Name",
+          MessageKeys.streetNameHintTitle: "Write here your address name",
+          MessageKeys.addAddressSuccessMessage: "Address is added successfully",
+          MessageKeys.deleteAddressSuccessMessage:
+          "Address is deleted successfully",
+          MessageKeys.deleteAddressConfirmationMessage:
+          "Are you sure to delete this address ?",
+          MessageKeys.changeDefaultAddressTitle: "Use as the shipping address",
+          MessageKeys.shippingAddressTitle: "Shipping address",
 
         },
         'ar': {
@@ -161,6 +222,7 @@ class Language extends Translations {
           MessageKeys.forgotPasswordTitle : "نسيت كلمة المرور",
           MessageKeys.forgotPasswordSuccessMessage: "تم إرسال البريد الإلكتروني بنجاح",
           MessageKeys.submitButtonTitle: "إرسال",
+          MessageKeys.saveButtonTitle: "حفظ",
           MessageKeys.registerSuccessMessage: "تهانينا! لقد تم إنشاء حسابك بنجاح",
 
           MessageKeys.pending: "قيد الانتظار",
@@ -181,6 +243,35 @@ class Language extends Translations {
           MessageKeys.languageTitle: "اللغة",
           MessageKeys.callUsTitle: "اتصل بنا",
           MessageKeys.reachOutTitle: "تواصل معنا",
+
+          MessageKeys.updateProfileSuccessMessage: "تم تحديث الملف الشخصي بنجاح",
+
+          MessageKeys.emptyTextFieldValidationMessage: "هذا الحقل مطلوب",
+
+          MessageKeys.locationDisabledTitle: "خدمة تحديد الموقع على الجهاز معطلة، الرجاء تفعيلها",
+
+          MessageKeys.noAddresses: "لم يتم العثور على عناوين",
+          MessageKeys.addAddressButtonTitle: "اضافة عنوان",
+          MessageKeys.selectLocationTitle: "اختر الموقع",
+          MessageKeys.areasTitle: "المنطقة",
+          MessageKeys.cityValidationEmpty: "يجب اختيار محافظة",
+          MessageKeys.areaValidationEmpty: "يجب اختيار منطقة",
+          MessageKeys.selectAddressButtonTitle: "اضف",
+          MessageKeys.deliveryLocationTitle: "موقع التوصيل",
+          MessageKeys.buildingNoTitle: "رقم المبني",
+          MessageKeys.buildNoHintTitle: "كتب هنا رقم المبني",
+          MessageKeys.apartmentNoTitle: "رقم الشقة",
+          MessageKeys.apartmentNoHintTitle: "اكتب هنا رقم الشقة",
+          MessageKeys.floorNoTitle: "رقم الدور",
+          MessageKeys.floorNoHintTitle: "اكتب هنا رقم الدور",
+          MessageKeys.streetNameTitle: "اسم الشارع",
+          MessageKeys.streetNameHintTitle: "اكتب هنا اسم الشارع",
+          MessageKeys.addAddressSuccessMessage: "تم اضافة العنوان بنجاح",
+          MessageKeys.deleteAddressSuccessMessage: "تم حذف العنوان بنجاح",
+          MessageKeys.deleteAddressConfirmationMessage:
+          "هل انت متاكد من حذف هذا العنوان ؟",
+          MessageKeys.changeDefaultAddressTitle: "استخدم كعنوان الشحن",
+          MessageKeys.shippingAddressTitle: "عنوان الشحن",
         }
 
       };

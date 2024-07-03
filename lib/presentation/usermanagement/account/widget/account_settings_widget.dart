@@ -1,10 +1,8 @@
 
-import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/app_settings_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
-import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/dialog/account_dialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -45,8 +43,8 @@ class _AccountSettingsWidgetState extends State<AccountSettingsWidget> {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.ceruleanBlueColor),
-              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: AppColors.ceruleanBlueColor,width: 0.5),
+              borderRadius: BorderRadius.circular(6),
             ),
             child: Column(
               children: [
@@ -64,12 +62,6 @@ class _AccountSettingsWidgetState extends State<AccountSettingsWidget> {
         ],
       ),
     );
-  }
-
-  void _showSnackBarError(AppErrorModel result) {
-    CustomSnackBar.showFailureSnackBar(
-        title: MessageKeys.error.tr,
-        message: result.message ?? MessageKeys.unKnown.tr);
   }
 
   void _changeLanguage(String value) {

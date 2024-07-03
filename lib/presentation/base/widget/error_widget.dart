@@ -1,4 +1,6 @@
+import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../language/language.dart';
@@ -15,7 +17,14 @@ class AppErrorWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Icon(Icons.error, color: AppColors.redColor, size: 140),
+        SvgPicture.asset(
+          AssetResource.errorImagePath,
+          width: 100,
+          height: 100,
+        ),
+        const SizedBox(
+          height: 24,
+        ),
         SizedBox(
           width: 200,
           child: ElevatedButton(

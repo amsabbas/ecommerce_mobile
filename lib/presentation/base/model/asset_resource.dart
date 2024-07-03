@@ -7,7 +7,7 @@ class AssetResource {
   static const String appLogoImagePath = "${imagePath}base/app_logo.png";
   static const String imagePlaceHolderImagePath = "${imagePath}base/image_placeholder.svg";
   static const String profileNotLoggedImagePath = "${imagePath}base/ic_account_not_logged.svg";
-
+  static const String errorImagePath = "${imagePath}base/ic_error.svg";
 
   //home
   static const String homeImagePath = "${imagePath}home/ic_home.svg";
@@ -15,8 +15,6 @@ class AssetResource {
   static const String homeOrdersImagePath = "${imagePath}home/ic_orders.svg";
 
   //account
-  static const String accountAvatarImagePath =
-      "${imagePath}account/ic_avatar.svg";
   static const String accountImagePath = "${imagePath}account/ic_profile.svg";
   static const String accountLanguageImagePath =
       "${imagePath}account/ic_language.svg";

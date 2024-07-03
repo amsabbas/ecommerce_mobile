@@ -32,8 +32,8 @@ class AccountReachOutWidget extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.ceruleanBlueColor),
-              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: AppColors.ceruleanBlueColor,width: 0.5),
+              borderRadius: BorderRadius.circular(6),
             ),
             child: Column(
               children: [

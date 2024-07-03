@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile/data/base/utils/auth_manager.dart';
 import 'package:ecommerce_mobile/data/user/datasource/user_remote_data_source.dart';
+import 'package:ecommerce_mobile/data/user/model/address_model.dart';
 import 'package:ecommerce_mobile/data/user/model/login_model.dart';
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 
@@ -22,6 +23,28 @@ class UserRepository {
   Future register(
       String email, String name, String phone, String password) async {
     return remoteDataSource.register(email, name, phone, password);
+  }
+
+  Future updateProfile(String name, String phone) async {
+    return remoteDataSource.updateProfile(name, phone);
+  }
+
+  Future<List<AddressModel>> getUserAddresses() async {
+    return remoteDataSource.getUserAddresses();
+  }
+
+  Future addAddress(int areaId, String street, String buildingNumber,
+      String floorNumber, String apartmentNumber, double lat, double lon) async {
+    return remoteDataSource.addAddress(areaId, street, buildingNumber,
+        floorNumber, apartmentNumber, lat, lon);
+  }
+
+  Future deleteAddress(int addressId) async {
+    return remoteDataSource.deleteAddress(addressId);
+  }
+
+  Future changeDefaultAddress(int addressId) async {
+    return remoteDataSource.setDefaultAddress(addressId);
   }
 
   Future<UserModel> getProfile() async {

@@ -1,0 +1,1 @@
+enum RefreshStatus { none, refresh }

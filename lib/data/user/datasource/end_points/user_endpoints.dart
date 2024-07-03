@@ -48,5 +48,68 @@ class UserEndPoints {
         method: HttpMethod.post);
   }
 
+  static EndPoint updateProfileEndPoint({
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? data,
+    required String? userToken,
+  }) {
+    return EndPoint(
+        endpoint: "user/editProfile",
+        headers: headers,
+        data: data,
+        userToken:userToken,
+        method: HttpMethod.post);
+  }
+
+  static EndPoint getUserAddresses(
+      {Map<String, dynamic>? headers,
+        Map<String, dynamic>? data,
+        required String? userToken}) {
+    return EndPoint(
+        endpoint: "addresses/getAddresses",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.get);
+  }
+
+  static EndPoint addUserAddress(
+      {Map<String, dynamic>? headers,
+        Map<String, dynamic>? data,
+        required String? userToken}) {
+    return EndPoint(
+        endpoint: "addresses/createAddress",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.post);
+  }
+
+  static EndPoint deleteAddress(
+      {Map<String, dynamic>? headers,
+        Map<String, dynamic>? data,
+        required String? userToken,
+        required int id}) {
+    return EndPoint(
+        endpoint: "addresses/address/$id",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.delete);
+  }
+
+  static EndPoint setDefaultAddress(
+      {Map<String, dynamic>? headers,
+        Map<String, dynamic>? data,
+        required String? userToken,
+        required int id}) {
+    return EndPoint(
+        endpoint: "addresses/changeAddressToPrimary/$id",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.post);
+  }
+
 
 }

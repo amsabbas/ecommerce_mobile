@@ -18,7 +18,7 @@ class AccountSignOutButtonWidget extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
-          backgroundColor: AppColors.redColor,
+          backgroundColor: AppColors.blackColor,
         ),
         onPressed: () {
           CustomDialogs.showConfirmationDialog(
@@ -33,12 +33,15 @@ class AccountSignOutButtonWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              MessageKeys.logoutButtonTitle.tr,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(color: AppColors.whiteColor),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text(
+                MessageKeys.logoutButtonTitle.tr,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(color: AppColors.whiteColor),
+              ),
             ),
           ],
         ),

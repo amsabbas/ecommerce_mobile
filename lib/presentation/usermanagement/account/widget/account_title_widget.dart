@@ -2,6 +2,9 @@
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
+import 'package:ecommerce_mobile/presentation/usermanagement/addresses/screen/addresses_screen.dart';
+import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
+import 'package:ecommerce_mobile/presentation/usermanagement/profile/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,8 +31,8 @@ class AccountTitleWidget extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.ceruleanBlueColor),
-              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: AppColors.ceruleanBlueColor,width: 0.5),
+              borderRadius: BorderRadius.circular(6),
             ),
             child: Column(
               children: [
@@ -37,15 +40,14 @@ class AccountTitleWidget extends StatelessWidget {
                     title: MessageKeys.profileTitle.tr,
                     imagePath: AssetResource.accountImagePath,
                     tapCallback: () {
-                      // Get.to(() => const ProfileScreen(),
-                      //     binding: UserBindings());
+                      Get.to(() => const ProfileScreen(), binding: UserBindings());
                     }),
                 AccountItemWidget(
                     title: MessageKeys.myAddressesTitle.tr,
                     imagePath: AssetResource.accountAddressesImagePath,
                     tapCallback: () {
-                      // Get.to(() => const AddressesScreen(),
-                      //     binding: UserBindings());
+                      Get.to(() => const AddressesScreen(),
+                          binding: UserBindings());
                     }),
               ],
             ),
