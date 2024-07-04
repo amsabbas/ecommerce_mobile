@@ -36,6 +36,8 @@ class UserInteractor {
   Future changeDefaultAddress(int addressId) async =>
       await repository.changeDefaultAddress(addressId);
 
+  Future<int> getCartCount() async => await repository.getCartCount();
+
   Future<UserModel> getProfile() async => await repository.getProfile();
 
   Future<UserModel?> getSavedUser() async => await repository.getSavedUser();

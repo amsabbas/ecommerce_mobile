@@ -3,8 +3,8 @@ import 'package:ecommerce_mobile/presentation/base/controller/user_controller.da
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/account_not_logged_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
+import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_logout_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_reachout_widget.dart';
-import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_sign_out_button_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_social_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_title_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_user_widget.dart';
@@ -55,7 +55,7 @@ class _AccountScreenState extends State<AccountScreen> {
           AccountTitleWidget(),
           //AccountSettingsWidget(),
           AccountReachOutWidget(),
-          AccountSignOutButtonWidget(),
+          AccountLogoutWidget(),
           AccountSocialWidget(),
         ],
       ),

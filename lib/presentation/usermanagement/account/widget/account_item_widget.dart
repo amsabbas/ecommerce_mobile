@@ -1,4 +1,3 @@
-
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +30,11 @@ class AccountItemWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                SvgPicture.asset(imagePath),
+                SvgPicture.asset(
+                  imagePath,
+                  width: 16,
+                  height: 16,
+                ),
                 const SizedBox(
                   width: 8,
                 ),

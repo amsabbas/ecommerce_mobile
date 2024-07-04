@@ -33,10 +33,16 @@ class UserRepository {
     return remoteDataSource.getUserAddresses();
   }
 
-  Future addAddress(int areaId, String street, String buildingNumber,
-      String floorNumber, String apartmentNumber, double lat, double lon) async {
-    return remoteDataSource.addAddress(areaId, street, buildingNumber,
-        floorNumber, apartmentNumber, lat, lon);
+  Future addAddress(
+      int areaId,
+      String street,
+      String buildingNumber,
+      String floorNumber,
+      String apartmentNumber,
+      double lat,
+      double lon) async {
+    return remoteDataSource.addAddress(
+        areaId, street, buildingNumber, floorNumber, apartmentNumber, lat, lon);
   }
 
   Future deleteAddress(int addressId) async {
@@ -45,6 +51,10 @@ class UserRepository {
 
   Future changeDefaultAddress(int addressId) async {
     return remoteDataSource.setDefaultAddress(addressId);
+  }
+
+  Future<int> getCartCount() async {
+    return remoteDataSource.getMyCartCount();
   }
 
   Future<UserModel> getProfile() async {

@@ -22,7 +22,7 @@ class AddressItemWidget extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColors.ceruleanBlueColor),
+          border: Border.all(color: AppColors.ceruleanBlueColor,width: 0.5),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),

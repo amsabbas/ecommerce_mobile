@@ -1,7 +1,6 @@
 import 'package:ecommerce_mobile/data/base/utils/end_point.dart';
 
 class UserEndPoints {
-
   static EndPoint loginEndPoint({
     Map<String, dynamic>? headers,
     Map<String, dynamic>? data,
@@ -57,14 +56,14 @@ class UserEndPoints {
         endpoint: "user/editProfile",
         headers: headers,
         data: data,
-        userToken:userToken,
+        userToken: userToken,
         method: HttpMethod.post);
   }
 
   static EndPoint getUserAddresses(
       {Map<String, dynamic>? headers,
-        Map<String, dynamic>? data,
-        required String? userToken}) {
+      Map<String, dynamic>? data,
+      required String? userToken}) {
     return EndPoint(
         endpoint: "addresses/getAddresses",
         headers: headers,
@@ -75,8 +74,8 @@ class UserEndPoints {
 
   static EndPoint addUserAddress(
       {Map<String, dynamic>? headers,
-        Map<String, dynamic>? data,
-        required String? userToken}) {
+      Map<String, dynamic>? data,
+      required String? userToken}) {
     return EndPoint(
         endpoint: "addresses/createAddress",
         headers: headers,
@@ -87,9 +86,9 @@ class UserEndPoints {
 
   static EndPoint deleteAddress(
       {Map<String, dynamic>? headers,
-        Map<String, dynamic>? data,
-        required String? userToken,
-        required int id}) {
+      Map<String, dynamic>? data,
+      required String? userToken,
+      required int id}) {
     return EndPoint(
         endpoint: "addresses/address/$id",
         headers: headers,
@@ -100,9 +99,9 @@ class UserEndPoints {
 
   static EndPoint setDefaultAddress(
       {Map<String, dynamic>? headers,
-        Map<String, dynamic>? data,
-        required String? userToken,
-        required int id}) {
+      Map<String, dynamic>? data,
+      required String? userToken,
+      required int id}) {
     return EndPoint(
         endpoint: "addresses/changeAddressToPrimary/$id",
         headers: headers,
@@ -111,5 +110,15 @@ class UserEndPoints {
         method: HttpMethod.post);
   }
 
-
+  static EndPoint getMyCartCount(
+      {Map<String, dynamic>? headers,
+      Map<String, dynamic>? data,
+      required String? userToken}) {
+    return EndPoint(
+        endpoint: "cart/cartCount",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.get);
+  }
 }

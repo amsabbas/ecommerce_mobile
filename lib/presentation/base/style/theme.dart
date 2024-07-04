@@ -12,6 +12,12 @@ class CustomTheme {
     return ThemeData(
         indicatorColor: Colors.transparent,
         primaryColor: AppColors.whiteColor,
+        inputDecorationTheme: const InputDecorationTheme(
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.ceruleanBlueColor),
+          ),
+          labelStyle: TextStyle(color: AppColors.ceruleanBlueColor),
+        ),
         useMaterial3: false,
         scaffoldBackgroundColor: AppColors.whiteColor,
         radioTheme: RadioThemeData(
@@ -54,6 +60,9 @@ class CustomTheme {
             ),
             backgroundColor: AppColors.ceruleanBlueColor,
           ),
+        ),
+        checkboxTheme: CheckboxThemeData(
+          fillColor: WidgetStateProperty.all(AppColors.ceruleanBlueColor),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(

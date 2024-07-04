@@ -1,3 +1,5 @@
+import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/empty_app_bar.dart';
 import 'package:ecommerce_mobile/presentation/orders/main/screen/my_orders_screen.dart';
@@ -6,8 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../base/language/language.dart';
-import '../../base/model/asset_resource.dart';
 import 'home_screen.dart';
 
 class HomeContainerScreen extends StatefulWidget {
@@ -37,8 +37,8 @@ class _HomeContainerScreenState extends State<HomeContainerScreen> {
             });
           },
           indicatorColor: AppColors.black12,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+          backgroundColor: Colors.white,
+          elevation: 2,
           selectedIndex: _currentPage,
           destinations: _getNavigationWidget()),
     );

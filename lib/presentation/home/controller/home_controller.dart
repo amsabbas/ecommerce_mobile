@@ -1,15 +1,16 @@
 import 'package:ecommerce_mobile/data/ads/interactor/ads_interactor.dart';
+import 'package:ecommerce_mobile/data/ads/model/ad_model.dart';
 import 'package:get/get.dart';
 
 import '../../../data/base/utils/app_logger.dart';
 import '../../base/utils/result.dart';
 
-class AdsController extends GetxController {
-  final adsState = ResultState();
+class HomeController extends GetxController {
+  final adsState = ResultState<List<AdModel>>();
 
   late final AdsInteractor adsInteractor;
 
-  AdsController({required this.adsInteractor});
+  HomeController({required this.adsInteractor});
 
   void getAds() async {
     try {
@@ -20,8 +21,6 @@ class AdsController extends GetxController {
       adsState.setError(error);
     }
   }
-
-
 
   @override
   void dispose() {

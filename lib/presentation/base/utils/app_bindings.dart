@@ -13,8 +13,8 @@ import 'package:ecommerce_mobile/data/categories/repository/categories_repositor
 import 'package:ecommerce_mobile/data/products/datasource/products_remote_data_source.dart';
 import 'package:ecommerce_mobile/data/products/interactor/products_interactor.dart';
 import 'package:ecommerce_mobile/data/products/repository/products_repository_impl.dart';
-import 'package:ecommerce_mobile/presentation/ads/controller/ads_controller.dart';
 import 'package:ecommerce_mobile/presentation/categories/controller/categories_controller.dart';
+import 'package:ecommerce_mobile/presentation/home/controller/home_controller.dart';
 import 'package:ecommerce_mobile/presentation/orders/base/utils/orders_bindings.dart';
 import 'package:ecommerce_mobile/presentation/products/controller/products_controller.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
@@ -29,6 +29,7 @@ class AppBindings extends Bindings {
     await addGeneralDependencies();
     await UserBindings().dependencies();
     await _addAdsDependencies();
+    await _addHomeDependencies();
     await _addCategoriesDependencies();
     await _addProductsDependencies();
     await OrdersBindings().dependencies();
@@ -63,7 +64,10 @@ class AppBindings extends Bindings {
     Get.lazyPut(
         () => AdsRepository(remoteDataSource: Get.find<AdsRemoteDataSource>()));
     Get.lazyPut(() => AdsInteractor(repository: Get.find<AdsRepository>()));
-    Get.lazyPut(() => AdsController(adsInteractor: Get.find<AdsInteractor>()));
+  }
+
+  Future<void> _addHomeDependencies() async {
+    Get.lazyPut(() => HomeController(adsInteractor: Get.find<AdsInteractor>()));
   }
 
   Future<void> _addCategoriesDependencies() async {

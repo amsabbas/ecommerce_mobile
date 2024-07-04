@@ -6,6 +6,7 @@ import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/orders/details/screen/order_details_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 class MyOrderItemWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class MyOrderItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-         Get.to(() => const OrderDetailsScreen(), arguments: orderModel);
+        Get.to(() => const OrderDetailsScreen(), arguments: orderModel);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
@@ -35,7 +36,7 @@ class MyOrderItemWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _orderNumber(context),
+                      _orderNumberAndStatus(context),
                       _orderDate(context),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +55,7 @@ class MyOrderItemWidget extends StatelessWidget {
     );
   }
 
-  Widget _orderNumber(context) {
+  Widget _orderNumberAndStatus(context) {
     String status = orderModel.status.getStatus();
     Color statusColor = orderModel.status.getStatusColor();
     return Row(
@@ -72,15 +73,19 @@ class MyOrderItemWidget extends StatelessWidget {
                     )),
           ],
         ),
-        Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12), color: statusColor),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
-            child: Text(status,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: AppColors.whiteColor,
-                    )),
+        Animate(
+          effects: const [FlipEffect()],
+          child: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12), color: statusColor),
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+              child: Text(status,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: AppColors.whiteColor,
+                      )),
+            ),
           ),
         ),
       ],

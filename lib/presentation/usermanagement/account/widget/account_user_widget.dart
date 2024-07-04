@@ -40,7 +40,7 @@ class AccountUserWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Animate(
-                        effects: const [FadeEffect(), ScaleEffect()],
+                        effects: const [FlipEffect()],
                         child: Text(
                           userModel?.name ?? "----",
                           maxLines: 1,
@@ -54,7 +54,7 @@ class AccountUserWidget extends StatelessWidget {
                         ),
                       ),
                       Animate(
-                        effects: const [FadeEffect(), ScaleEffect()],
+                        effects: const [FlipEffect()],
                         child: Text(
                           userModel?.email ?? "----",
                           maxLines: 1,

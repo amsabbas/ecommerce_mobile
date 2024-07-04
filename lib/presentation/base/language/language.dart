@@ -28,6 +28,9 @@ class MessageKeys {
   static const String accepted = "accepted";
   static const String rejected = "rejected";
 
+  static const String seeYouSoonTitle = "seeYouSoonTitle";
+  static const String homeWelcomeTitle = "homeWelcomeTitle";
+
   static const String logoutButtonTitle = "logoutButtonTitle";
   static const String logoutMessage = "logoutMessage";
 
@@ -90,7 +93,6 @@ class MessageKeys {
   static const String changeDefaultAddressTitle = "changeDefaultAddressTitle";
   static const String shippingAddressTitle = "shippingAddressTitle";
 
-  static const String myOrdersTitle = "myOrdersTitle";
   static const String noOrdersTitle = "noOrdersTitle";
   static const String orderNumberTitle = "orderNumberTitle";
   static const String orderQuantityTitle = "orderQuantityTitle";
@@ -132,6 +134,10 @@ class Language extends Translations {
           MessageKeys.noData: "No data",
           MessageKeys.viewMore: "Show more",
           MessageKeys.noFound: "Not found",
+
+          MessageKeys.homeWelcomeTitle: "Welcome,",
+          MessageKeys.seeYouSoonTitle: "See you soon!",
+
           MessageKeys.logoutButtonTitle: "Logout",
           MessageKeys.logoutMessage: "Are you sure you want to logout?",
           MessageKeys.loginButtonTitle: "Login",
@@ -199,11 +205,10 @@ class Language extends Translations {
           MessageKeys.changeDefaultAddressTitle: "Use as the primary address",
           MessageKeys.shippingAddressTitle: "Shipping address",
 
-          MessageKeys.myOrdersTitle: "My Orders",
           MessageKeys.noOrdersTitle: "No Orders found\nLooks like you haven't placed any orders yet.",
           MessageKeys.orderNumberTitle: "Order no:",
           MessageKeys.orderQuantityTitle: "Quantity:",
-          MessageKeys.orderDateTitle: "Order date:",
+          MessageKeys.orderDateTitle: "Date:",
           MessageKeys.orderDetailsTitle: "Order details",
           MessageKeys.subTotalTitle: "Subtotal",
           MessageKeys.discountTitle: "Discount",
@@ -236,6 +241,10 @@ class Language extends Translations {
           MessageKeys.noData: "لايوجد بيانات",
           MessageKeys.viewMore: "عرض المزيد",
           MessageKeys.noFound: "لا يوجد",
+
+          MessageKeys.seeYouSoonTitle: "أراك قريبا!",
+          MessageKeys.homeWelcomeTitle: "مرحبا",
+
           MessageKeys.logoutButtonTitle: "تسجيل الخروج",
           MessageKeys.logoutMessage: "هل أنت متأكد من تسجيل الخروج؟",
           MessageKeys.loginButtonTitle: "تسجيل الدخول",
@@ -302,7 +311,6 @@ class Language extends Translations {
           MessageKeys.changeDefaultAddressTitle: "استخدم كعنوان الشحن",
           MessageKeys.shippingAddressTitle: "عنوان الشحن",
 
-          MessageKeys.myOrdersTitle: "الطلبات",
           MessageKeys.noOrdersTitle: "لم يتم العثور على طلبات، يبدو أنك لم تقم بإجراء أي طلب بعد.",
           MessageKeys.orderNumberTitle: "رقم الطلب:",
           MessageKeys.orderQuantityTitle: "الكمية:",

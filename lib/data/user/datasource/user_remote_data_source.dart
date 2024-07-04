@@ -58,8 +58,14 @@ class UserRemoteDataSource {
             .toList());
   }
 
-  Future addAddress(int areaId, String street, String buildingNumber,
-      String floorNumber, String apartmentNumber, double lat, double lon) async {
+  Future addAddress(
+      int areaId,
+      String street,
+      String buildingNumber,
+      String floorNumber,
+      String apartmentNumber,
+      double lat,
+      double lon) async {
     final userToken = authManager.getToken();
     Map<String, dynamic> map = {
       'area_id': areaId,
@@ -84,5 +90,12 @@ class UserRemoteDataSource {
     final userToken = authManager.getToken();
     return service
         .call(UserEndPoints.setDefaultAddress(userToken: userToken, id: id));
+  }
+
+  Future<int> getMyCartCount() async {
+    final userToken = authManager.getToken();
+    return service
+        .call(UserEndPoints.getMyCartCount(userToken: userToken))
+        .then((value) => value);
   }
 }

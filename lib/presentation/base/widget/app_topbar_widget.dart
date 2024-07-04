@@ -1,5 +1,7 @@
 
+import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
+import 'package:ecommerce_mobile/presentation/base/widget/cart_count_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,8 +17,7 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextDirection currentDirection = Directionality.of(context);
-    final bool isRTL = currentDirection == TextDirection.rtl;
+    UserController userController = Get.find();
     return AppBar(
       scrolledUnderElevation: 0,
       elevation: 0,
@@ -37,6 +38,27 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
           ),
         ],
       ),
+      actions: [
+        GetX<UserController>(
+            init: userController,
+            builder: (controller) {
+              int? productsQuantity = userController.productsQuantity.value;
+              if (productsQuantity != null && productsQuantity > 0) {
+                return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: CartCountWidget(
+                      productsQuantity: productsQuantity,
+                    ));
+              } else {
+                return const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: CartCountWidget(
+                    productsQuantity: null,
+                  ),
+                );
+              }
+            })
+      ],
       centerTitle: false,
     );
   }

@@ -37,7 +37,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppTopBarWidget(
-          title: MessageKeys.myOrdersTitle.tr,
+          title: MessageKeys.ordersTitle.tr,
           showBackIcon: false,
         ),
         body: GetX<UserController>(
