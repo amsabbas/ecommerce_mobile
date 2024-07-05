@@ -6,7 +6,11 @@ class ProductsInteractor {
 
   ProductsInteractor({required this.repository});
 
-  Future<List<ProductModel>> getAllProductsEndPoint() async =>
-      await repository.getAllProductsEndPoint();
+  Future<List<ProductModel>> getAllProducts() async =>
+      await repository.getAllProducts();
+
+
+  Future<List<ProductModel>> getAllProductsByCategoryID(int categoryID) async =>
+      await repository.getAllProductsByCategoryID(categoryID);
 
 }

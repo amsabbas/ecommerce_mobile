@@ -1,7 +1,6 @@
 import 'package:ecommerce_mobile/data/base/utils/end_point.dart';
 
 class ProductsEndPoints {
-
   static EndPoint getAllProductsEndPoint({
     Map<String, dynamic>? headers,
     Map<String, dynamic>? data,
@@ -13,5 +12,14 @@ class ProductsEndPoints {
         method: HttpMethod.get);
   }
 
-
+  static EndPoint getAllProductsByCategoryIDEndPoint(
+      {Map<String, dynamic>? headers,
+      Map<String, dynamic>? data,
+      required int categoryID}) {
+    return EndPoint(
+        endpoint: "products/getAllProductsByCategoryID/${categoryID}",
+        headers: headers,
+        data: data,
+        method: HttpMethod.get);
+  }
 }

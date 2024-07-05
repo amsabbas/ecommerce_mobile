@@ -99,7 +99,7 @@ class AddressItemWidget extends StatelessWidget {
                 .titleSmall
                 ?.copyWith(color: AppColors.blackColor,fontWeight: FontWeight.bold)),
 
-        Text(key,
+        Text(value,
             style: Theme.of(context)
                 .textTheme
                 .titleSmall

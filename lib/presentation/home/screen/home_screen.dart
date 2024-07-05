@@ -5,7 +5,9 @@ import 'package:ecommerce_mobile/presentation/base/widget/error_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/controller/home_controller.dart';
 import 'package:ecommerce_mobile/presentation/home/widget/home_ads_widget.dart';
+import 'package:ecommerce_mobile/presentation/home/widget/home_categories_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/widget/home_greeting_widget.dart';
+import 'package:ecommerce_mobile/presentation/home/widget/home_products_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,16 +28,19 @@ class _HomeScreenState extends State<HomeScreen> {
     _userController = Get.find();
     _homeController = Get.find();
     _userController.getProfile();
-    _homeController.getAds();
+    _homeController.getHomeData();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppTopBarWidget(title:MessageKeys.appName.tr, showBackIcon: false,),
+        appBar: AppTopBarWidget(
+          title: MessageKeys.appName.tr,
+          showBackIcon: false,
+        ),
         body: GetX<HomeController>(
           init: _homeController,
-          builder: (controller) => controller.adsState.handleStateInWidget(
+          builder: (controller) => controller.homeState.handleStateInWidget(
               onSuccess: (context, data) => _successWidget(),
               onLoading: (context, data) => loadingWidget(context),
               onNormal: (context, data) => loadingWidget(context),
@@ -45,13 +50,16 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _successWidget() {
-    return const Padding(
+    return  const Padding(
       padding: EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           HomeGreetingWidget(),
           HomeAdsWidget(),
+          HomeCategoriesWidget(),
+          Expanded(child: HomeProductsWidget()),
         ],
       ),
     );
@@ -60,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _errorWidget() {
     return Center(
       child: AppErrorWidget(retryCallback: () {
-        _homeController.getAds();
+        _homeController.getHomeData();
       }),
     );
   }

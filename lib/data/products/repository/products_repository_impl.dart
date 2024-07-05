@@ -6,7 +6,11 @@ class ProductsRepository {
 
   ProductsRepository({required this.remoteDataSource});
 
-  Future<List<ProductModel>> getAllProductsEndPoint() async {
-    return await remoteDataSource.getAllProductsEndPoint();
+  Future<List<ProductModel>> getAllProducts() async {
+    return await remoteDataSource.getAllProducts();
+  }
+
+  Future<List<ProductModel>> getAllProductsByCategoryID(int categoryID) async {
+    return await remoteDataSource.getAllProductsByCategoryID(categoryID);
   }
 }

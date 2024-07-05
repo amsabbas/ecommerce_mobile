@@ -106,6 +106,8 @@ class MessageKeys {
   static const String deliveryDateTitle = "deliveryDateTitle";
 
   static const String productsTitle = "productsTitle";
+
+  static const String outOfStockTitle = "outOfStockTitle";
 }
 
 class Language extends Translations {
@@ -218,6 +220,8 @@ class Language extends Translations {
           MessageKeys.deliveryDateTitle: "Delivery date/time",
 
           MessageKeys.productsTitle: "Products",
+
+          MessageKeys.outOfStockTitle: "Unavailable"
         },
         'ar': {
           MessageKeys.appName: 'متجر الكتروني',
@@ -324,6 +328,8 @@ class Language extends Translations {
           MessageKeys.deliveryDateTitle: "تاريخ/وقت التسليم",
 
           MessageKeys.productsTitle: "المنتجات",
+
+          MessageKeys.outOfStockTitle: "غير متوفر"
 
         }
 

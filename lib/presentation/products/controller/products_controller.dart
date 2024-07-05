@@ -21,7 +21,7 @@ class ProductsController extends GetxController {
     try {
       productsState.setLoading();
       productsState
-          .setSuccess(await productsInteractor.getAllProductsEndPoint());
+          .setSuccess(await productsInteractor.getAllProducts());
     } catch (error, errorStack) {
       AppLogger.error(error: error, errorStack: errorStack);
       productsState.setError(error);
@@ -37,8 +37,6 @@ class ProductsController extends GetxController {
       categoriesState.setError(error);
     }
   }
-
-
 
   @override
   void dispose() {

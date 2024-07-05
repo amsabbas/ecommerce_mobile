@@ -9,11 +9,19 @@ class ProductsRemoteDataSource {
 
   ProductsRemoteDataSource({required this.service, required this.authManager});
 
-  Future<List<ProductModel>> getAllProductsEndPoint() async {
+  Future<List<ProductModel>> getAllProducts() async {
     return service.call(ProductsEndPoints.getAllProductsEndPoint()).then(
         (response) => response
             .map<ProductModel>((e) => ProductModel.fromJson(e))
             .toList());
   }
 
+  Future<List<ProductModel>> getAllProductsByCategoryID(int categoryID) async {
+    return service
+        .call(ProductsEndPoints.getAllProductsByCategoryIDEndPoint(
+            categoryID: categoryID))
+        .then((response) => response
+            .map<ProductModel>((e) => ProductModel.fromJson(e))
+            .toList());
+  }
 }

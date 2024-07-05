@@ -62,7 +62,8 @@ class CustomTheme {
           ),
         ),
         checkboxTheme: CheckboxThemeData(
-          fillColor: WidgetStateProperty.all(AppColors.ceruleanBlueColor),
+          fillColor: WidgetStateProperty.all(AppColors.whiteColor),
+          checkColor: WidgetStateProperty.all(AppColors.blackColor),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
