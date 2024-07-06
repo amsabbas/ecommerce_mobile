@@ -1,0 +1,144 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce_mobile/data/products/model/product_model.dart';
+import 'package:ecommerce_mobile/data/user/model/user_model.dart';
+import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
+import 'package:ecommerce_mobile/presentation/base/extension/double_extension.dart';
+import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
+import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
+import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class ProductScreen extends StatefulWidget {
+  const ProductScreen({super.key});
+
+  @override
+  State<ProductScreen> createState() => _ProductScreenState();
+}
+
+class _ProductScreenState extends State<ProductScreen> {
+  late final UserController _userController;
+  late final ProductModel productModel;
+
+  @override
+  void initState() {
+    super.initState();
+    productModel = Get.arguments;
+    _userController = Get.find();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppTopBarWidget(
+          title: MessageKeys.productDetailTitle.tr,
+          showBackIcon: false,
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              _productImage(),
+              _productDetailsWidget(),
+              _addToMyCart()
+            ],
+          ),
+        ));
+  }
+
+  Widget _productImage() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Center(
+          child: CachedNetworkImage(
+        imageUrl:
+            "http://192.168.1.106:3000/${productModel.photoUrl?.replaceAll("localhost:3000/", "")}",
+        // "$scheme://" + element.photoUrl,
+        fit: BoxFit.fitWidth,
+        height: 250,
+      )),
+    );
+  }
+
+  Widget _productDetailsWidget() {
+    bool isProductAvailable = productModel.isAvailable!;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(productModel.name!,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: AppColors.ceruleanBlueColor,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.start,
+                maxLines: 1),
+            Text(productModel.description!,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(color: AppColors.ceruleanBlueColor),
+                textAlign: TextAlign.start,
+                maxLines: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (!isProductAvailable)
+                  Text(
+                    MessageKeys.outOfStockTitle.tr,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge
+                        ?.copyWith(color: AppColors.redColor),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                if (isProductAvailable)
+                  Text(
+                    "${productModel.price!.roundDouble()} $currency",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge
+                        ?.copyWith(color: AppColors.greenColor),
+                  ),
+              ],
+            )
+          ]),
+    );
+  }
+
+  Widget _addToMyCart() {
+    return GetX<UserController>(
+        init: _userController,
+        builder: (controller) {
+          UserModel? userModel = _userController.userState.value;
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24),
+            child: ElevatedButton(
+              onPressed: userModel == null ? null : () {
+
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.add_shopping_cart),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      MessageKeys.addToMyCartButtonTitle.tr,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium
+                          ?.copyWith(color: AppColors.whiteColor),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+}

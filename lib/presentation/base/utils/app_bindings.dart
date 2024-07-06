@@ -52,7 +52,7 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => AppSettingsController(
         settingsInteractor: Get.find<SettingsInteractor>()));
 
-    Get.lazyPut(() => ServiceGenerator("http://192.168.1.8:3000/",
+    Get.lazyPut(() => ServiceGenerator("http://192.168.1.106:3000/",
         Get.find<AuthManager>(), Get.find<SettingsLocalDataSource>()));
   }
 
@@ -90,10 +90,6 @@ class AppBindings extends Bindings {
         remoteDataSource: Get.find<ProductsRemoteDataSource>()));
     Get.lazyPut(
         () => ProductsInteractor(repository: Get.find<ProductsRepository>()));
-    Get.lazyPut(
-      () => ProductsController(
-          categoryInteractor: Get.find<CategoryInteractor>(),
-          productsInteractor: Get.find<ProductsInteractor>()),
-    );
+    Get.lazyPut(() => ProductsController());
   }
 }

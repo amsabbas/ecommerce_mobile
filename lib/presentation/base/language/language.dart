@@ -108,6 +108,10 @@ class MessageKeys {
   static const String productsTitle = "productsTitle";
 
   static const String outOfStockTitle = "outOfStockTitle";
+
+  static const String addToMyCartButtonTitle = "addToMyCartButtonTitle";
+  static const String productDetailTitle = "productDetailTitle";
+
 }
 
 class Language extends Translations {
@@ -221,7 +225,10 @@ class Language extends Translations {
 
           MessageKeys.productsTitle: "Products",
 
-          MessageKeys.outOfStockTitle: "Unavailable"
+          MessageKeys.outOfStockTitle: "Currently unavailable",
+
+          MessageKeys.addToMyCartButtonTitle: "Add to my cart",
+          MessageKeys.productDetailTitle: "Product Detail",
         },
         'ar': {
           MessageKeys.appName: 'متجر الكتروني',
@@ -329,8 +336,10 @@ class Language extends Translations {
 
           MessageKeys.productsTitle: "المنتجات",
 
-          MessageKeys.outOfStockTitle: "غير متوفر"
+          MessageKeys.outOfStockTitle: "غير متوفر",
 
+          MessageKeys.addToMyCartButtonTitle: "أضف إلى سلة التسوق",
+          MessageKeys.productDetailTitle: "تفاصيل المنتج",
         }
 
       };

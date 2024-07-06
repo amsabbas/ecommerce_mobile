@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeAdsWidget> {
 
       widgets.add(CachedNetworkImage(
           imageUrl:
-              "http://192.168.1.8:3000/${photoUrl.replaceAll("localhost:3000/", "")}",
+              "http://192.168.1.106:3000/${photoUrl.replaceAll("localhost:3000/", "")}",
           // "$scheme://" + element.photoUrl,
           height: 150.0,
           fit: BoxFit.cover,
