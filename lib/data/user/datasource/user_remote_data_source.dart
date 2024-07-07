@@ -3,6 +3,7 @@ import 'package:ecommerce_mobile/data/base/utils/auth_manager.dart';
 import 'package:ecommerce_mobile/data/user/datasource/end_points/user_endpoints.dart';
 import 'package:ecommerce_mobile/data/user/model/address_model.dart';
 import 'package:ecommerce_mobile/data/user/model/login_model.dart';
+import 'package:ecommerce_mobile/data/user/model/notification_request_model.dart';
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 
 class UserRemoteDataSource {
@@ -104,5 +105,19 @@ class UserRemoteDataSource {
     return service
         .call(UserEndPoints.getMyCartCount(userToken: userToken))
         .then((value) => int.parse(value));
+  }
+
+  Future sendPushNotificationTokenEndPoint(String token) async {
+    final userToken = authManager.getToken();
+    if (userToken == null) return;
+    return service.call(UserEndPoints.sendPushNotificationTokenEndPoint(
+        userToken: userToken ?? "",
+        data: NotificationRequestModel(token: token).toJson()));
+  }
+
+  Future logoutEndPoint() async {
+    final userToken = authManager.getToken();
+    return service
+        .call(UserEndPoints.logoutEndPoint(userToken: userToken ?? ""));
   }
 }

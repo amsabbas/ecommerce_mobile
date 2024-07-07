@@ -8,6 +8,7 @@ import '../../user/model/user_model.dart';
 class AuthManager {
   static const userKey = "user";
   static const tokenKey = "token";
+  static const fcmToken = "fcmToken";
   final SharedPreferences _sharedPref;
 
   AuthManager({required sharedPreferences}) : _sharedPref = sharedPreferences;
@@ -48,5 +49,13 @@ class AuthManager {
     } catch (_) {
       return;
     }
+  }
+
+  Future<bool> saveFCMToken(String token) async {
+    return await _sharedPref.setString(fcmToken, token);
+  }
+
+  String getFCMToken() {
+    return _sharedPref.getString(fcmToken) ?? "";
   }
 }

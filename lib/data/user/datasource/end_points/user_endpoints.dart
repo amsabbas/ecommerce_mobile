@@ -133,4 +133,26 @@ class UserEndPoints {
         userToken: userToken,
         method: HttpMethod.get);
   }
+
+  static EndPoint sendPushNotificationTokenEndPoint({
+    Map<String, dynamic>? headers,
+    required Map<String, dynamic> data,
+    required String userToken,
+  }) {
+    return EndPoint(
+        endpoint: "auth/updateFcmToken",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.post);
+  }
+
+  static EndPoint logoutEndPoint(
+      {Map<String, dynamic>? headers, required String userToken}) {
+    return EndPoint(
+        endpoint: "auth/logout",
+        userToken: userToken,
+        headers: headers,
+        method: HttpMethod.post);
+  }
 }

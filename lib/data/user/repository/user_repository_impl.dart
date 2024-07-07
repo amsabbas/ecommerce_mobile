@@ -73,9 +73,18 @@ class UserRepository {
 
   Future logout() async {
     try {
-      await authManager.deleteToken();
-      await authManager.deleteUser();
+      await remoteDataSource.logoutEndPoint();
     } catch (_) {}
-    return authManager.deleteUser();
+    await authManager.deleteToken();
+    await authManager.deleteUser();
+  }
+
+  void saveFCMToken(String token) {
+    authManager.saveFCMToken(token);
+  }
+
+  Future sendPushNotificationToken() {
+    String token = authManager.getFCMToken();
+    return remoteDataSource.sendPushNotificationTokenEndPoint(token);
   }
 }

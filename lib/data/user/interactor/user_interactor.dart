@@ -52,4 +52,9 @@ class UserInteractor {
   Future<UserModel?> getSavedUser() async => await repository.getSavedUser();
 
   Future logout() async => await repository.logout();
+
+  Future sendPushNotificationToken() async =>
+      await repository.sendPushNotificationToken();
+
+  void saveFCMToken(String token) async => repository.saveFCMToken(token);
 }
