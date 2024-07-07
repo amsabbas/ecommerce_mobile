@@ -16,4 +16,10 @@ class OrdersRemoteDataSource {
         .then((response) =>
             response.map<OrderModel>((e) => OrderModel.fromJson(e)).toList());
   }
+
+  Future createOrder(String? promoCode) async {
+    String? userToken = authManager.getToken();
+    return service.call(OrdersEndPoints.createOrderEndPoint(
+        userToken: userToken, data: {"promoCode": promoCode}));
+  }
 }

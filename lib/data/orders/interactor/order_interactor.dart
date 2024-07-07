@@ -8,4 +8,7 @@ class OrderInteractor {
 
   Future<List<OrderModel>> getMyOrders() async =>
       await repository.getMyOrders();
+
+  Future createOrder(String? promoCode) async =>
+      await repository.createOrder(promoCode);
 }

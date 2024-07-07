@@ -9,4 +9,8 @@ class OrdersRepository {
   Future<List<OrderModel>> getMyOrders() async {
     return await remoteDataSource.getMyOrders();
   }
+
+  Future createOrder(String? promoCode) async {
+    return await remoteDataSource.createOrder(promoCode);
+  }
 }

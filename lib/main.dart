@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: theme,
       darkTheme: theme,
-      home: HomeContainerScreen(),
+      home: const HomeContainerScreen(),
       translations: Language(),
     );
   }

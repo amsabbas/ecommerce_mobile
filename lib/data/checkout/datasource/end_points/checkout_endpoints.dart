@@ -1,26 +1,26 @@
 import 'package:ecommerce_mobile/data/base/utils/end_point.dart';
 
-class OrdersEndPoints {
-  static EndPoint getMyOrdersEndPoint({
+class CheckoutEndpoints {
+  static EndPoint calculateCostEndPoint({
     Map<String, dynamic>? headers,
     Map<String, dynamic>? data,
-    required String? userToken
+    required String? userToken,
   }) {
     return EndPoint(
-        endpoint: "orders/getMyOrders",
+        endpoint: "checkout/cost",
         headers: headers,
         data: data,
         userToken: userToken,
         method: HttpMethod.get);
   }
 
-  static EndPoint createOrderEndPoint({
+  static EndPoint checkCartAvailabilityEndPoint({
     Map<String, dynamic>? headers,
     Map<String, dynamic>? data,
-    required String? userToken
+    required String? userToken,
   }) {
     return EndPoint(
-        endpoint: "orders/createOrder",
+        endpoint: "checkout/checkCartAvailability",
         headers: headers,
         data: data,
         userToken: userToken,

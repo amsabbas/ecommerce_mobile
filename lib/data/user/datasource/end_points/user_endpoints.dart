@@ -72,6 +72,18 @@ class UserEndPoints {
         method: HttpMethod.get);
   }
 
+  static EndPoint getPrimaryAddress(
+      {Map<String, dynamic>? headers,
+      Map<String, dynamic>? data,
+      required String? userToken}) {
+    return EndPoint(
+        endpoint: "addresses/getPrimaryAddress",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.get);
+  }
+
   static EndPoint addUserAddress(
       {Map<String, dynamic>? headers,
       Map<String, dynamic>? data,

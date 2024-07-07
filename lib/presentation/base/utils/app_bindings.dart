@@ -18,6 +18,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../controller/app_settings_controller.dart';
 
 class AppBindings extends Bindings {
+
   @override
   Future<void> dependencies() async {
     await addGeneralDependencies();
@@ -25,9 +26,9 @@ class AppBindings extends Bindings {
     await AdsBindings().dependencies();
     await CategoriesBindings().dependencies();
     await ProductsBindings().dependencies();
-    await CartBindings().dependencies();
     await HomeBindings().dependencies();
     await OrdersBindings().dependencies();
+    await CartBindings().dependencies();
   }
 
   Future<void> addGeneralDependencies() async {

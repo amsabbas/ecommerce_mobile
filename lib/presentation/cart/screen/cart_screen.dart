@@ -14,6 +14,8 @@ import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
 import 'package:ecommerce_mobile/presentation/cart/controller/cart_controller.dart';
 import 'package:ecommerce_mobile/presentation/cart/widget/cart_checkout_button_widget.dart';
 import 'package:ecommerce_mobile/presentation/cart/widget/cart_item_widget.dart';
+import 'package:ecommerce_mobile/presentation/checkout/screen/checkout_screen.dart';
+import 'package:ecommerce_mobile/presentation/checkout/utils/checkout_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +29,7 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   late final CartController _cartController;
   late final UserController _userController;
-  late final Worker _deleteCartWorker;
+  late final Worker _deleteCartWorker, checkCartAvailabilityWorker;
 
   @override
   void initState() {
@@ -46,6 +48,18 @@ class _CartScreenState extends State<CartScreen> {
                   onSuccess: () {
                     _cartController.getMyCarts();
                     _userController.refreshProductQuantity();
+                  },
+                  onLoadingFinish: () => CustomLoading.dismissLoading(context))
+            });
+    checkCartAvailabilityWorker = ever(
+        _cartController.checkCartAvailabilityState,
+        (ResultData res) => {
+              res.handleState(
+                  onLoading: () => CustomLoading.onLoading(context),
+                  onError: () => _showSnackBarError(res.error as AppErrorModel),
+                  onSuccess: () {
+                    Get.to(() => const CheckoutScreen(),
+                        binding: CheckoutBindings());
                   },
                   onLoadingFinish: () => CustomLoading.dismissLoading(context))
             });
@@ -125,7 +139,7 @@ class _CartScreenState extends State<CartScreen> {
           ),
           CartCheckoutButtonWidget(
             callback: () {
-
+              _cartController.checkCartAvailabilityCart();
             },
           ),
         ],
@@ -151,5 +165,6 @@ class _CartScreenState extends State<CartScreen> {
   void dispose() {
     super.dispose();
     _deleteCartWorker.dispose();
+    checkCartAvailabilityWorker.dispose();
   }
 }

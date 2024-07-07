@@ -47,13 +47,13 @@ class MessageKeys {
   static const String registerNoAccountTitle = "registerNoAccountTitle";
   static const String forgotPasswordButtonTitle = "forgotPasswordButtonTitle";
   static const String forgotPasswordTitle = "forgotPasswordTitle";
-  static const String forgotPasswordSuccessMessage = "forgotPasswordSuccessMessage";
+  static const String forgotPasswordSuccessMessage =
+      "forgotPasswordSuccessMessage";
 
   static const String homeTitle = "homeTitle";
   static const String ordersTitle = "ordersTitle";
   static const String cartTitle = "cartTitle";
   static const String accountTitle = "accountTitle";
-
 
   static const String changeLanguageDialogTitle = "changeLanguageDialogTitle";
   static const String englishTitle = "englishTitle";
@@ -65,9 +65,11 @@ class MessageKeys {
   static const String languageTitle = "languageTitle";
   static const String callUsTitle = "callUsTitle";
   static const String reachOutTitle = "reachOutTitle";
-  static const String updateProfileSuccessMessage= "updateProfileSuccessMessage";
+  static const String updateProfileSuccessMessage =
+      "updateProfileSuccessMessage";
 
-  static const String emptyTextFieldValidationMessage = "emptyTextFieldValidationMessage";
+  static const String emptyTextFieldValidationMessage =
+      "emptyTextFieldValidationMessage";
 
   static const String locationDisabledTitle = "locationDisabledTitle";
   static const String noAddresses = "noAddresses";
@@ -116,7 +118,10 @@ class MessageKeys {
   static const String productDetailTitle = "productDetailTitle";
   static const String addToMyCartSuccessMessage = "addToMyCartSuccessMessage";
   static const String checkoutTitle = "checkoutTitle";
-
+  static const String checkoutApplyButtonTitle = "checkoutApplyButtonTitle";
+  static const String checkoutPromoCodeTitle = "checkoutPromoCodeTitle";
+  static const String checkoutSuccessMessage = "checkoutSuccessMessage";
+  static const String checkoutNoAddresses = "checkoutNoAddresses";
 }
 
 class Language extends Translations {
@@ -145,10 +150,8 @@ class Language extends Translations {
           MessageKeys.noData: "No data",
           MessageKeys.viewMore: "Show more",
           MessageKeys.noFound: "Not found",
-
           MessageKeys.homeWelcomeTitle: "Welcome,",
           MessageKeys.seeYouSoonTitle: "See you soon!",
-
           MessageKeys.logoutButtonTitle: "Logout",
           MessageKeys.logoutMessage: "Are you sure you want to logout?",
           MessageKeys.loginButtonTitle: "Login",
@@ -161,20 +164,20 @@ class Language extends Translations {
           MessageKeys.forgotPasswordButtonTitle: "Forgot Password?",
           MessageKeys.registerNoAccountTitle: "Don't have an account?",
           MessageKeys.registerButtonTitle: "Register",
-          MessageKeys.forgotPasswordTitle : "Forgot Password",
+          MessageKeys.forgotPasswordTitle: "Forgot Password",
           MessageKeys.submitButtonTitle: "Submit",
           MessageKeys.saveButtonTitle: "Save",
-          MessageKeys.forgotPasswordSuccessMessage: "Email is sent successfully",
-          MessageKeys.registerSuccessMessage: "Congratulations! Your account has been successfully created",
+          MessageKeys.forgotPasswordSuccessMessage:
+              "Email is sent successfully",
+          MessageKeys.registerSuccessMessage:
+              "Congratulations! Your account has been successfully created",
           MessageKeys.pending: "Pending",
           MessageKeys.accepted: "Accepted",
           MessageKeys.rejected: "Rejected",
-
           MessageKeys.homeTitle: "Home",
           MessageKeys.ordersTitle: "Orders",
           MessageKeys.cartTitle: "Cart",
           MessageKeys.accountTitle: "Account",
-
           MessageKeys.changeLanguageDialogTitle: "Change Language",
           MessageKeys.englishTitle: "English",
           MessageKeys.arabicTitle: "Arabic",
@@ -185,17 +188,14 @@ class Language extends Translations {
           MessageKeys.languageTitle: "Language",
           MessageKeys.callUsTitle: "Call Us",
           MessageKeys.reachOutTitle: "Reach Out",
-
-          MessageKeys.updateProfileSuccessMessage: "Profile updated successfully",
-
+          MessageKeys.updateProfileSuccessMessage:
+              "Profile updated successfully",
           MessageKeys.emptyTextFieldValidationMessage: "This field is required",
-
-
           MessageKeys.noAddresses: "No addresses found",
           MessageKeys.addAddressButtonTitle: "Add address",
           MessageKeys.selectLocationTitle: "Select Location",
           MessageKeys.locationDisabledTitle:
-          "Location service on the device is disabled, please enable it",
+              "Location service on the device is disabled, please enable it",
           MessageKeys.areasTitle: "Areas",
           MessageKeys.cityValidationEmpty: "You must select city name",
           MessageKeys.areaValidationEmpty: "You must select area name",
@@ -211,13 +211,13 @@ class Language extends Translations {
           MessageKeys.streetNameHintTitle: "Write here your address name",
           MessageKeys.addAddressSuccessMessage: "Address is added successfully",
           MessageKeys.deleteAddressSuccessMessage:
-          "Address is deleted successfully",
+              "Address is deleted successfully",
           MessageKeys.deleteAddressConfirmationMessage:
-          "Are you sure to delete this address ?",
+              "Are you sure to delete this address ?",
           MessageKeys.changeDefaultAddressTitle: "Use as the primary address",
           MessageKeys.shippingAddressTitle: "Shipping address",
-
-          MessageKeys.noOrdersTitle: "No Orders found\nLooks like you haven't placed any orders yet.",
+          MessageKeys.noOrdersTitle:
+              "No Orders found\nLooks like you haven't placed any orders yet.",
           MessageKeys.noCartTitle: "No items in your cart",
           MessageKeys.orderNumberTitle: "Order no:",
           MessageKeys.orderQuantityTitle: "Quantity:",
@@ -229,15 +229,17 @@ class Language extends Translations {
           MessageKeys.totalAmountTitle: "Total amount",
           MessageKeys.paymentTitle: "Payment",
           MessageKeys.deliveryDateTitle: "Delivery date/time",
-
           MessageKeys.productsTitle: "Products",
-
           MessageKeys.outOfStockTitle: "Currently unavailable",
-
           MessageKeys.addToMyCartButtonTitle: "Add to my cart",
           MessageKeys.productDetailTitle: "Product Detail",
-          MessageKeys.addToMyCartSuccessMessage: "Product added to cart successfully",
+          MessageKeys.addToMyCartSuccessMessage:
+              "Product added to cart successfully",
           MessageKeys.checkoutTitle: "Checkout",
+          MessageKeys.checkoutApplyButtonTitle: "Apply",
+          MessageKeys.checkoutPromoCodeTitle: "Promo Code",
+          MessageKeys.checkoutSuccessMessage: "Your order has been placed successfully",
+          MessageKeys.checkoutNoAddresses: "In order to create an order you need to add address",
         },
         'ar': {
           MessageKeys.appName: 'متجر الكتروني',
@@ -261,10 +263,8 @@ class Language extends Translations {
           MessageKeys.noData: "لايوجد بيانات",
           MessageKeys.viewMore: "عرض المزيد",
           MessageKeys.noFound: "لا يوجد",
-
           MessageKeys.seeYouSoonTitle: "أراك قريبا!",
           MessageKeys.homeWelcomeTitle: "مرحبا",
-
           MessageKeys.logoutButtonTitle: "تسجيل الخروج",
           MessageKeys.logoutMessage: "هل أنت متأكد من تسجيل الخروج؟",
           MessageKeys.loginButtonTitle: "تسجيل الدخول",
@@ -277,21 +277,20 @@ class Language extends Translations {
           MessageKeys.forgotPasswordButtonTitle: "نسيت كلمة المرور؟",
           MessageKeys.registerNoAccountTitle: "ليس لديك حساب؟",
           MessageKeys.registerButtonTitle: "تسجيل",
-          MessageKeys.forgotPasswordTitle : "نسيت كلمة المرور",
-          MessageKeys.forgotPasswordSuccessMessage: "تم إرسال البريد الإلكتروني بنجاح",
+          MessageKeys.forgotPasswordTitle: "نسيت كلمة المرور",
+          MessageKeys.forgotPasswordSuccessMessage:
+              "تم إرسال البريد الإلكتروني بنجاح",
           MessageKeys.submitButtonTitle: "إرسال",
           MessageKeys.saveButtonTitle: "حفظ",
-          MessageKeys.registerSuccessMessage: "تهانينا! لقد تم إنشاء حسابك بنجاح",
-
+          MessageKeys.registerSuccessMessage:
+              "تهانينا! لقد تم إنشاء حسابك بنجاح",
           MessageKeys.pending: "قيد الانتظار",
           MessageKeys.accepted: "مقبول",
           MessageKeys.rejected: "مرفوض",
-
           MessageKeys.homeTitle: "الرئيسية",
           MessageKeys.ordersTitle: "الطلبات",
           MessageKeys.cartTitle: "السلة",
           MessageKeys.accountTitle: "الحساب",
-
           MessageKeys.changeLanguageDialogTitle: "تغيير اللغة",
           MessageKeys.englishTitle: "الإنجليزية",
           MessageKeys.arabicTitle: "العربية",
@@ -302,13 +301,11 @@ class Language extends Translations {
           MessageKeys.languageTitle: "اللغة",
           MessageKeys.callUsTitle: "اتصل بنا",
           MessageKeys.reachOutTitle: "تواصل معنا",
-
-          MessageKeys.updateProfileSuccessMessage: "تم تحديث الملف الشخصي بنجاح",
-
+          MessageKeys.updateProfileSuccessMessage:
+              "تم تحديث الملف الشخصي بنجاح",
           MessageKeys.emptyTextFieldValidationMessage: "هذا الحقل مطلوب",
-
-          MessageKeys.locationDisabledTitle: "خدمة تحديد الموقع على الجهاز معطلة، الرجاء تفعيلها",
-
+          MessageKeys.locationDisabledTitle:
+              "خدمة تحديد الموقع على الجهاز معطلة، الرجاء تفعيلها",
           MessageKeys.noAddresses: "لم يتم العثور على عناوين",
           MessageKeys.addAddressButtonTitle: "اضافة عنوان",
           MessageKeys.selectLocationTitle: "اختر الموقع",
@@ -328,11 +325,11 @@ class Language extends Translations {
           MessageKeys.addAddressSuccessMessage: "تم اضافة العنوان بنجاح",
           MessageKeys.deleteAddressSuccessMessage: "تم حذف العنوان بنجاح",
           MessageKeys.deleteAddressConfirmationMessage:
-          "هل انت متاكد من حذف هذا العنوان ؟",
+              "هل انت متاكد من حذف هذا العنوان ؟",
           MessageKeys.changeDefaultAddressTitle: "استخدم كعنوان الشحن",
           MessageKeys.shippingAddressTitle: "عنوان الشحن",
-
-          MessageKeys.noOrdersTitle: "لم يتم العثور على طلبات، يبدو أنك لم تقم بإجراء أي طلب بعد.",
+          MessageKeys.noOrdersTitle:
+              "لم يتم العثور على طلبات، يبدو أنك لم تقم بإجراء أي طلب بعد.",
           MessageKeys.noCartTitle: "لا يوجد عناصر في سلة التسوق",
           MessageKeys.orderNumberTitle: "رقم الطلب:",
           MessageKeys.orderQuantityTitle: "الكمية:",
@@ -344,16 +341,17 @@ class Language extends Translations {
           MessageKeys.totalAmountTitle: "المبلغ الإجمالي",
           MessageKeys.paymentTitle: "طريقة الدفع",
           MessageKeys.deliveryDateTitle: "تاريخ/وقت التسليم",
-
           MessageKeys.productsTitle: "المنتجات",
-
           MessageKeys.outOfStockTitle: "غير متوفر",
-
           MessageKeys.addToMyCartButtonTitle: "أضف إلى سلة التسوق",
           MessageKeys.productDetailTitle: "تفاصيل المنتج",
-          MessageKeys.addToMyCartSuccessMessage: "تمت إضافة المنتج إلى سلة التسوق بنجاح",
+          MessageKeys.addToMyCartSuccessMessage:
+              "تمت إضافة المنتج إلى سلة التسوق بنجاح",
           MessageKeys.checkoutTitle: "الدفع",
+          MessageKeys.checkoutApplyButtonTitle: "تطبيق",
+          MessageKeys.checkoutPromoCodeTitle: "كود الخصم",
+          MessageKeys.checkoutSuccessMessage: "تم تقديم طلبك بنجاح",
+          MessageKeys.checkoutNoAddresses: "لإنشاء طلب يجب عليك اضافة عنوان",
         }
-
       };
 }

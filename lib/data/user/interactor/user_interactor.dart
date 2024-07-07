@@ -25,10 +25,19 @@ class UserInteractor {
   Future<List<AddressModel>> getUserAddresses() async =>
       await repository.getUserAddresses();
 
-  Future addAddress(int areaId, String street, String buildingNumber,
-      String floorNumber, String apartmentNumber, double lat, double lon) async =>
-      await repository.addAddress(areaId, street, buildingNumber,
-          floorNumber, apartmentNumber, lat, lon);
+  Future<AddressModel> getPrimaryAddress() async =>
+      await repository.getPrimaryAddress();
+
+  Future addAddress(
+          int areaId,
+          String street,
+          String buildingNumber,
+          String floorNumber,
+          String apartmentNumber,
+          double lat,
+          double lon) async =>
+      await repository.addAddress(areaId, street, buildingNumber, floorNumber,
+          apartmentNumber, lat, lon);
 
   Future deleteAddress(int addressId) async =>
       await repository.deleteAddress(addressId);

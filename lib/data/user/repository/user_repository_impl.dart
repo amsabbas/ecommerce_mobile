@@ -33,6 +33,10 @@ class UserRepository {
     return remoteDataSource.getUserAddresses();
   }
 
+  Future<AddressModel> getPrimaryAddress() async {
+    return remoteDataSource.getPrimaryAddress();
+  }
+
   Future addAddress(
       int areaId,
       String street,

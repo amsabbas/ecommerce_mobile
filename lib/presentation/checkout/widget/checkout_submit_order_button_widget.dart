@@ -1,0 +1,34 @@
+import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class CheckoutSubmitOrderButtonWidget extends StatelessWidget {
+  final Function callback;
+
+  const CheckoutSubmitOrderButtonWidget({super.key, required this.callback});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 32.0),
+      child: ElevatedButton(
+        onPressed: () {
+          callback.call();
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              MessageKeys.submitButtonTitle.tr,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(color: AppColors.whiteColor),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

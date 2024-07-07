@@ -58,6 +58,13 @@ class UserRemoteDataSource {
             .toList());
   }
 
+  Future<AddressModel> getPrimaryAddress() async {
+    final userToken = authManager.getToken();
+    return service
+        .call(UserEndPoints.getPrimaryAddress(userToken: userToken))
+        .then((response) => AddressModel.fromJson(response));
+  }
+
   Future addAddress(
       int areaId,
       String street,
