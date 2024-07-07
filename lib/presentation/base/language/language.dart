@@ -51,6 +51,7 @@ class MessageKeys {
 
   static const String homeTitle = "homeTitle";
   static const String ordersTitle = "ordersTitle";
+  static const String cartTitle = "cartTitle";
   static const String accountTitle = "accountTitle";
 
 
@@ -94,6 +95,8 @@ class MessageKeys {
   static const String shippingAddressTitle = "shippingAddressTitle";
 
   static const String noOrdersTitle = "noOrdersTitle";
+  static const String noCartTitle = "noCartTitle";
+
   static const String orderNumberTitle = "orderNumberTitle";
   static const String orderQuantityTitle = "orderQuantityTitle";
   static const String orderDateTitle = "orderDateTitle";
@@ -111,6 +114,8 @@ class MessageKeys {
 
   static const String addToMyCartButtonTitle = "addToMyCartButtonTitle";
   static const String productDetailTitle = "productDetailTitle";
+  static const String addToMyCartSuccessMessage = "addToMyCartSuccessMessage";
+  static const String checkoutTitle = "checkoutTitle";
 
 }
 
@@ -167,6 +172,7 @@ class Language extends Translations {
 
           MessageKeys.homeTitle: "Home",
           MessageKeys.ordersTitle: "Orders",
+          MessageKeys.cartTitle: "Cart",
           MessageKeys.accountTitle: "Account",
 
           MessageKeys.changeLanguageDialogTitle: "Change Language",
@@ -212,6 +218,7 @@ class Language extends Translations {
           MessageKeys.shippingAddressTitle: "Shipping address",
 
           MessageKeys.noOrdersTitle: "No Orders found\nLooks like you haven't placed any orders yet.",
+          MessageKeys.noCartTitle: "No items in your cart",
           MessageKeys.orderNumberTitle: "Order no:",
           MessageKeys.orderQuantityTitle: "Quantity:",
           MessageKeys.orderDateTitle: "Date:",
@@ -229,6 +236,8 @@ class Language extends Translations {
 
           MessageKeys.addToMyCartButtonTitle: "Add to my cart",
           MessageKeys.productDetailTitle: "Product Detail",
+          MessageKeys.addToMyCartSuccessMessage: "Product added to cart successfully",
+          MessageKeys.checkoutTitle: "Checkout",
         },
         'ar': {
           MessageKeys.appName: 'متجر الكتروني',
@@ -280,6 +289,7 @@ class Language extends Translations {
 
           MessageKeys.homeTitle: "الرئيسية",
           MessageKeys.ordersTitle: "الطلبات",
+          MessageKeys.cartTitle: "السلة",
           MessageKeys.accountTitle: "الحساب",
 
           MessageKeys.changeLanguageDialogTitle: "تغيير اللغة",
@@ -323,6 +333,7 @@ class Language extends Translations {
           MessageKeys.shippingAddressTitle: "عنوان الشحن",
 
           MessageKeys.noOrdersTitle: "لم يتم العثور على طلبات، يبدو أنك لم تقم بإجراء أي طلب بعد.",
+          MessageKeys.noCartTitle: "لا يوجد عناصر في سلة التسوق",
           MessageKeys.orderNumberTitle: "رقم الطلب:",
           MessageKeys.orderQuantityTitle: "الكمية:",
           MessageKeys.discountTitle: "الخصم:",
@@ -340,6 +351,8 @@ class Language extends Translations {
 
           MessageKeys.addToMyCartButtonTitle: "أضف إلى سلة التسوق",
           MessageKeys.productDetailTitle: "تفاصيل المنتج",
+          MessageKeys.addToMyCartSuccessMessage: "تمت إضافة المنتج إلى سلة التسوق بنجاح",
+          MessageKeys.checkoutTitle: "الدفع",
         }
 
       };

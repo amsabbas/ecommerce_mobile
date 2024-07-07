@@ -96,6 +96,6 @@ class UserRemoteDataSource {
     final userToken = authManager.getToken();
     return service
         .call(UserEndPoints.getMyCartCount(userToken: userToken))
-        .then((value) => value);
+        .then((value) => int.parse(value));
   }
 }

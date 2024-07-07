@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_mobile/data/ads/model/ad_model.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/home/controller/home_controller.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeAdsWidget> {
 
       widgets.add(CachedNetworkImage(
           imageUrl:
-              "http://192.168.1.106:3000/${photoUrl.replaceAll("localhost:3000/", "")}",
+              "$baseURL${photoUrl.replaceAll("localhost:3000/", "")}",
           // "$scheme://" + element.photoUrl,
           height: 150.0,
           fit: BoxFit.cover,

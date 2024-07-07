@@ -13,4 +13,8 @@ class ProductsRepository {
   Future<List<ProductModel>> getAllProductsByCategoryID(int categoryID) async {
     return await remoteDataSource.getAllProductsByCategoryID(categoryID);
   }
+
+  Future addProductToMyCart(int productID, int quantity) async {
+    return await remoteDataSource.addProductToMyCart(productID, quantity);
+  }
 }

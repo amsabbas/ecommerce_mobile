@@ -1,7 +1,10 @@
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
+import 'package:ecommerce_mobile/presentation/cart/screen/cart_screen.dart';
+import 'package:ecommerce_mobile/presentation/cart/utils/cart_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class CartCountWidget extends StatelessWidget {
   final int? productsQuantity;
@@ -17,9 +20,8 @@ class CartCountWidget extends StatelessWidget {
             width: 20,
             height: 20,
           ),
-          onPressed: () => {}
-          //Get.to(() => const CartScreen(), binding: ProductBinding()),
-          ),
+          onPressed: () =>
+              Get.to(() => const CartScreen(), binding: CartBindings())),
       if (productsQuantity != null && productsQuantity! > 0)
         ClipOval(
           child: Container(

@@ -1,52 +1,68 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce_mobile/data/cart/model/cart_model.dart';
 import 'package:ecommerce_mobile/data/products/model/product_model.dart';
 import 'package:ecommerce_mobile/presentation/base/extension/double_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
-import 'package:ecommerce_mobile/presentation/products/screen/product_screen.dart';
+import 'package:ecommerce_mobile/presentation/cart/widget/cart_quantity_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProductItemWidget extends StatelessWidget {
-  final ProductModel product;
+class CartItemWidget extends StatelessWidget {
+  final CartModel cartModel;
+  final Function deleteProductCallback;
 
-  const ProductItemWidget({super.key, required this.product});
+  const CartItemWidget(
+      {super.key,
+      required this.cartModel,
+      required this.deleteProductCallback});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Get.to(() => const ProductScreen(), arguments: product);
-      },
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          _productImageWidget(product),
-          const SizedBox(width: 16),
-          _productDetailsWidget(context, product),
-        ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: AppColors.darkGrayColor, width: 0.5),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Center(
+                        child: CachedNetworkImage(
+                      imageUrl:
+                          "$baseURL${cartModel.product.photoUrl?.replaceAll("localhost:3000/", "")}",
+                      // "$scheme://" + element.photoUrl,
+                      fit: BoxFit.fitHeight,
+                      height: 100,
+                      width: 100,
+                    )),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: _productDetailWidget(context, cartModel.product),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 
-  Widget _productImageWidget(ProductModel product) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Center(
-          child: CachedNetworkImage(
-        imageUrl:
-            "$baseURL${product.photoUrl?.replaceAll("localhost:3000/", "")}",
-        // "$scheme://" + element.photoUrl,
-        fit: BoxFit.fitHeight,
-        height: 100,
-        width: 100,
-      )),
-    );
-  }
-
-  Widget _productDetailsWidget(context, ProductModel product) {
+  Widget _productDetailWidget(context, ProductModel product) {
     bool isProductAvailable = product.isAvailable!;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -84,9 +100,13 @@ class ProductItemWidget extends StatelessWidget {
                         ?.copyWith(color: AppColors.greenColor),
                   ),
               ],
-            )
+            ),
+            CartQuantityWidget(
+              productID: product.id!,
+              quantity: cartModel.quantity,
+              deleteProductCallback: deleteProductCallback,
+            ),
           ]),
     );
   }
-
 }

@@ -9,8 +9,9 @@ class ProductsInteractor {
   Future<List<ProductModel>> getAllProducts() async =>
       await repository.getAllProducts();
 
-
   Future<List<ProductModel>> getAllProductsByCategoryID(int categoryID) async =>
       await repository.getAllProductsByCategoryID(categoryID);
 
+  Future addProductToMyCart(int productID, int quantity) async =>
+      await repository.addProductToMyCart(productID, quantity);
 }

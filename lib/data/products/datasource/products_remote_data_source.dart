@@ -24,4 +24,11 @@ class ProductsRemoteDataSource {
             .map<ProductModel>((e) => ProductModel.fromJson(e))
             .toList());
   }
+
+  Future addProductToMyCart(int productID, int quantity) async {
+    Map<String, dynamic> map = {'product_id': productID, 'quantity': quantity};
+    String? userToken = authManager.getToken();
+    return service.call(ProductsEndPoints.addProductToMyCartEndPoint(
+        userToken: userToken, data: map));
+  }
 }

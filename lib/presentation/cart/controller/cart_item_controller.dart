@@ -3,19 +3,19 @@ import 'package:ecommerce_mobile/data/products/interactor/products_interactor.da
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:get/get.dart';
 
-class ProductsController extends GetxController {
+class CartItemController extends GetxController {
   final addProductToMyCartState = ResultState();
 
   late final ProductsInteractor productsInteractor;
   Rx<int> quantity = Rx(1);
 
-  ProductsController({required this.productsInteractor});
+  CartItemController({required this.productsInteractor});
 
   void addProductToMyCart(int productID) async {
     try {
       addProductToMyCartState.setLoading();
-      addProductToMyCartState.setSuccess(
-          await productsInteractor.addProductToMyCart(productID, quantity.value));
+      addProductToMyCartState.setSuccess(await productsInteractor
+          .addProductToMyCart(productID, quantity.value));
     } catch (error, errorStack) {
       AppLogger.error(error: error, errorStack: errorStack);
       addProductToMyCartState.setError(error);

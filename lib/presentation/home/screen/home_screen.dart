@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _homeController = Get.find();
     _userController.getProfile();
     _homeController.getHomeData();
+    _userController.refreshProductQuantity();
   }
 
   @override

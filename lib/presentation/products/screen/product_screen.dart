@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/data/products/model/product_model.dart';
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
@@ -6,7 +7,12 @@ import 'package:ecommerce_mobile/presentation/base/extension/double_extension.da
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
+import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
+import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
+import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
+import 'package:ecommerce_mobile/presentation/products/controller/products_controller.dart';
+import 'package:ecommerce_mobile/presentation/products/widget/product_quantity_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,13 +25,27 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
   late final UserController _userController;
+  late final ProductsController _productsController;
   late final ProductModel productModel;
+  late final Worker _addProductToMyCartWorker;
 
   @override
   void initState() {
     super.initState();
     productModel = Get.arguments;
     _userController = Get.find();
+    _productsController = Get.put(
+        ProductsController(productsInteractor: Get.find()),
+        tag: productModel.id.toString());
+    _addProductToMyCartWorker = ever(
+        _productsController.addProductToMyCartState,
+        (ResultData res) => {
+              res.handleState(
+                  onLoading: () => CustomLoading.onLoading(context),
+                  onError: () => _showError(res.error as AppErrorModel),
+                  onSuccess: () => _showSuccess(),
+                  onLoadingFinish: () => CustomLoading.dismissLoading(context))
+            });
   }
 
   @override
@@ -52,7 +72,7 @@ class _ProductScreenState extends State<ProductScreen> {
       child: Center(
           child: CachedNetworkImage(
         imageUrl:
-            "http://192.168.1.106:3000/${productModel.photoUrl?.replaceAll("localhost:3000/", "")}",
+            "$baseURL${productModel.photoUrl?.replaceAll("localhost:3000/", "")}",
         // "$scheme://" + element.photoUrl,
         fit: BoxFit.fitWidth,
         height: 250,
@@ -104,6 +124,9 @@ class _ProductScreenState extends State<ProductScreen> {
                         .titleLarge
                         ?.copyWith(color: AppColors.greenColor),
                   ),
+                ProductQuantityWidget(
+                  productID: productModel.id!,
+                )
               ],
             )
           ]),
@@ -118,9 +141,11 @@ class _ProductScreenState extends State<ProductScreen> {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24),
             child: ElevatedButton(
-              onPressed: userModel == null ? null : () {
-
-              },
+              onPressed: userModel == null || !productModel.isAvailable!
+                  ? null
+                  : () {
+                      _productsController.addProductToMyCart(productModel.id!);
+                    },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -140,5 +165,23 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
           );
         });
+  }
+
+  void _showError(AppErrorModel result) {
+    CustomSnackBar.showFailureSnackBar(
+        title: MessageKeys.error.tr,
+        message: result.message ?? MessageKeys.unKnown.tr);
+  }
+
+  void _showSuccess() {
+    _userController.refreshProductQuantity();
+    CustomSnackBar.showSuccessSnackBar(
+        MessageKeys.success.tr, MessageKeys.addToMyCartSuccessMessage.tr);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _addProductToMyCartWorker.dispose();
   }
 }
