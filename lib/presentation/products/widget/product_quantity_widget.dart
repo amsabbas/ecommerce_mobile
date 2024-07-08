@@ -30,8 +30,8 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                width: 25,
-                height: 25,
+                width: 30,
+                height: 30,
                 child: ElevatedButton(
                   onPressed: () {
                     if (_productsController.quantity.value > 1) {
@@ -57,14 +57,14 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
               Text(_productsController.quantity.toString(),
                   style: Theme.of(context)
                       .textTheme
-                      .bodySmall
+                      .bodyMedium
                       ?.copyWith(color: AppColors.ceruleanBlueColor),
                   textAlign: TextAlign.start,
                   maxLines: 1),
               const SizedBox(width: 8),
               SizedBox(
-                width: 25,
-                height: 25,
+                width: 30,
+                height: 30,
                 child: ElevatedButton(
                   onPressed: () {
                     _productsController.quantity.value += 1;

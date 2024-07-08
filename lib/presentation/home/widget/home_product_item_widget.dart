@@ -19,74 +19,73 @@ class ProductItemWidget extends StatelessWidget {
       onTap: () {
         Get.to(() => const ProductScreen(), arguments: product);
       },
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          _productImageWidget(product),
-          const SizedBox(width: 16),
-          _productDetailsWidget(context, product),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            _productImageWidget(product),
+            const SizedBox(width: 16),
+            _productDetailsWidget(context, product),
+          ],
+        ),
       ),
     );
   }
 
   Widget _productImageWidget(ProductModel product) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Center(
-          child: CachedNetworkImage(
-        imageUrl:
-            "$baseURL${product.photoUrl?.replaceAll("localhost:3000/", "")}",
-        // "$scheme://" + element.photoUrl,
-        fit: BoxFit.fitHeight,
-        height: 100,
-        width: 100,
-      )),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(8.0),
+      child: CachedNetworkImage(
+              imageUrl:
+        "$baseURL${product.photoUrl?.replaceAll("localhost:3000/", "")}",
+              // "$scheme://" + element.photoUrl,
+              fit: BoxFit.fitHeight,
+              height: 100,
+              width: 100,
+            ),
     );
   }
 
   Widget _productDetailsWidget(context, ProductModel product) {
     bool isProductAvailable = product.isAvailable!;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(product.name!,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.ceruleanBlueColor,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.start,
-                maxLines: 1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                if (!isProductAvailable)
-                  Text(
-                    MessageKeys.outOfStockTitle.tr,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.copyWith(color: AppColors.redColor),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                if (isProductAvailable)
-                  Text(
-                    "${product.price!.roundDouble()} $currency",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium
-                        ?.copyWith(color: AppColors.greenColor),
-                  ),
-              ],
-            )
-          ]),
-    );
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(product.name!,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: AppColors.ceruleanBlueColor,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.start,
+              maxLines: 1),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              if (!isProductAvailable)
+                Text(
+                  MessageKeys.outOfStockTitle.tr,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge
+                      ?.copyWith(color: AppColors.redColor),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              if (isProductAvailable)
+                Text(
+                  "${product.price!.roundDouble()} $currency",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium
+                      ?.copyWith(color: AppColors.greenColor),
+                ),
+            ],
+          )
+        ]);
   }
 
 }

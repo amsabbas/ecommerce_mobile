@@ -44,7 +44,7 @@ class _HomeCategoryItemWidgetState extends State<HomeCategoryItemWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 2),
                       child: Text(
                         widget.category.name,
                         style: Theme.of(context)

@@ -5,6 +5,7 @@ import 'package:ecommerce_mobile/presentation/base/widget/account_not_logged_wid
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_logout_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_reachout_widget.dart';
+import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_settings_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_social_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_title_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/account/widget/account_user_widget.dart';
@@ -53,7 +54,7 @@ class _AccountScreenState extends State<AccountScreen> {
         children: [
           AccountUserWidget(),
           AccountTitleWidget(),
-          //AccountSettingsWidget(),
+          AccountSettingsWidget(),
           AccountReachOutWidget(),
           AccountLogoutWidget(),
           AccountSocialWidget(),

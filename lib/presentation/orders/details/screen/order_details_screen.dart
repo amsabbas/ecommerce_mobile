@@ -30,7 +30,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     OrderModel orderModel = Get.arguments;
-    SettingModel? settingModel = _appSettingsController.settingsState.value.data;
+    SettingModel? settingModel =
+        _appSettingsController.settingsState.value.data;
     return Scaffold(
         appBar: AppTopBarWidget(
           title: MessageKeys.orderDetailsTitle.tr,
@@ -38,7 +39,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,8 +60,8 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                 const SizedBox(
                   height: 16,
                 ),
-                const OrderDetailPaymentWidget(
-                  paymentType: "CASH",
+                OrderDetailPaymentWidget(
+                  paymentType: MessageKeys.cash.tr,
                 ),
                 OrderDetailAmountWidget(
                   deliveryFees: orderModel.deliveryFees,

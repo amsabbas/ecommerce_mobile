@@ -27,6 +27,7 @@ class MessageKeys {
   static const String pending = "pending";
   static const String accepted = "accepted";
   static const String rejected = "rejected";
+  static const String cash = "cash";
 
   static const String seeYouSoonTitle = "seeYouSoonTitle";
   static const String homeWelcomeTitle = "homeWelcomeTitle";
@@ -174,6 +175,7 @@ class Language extends Translations {
           MessageKeys.pending: "Pending",
           MessageKeys.accepted: "Accepted",
           MessageKeys.rejected: "Rejected",
+          MessageKeys.cash: "Cash",
           MessageKeys.homeTitle: "Home",
           MessageKeys.ordersTitle: "Orders",
           MessageKeys.cartTitle: "Cart",
@@ -287,6 +289,7 @@ class Language extends Translations {
           MessageKeys.pending: "قيد الانتظار",
           MessageKeys.accepted: "مقبول",
           MessageKeys.rejected: "مرفوض",
+          MessageKeys.cash: "نقدًا",
           MessageKeys.homeTitle: "الرئيسية",
           MessageKeys.ordersTitle: "الطلبات",
           MessageKeys.cartTitle: "السلة",

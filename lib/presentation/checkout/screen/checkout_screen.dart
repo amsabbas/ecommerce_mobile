@@ -130,8 +130,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               CheckoutDateItemWidget(
                 date: settingModel?.deliveryTime.toString() ?? "",
               ),
-              const CheckoutPaymentItemWidget(
-                paymentType: 'CASH',
+               CheckoutPaymentItemWidget(
+                paymentType: MessageKeys.cash.tr,
               ),
               const CheckoutPromoCodeWidget(),
               GetX<CheckoutController>(

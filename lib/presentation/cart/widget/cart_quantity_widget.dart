@@ -57,8 +57,8 @@ class _CartQuantityWidgetState extends State<CartQuantityWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                width: 25,
-                height: 25,
+                width: 30,
+                height: 30,
                 child: ElevatedButton(
                   onPressed: () {
                     if (_cartItemController.quantity.value > 1) {
@@ -87,14 +87,14 @@ class _CartQuantityWidgetState extends State<CartQuantityWidget> {
               Text(_cartItemController.quantity.toString(),
                   style: Theme.of(context)
                       .textTheme
-                      .bodySmall
+                      .bodyMedium
                       ?.copyWith(color: AppColors.ceruleanBlueColor),
                   textAlign: TextAlign.start,
                   maxLines: 1),
               const SizedBox(width: 8),
               SizedBox(
-                width: 25,
-                height: 25,
+                width: 30,
+                height: 30,
                 child: ElevatedButton(
                   onPressed: () {
                     _cartItemController.quantity.value += 1;

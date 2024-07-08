@@ -19,12 +19,15 @@ class CheckoutSubmitOrderButtonWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              MessageKeys.submitButtonTitle.tr,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(color: AppColors.whiteColor),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Text(
+                MessageKeys.submitButtonTitle.tr,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(color: AppColors.whiteColor),
+              ),
             ),
           ],
         ),

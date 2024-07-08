@@ -37,17 +37,16 @@ class CartItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Center(
-                        child: CachedNetworkImage(
-                      imageUrl:
-                          "$baseURL${cartModel.product.photoUrl?.replaceAll("localhost:3000/", "")}",
-                      // "$scheme://" + element.photoUrl,
-                      fit: BoxFit.fitHeight,
-                      height: 100,
-                      width: 100,
-                    )),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: CachedNetworkImage(
+                                          imageUrl:
+                      "$baseURL${cartModel.product.photoUrl?.replaceAll("localhost:3000/", "")}",
+                                          // "$scheme://" + element.photoUrl,
+                                          fit: BoxFit.fitHeight,
+                                          height: 100,
+                                          width: 100,
+                                        ),
                   ),
                   const SizedBox(width: 16),
                   Expanded(
@@ -64,49 +63,47 @@ class CartItemWidget extends StatelessWidget {
 
   Widget _productDetailWidget(context, ProductModel product) {
     bool isProductAvailable = product.isAvailable!;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(product.name!,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.ceruleanBlueColor,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.start,
-                maxLines: 1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                if (!isProductAvailable)
-                  Text(
-                    MessageKeys.outOfStockTitle.tr,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.copyWith(color: AppColors.redColor),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                if (isProductAvailable)
-                  Text(
-                    "${product.price!.roundDouble()} $currency",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium
-                        ?.copyWith(color: AppColors.greenColor),
-                  ),
-              ],
-            ),
-            CartQuantityWidget(
-              productID: product.id!,
-              quantity: cartModel.quantity,
-              deleteProductCallback: deleteProductCallback,
-            ),
-          ]),
-    );
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(product.name!,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: AppColors.ceruleanBlueColor,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.start,
+              maxLines: 1),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              if (!isProductAvailable)
+                Text(
+                  MessageKeys.outOfStockTitle.tr,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge
+                      ?.copyWith(color: AppColors.redColor),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              if (isProductAvailable)
+                Text(
+                  "${product.price!.roundDouble()} $currency",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium
+                      ?.copyWith(color: AppColors.greenColor),
+                ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          CartQuantityWidget(
+            productID: product.id!,
+            quantity: cartModel.quantity,
+            deleteProductCallback: deleteProductCallback,
+          ),
+        ]);
   }
 }

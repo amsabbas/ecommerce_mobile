@@ -37,7 +37,7 @@ class ServiceGenerator {
   }
 
   Future<M> call<M>(EndPoint endPoint) async {
-    endPoint.headers!["Accept-Language"] = localDataSource.getLanguage();
+    endPoint.headers!["language"] = localDataSource.getLanguage();
     _dio.options.headers = endPoint.headers;
 
     try {
