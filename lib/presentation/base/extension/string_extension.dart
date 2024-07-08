@@ -26,7 +26,7 @@ extension StringExtension on String? {
 
   Color getStatusColor() {
     if (this == pendingStatus) {
-      return AppColors.redColor;
+      return AppColors.orangeColor;
     } else if (this == acceptedStatus) {
       return AppColors.greenColor;
     } else {

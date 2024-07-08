@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _userController = Get.find();
     _homeController = Get.find();
     _userController.getProfile();
+    _userController.getSavedUser();
     _homeController.getHomeData();
     _userController.refreshProductQuantity();
     WidgetsBinding.instance.addPostFrameCallback((_) {

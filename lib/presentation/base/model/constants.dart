@@ -5,7 +5,7 @@ const String rejectedStatus = 'rejected';
 const String currency = 'EGP';
 
 //baseURL
-const String baseURL = "http://192.168.1.106:3000/";
+const String baseURL = "http://172.18.42.93:3000/";
 
 //firebase
 const String firebaseApiKey = "AIzaSyAt4d2f85aYI0Fpn4dQrvxg1o_7SwJJ9RU";

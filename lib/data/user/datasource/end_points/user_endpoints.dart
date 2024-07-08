@@ -140,7 +140,7 @@ class UserEndPoints {
     required String userToken,
   }) {
     return EndPoint(
-        endpoint: "auth/updateFcmToken",
+        endpoint: "user/updateFcmToken",
         headers: headers,
         data: data,
         userToken: userToken,
@@ -150,7 +150,7 @@ class UserEndPoints {
   static EndPoint logoutEndPoint(
       {Map<String, dynamic>? headers, required String userToken}) {
     return EndPoint(
-        endpoint: "auth/logout",
+        endpoint: "user/logout",
         userToken: userToken,
         headers: headers,
         method: HttpMethod.post);
