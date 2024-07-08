@@ -8,11 +8,17 @@ class CategoryModel {
   final int id;
   @JsonKey(name: "name")
   final String name;
+  @JsonKey(name: "name_ar")
+  final String nameAr;
 
-  CategoryModel({
-    required this.id,
-    required this.name,
-  });
+  getNameByLocale(String locale) {
+    if (locale == "ar") {
+      return nameAr;
+    }
+    return name;
+  }
+
+  CategoryModel({required this.id, required this.name, required this.nameAr});
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) =>
       _$CategoryModelFromJson(json);

@@ -47,7 +47,7 @@ class _HomeCategoryItemWidgetState extends State<HomeCategoryItemWidget> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 12.0, vertical: 2),
                       child: Text(
-                        widget.category.name,
+                        widget.category.getNameByLocale(Get.locale.toString()),
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium

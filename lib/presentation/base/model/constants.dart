@@ -1,8 +1,11 @@
+import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:get/get.dart';
+
 const String scheme = 'http';
 const String acceptedStatus = 'accepted';
 const String pendingStatus = 'pending';
 const String rejectedStatus = 'rejected';
-const String currency = 'EGP';
+String currency = MessageKeys.currency.tr;
 
 //baseURL
 const String baseURL = "http://172.18.42.93:3000/";

@@ -88,21 +88,23 @@ class _ProductScreenState extends State<ProductScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(productModel.name!,
+            Text(productModel.getNameByLocale(Get.locale.toString())!,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: AppColors.ceruleanBlueColor,
                     fontWeight: FontWeight.bold),
                 textAlign: TextAlign.start,
                 maxLines: 1),
-            Text(productModel.description!,
+            Text(productModel.getDescByLocale(Get.locale.toString())!,
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium
                     ?.copyWith(color: AppColors.ceruleanBlueColor),
                 textAlign: TextAlign.start,
                 maxLines: 5),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 if (!isProductAvailable)
                   Text(

@@ -19,17 +19,28 @@ class ProductItemWidget extends StatelessWidget {
       onTap: () {
         Get.to(() => const ProductScreen(), arguments: product);
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            _productImageWidget(product),
-            const SizedBox(width: 16),
-            _productDetailsWidget(context, product),
-          ],
-        ),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: AppColors.darkGrayColor, width: 0.1),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  _productImageWidget(product),
+                  const SizedBox(width: 16),
+                  _productDetailsWidget(context, product),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 16,)
+        ],
       ),
     );
   }
@@ -54,7 +65,7 @@ class ProductItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(product.name!,
+          Text(product.getNameByLocale(Get.locale.toString())!,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: AppColors.ceruleanBlueColor,
                   fontWeight: FontWeight.bold),

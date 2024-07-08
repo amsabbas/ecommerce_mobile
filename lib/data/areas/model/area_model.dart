@@ -8,10 +8,20 @@ class AreaModel {
   final int id;
   @JsonKey(name: "name")
   final String name;
+  @JsonKey(name: "name_ar")
+  final String nameAr;
+
+  getNameByLocale(String locale) {
+    if (locale == "ar") {
+      return nameAr;
+    }
+    return name;
+  }
 
   AreaModel({
     required this.id,
     required this.name,
+    required this.nameAr
   });
 
   factory AreaModel.fromJson(Map<String, dynamic> json) =>

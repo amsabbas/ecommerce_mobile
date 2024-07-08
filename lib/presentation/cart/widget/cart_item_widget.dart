@@ -67,7 +67,7 @@ class CartItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(product.name!,
+          Text(product.getNameByLocale(Get.locale.toString())!,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: AppColors.ceruleanBlueColor,
                   fontWeight: FontWeight.bold),

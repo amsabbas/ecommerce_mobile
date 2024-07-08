@@ -28,7 +28,7 @@ class CheckoutPromoCodeWidgetState extends State<CheckoutPromoCodeWidget> {
         builder: (controller) {
           return Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24),
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24),
               child: Row(
                 children: [
                   Expanded(

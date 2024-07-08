@@ -36,9 +36,9 @@ class HomeController extends GetxController {
       if (categories.isNotEmpty) {
         productsState.setSuccess(await productsInteractor
             .getAllProductsByCategoryID(categories[0].id));
+        selectedCategory.value = categories[0].id;
       }
       homeState.setSuccess(null);
-      selectedCategory.value = categories[0].id;
     } catch (error, errorStack) {
       AppLogger.error(error: error, errorStack: errorStack);
       adsState.setError(error);

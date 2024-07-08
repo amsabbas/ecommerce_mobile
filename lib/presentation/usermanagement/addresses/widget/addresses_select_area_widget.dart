@@ -1,4 +1,3 @@
-
 import 'package:ecommerce_mobile/data/areas/model/area_model.dart';
 import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
@@ -100,7 +99,8 @@ class _AddressesSelectAreaWidgetState extends State<AddressesSelectAreaWidget> {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(),
       ),
-      validator: (value) => _addressesController.validateTextField(value?.name),
+      validator: (value) => _addressesController
+          .validateTextField(value?.getNameByLocale(Get.locale.toString())),
       padding: EdgeInsets.zero,
       iconEnabledColor: AppColors.ceruleanBlueColor,
       value: _areaValue,
@@ -114,7 +114,7 @@ class _AddressesSelectAreaWidgetState extends State<AddressesSelectAreaWidget> {
       items: widget.areas.map((AreaModel value) {
         return DropdownMenuItem<AreaModel>(
           value: value,
-          child: Text(value.name,
+          child: Text(value.getNameByLocale(Get.locale.toString()),
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
