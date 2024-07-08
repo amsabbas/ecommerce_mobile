@@ -79,7 +79,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
       child: Text(
         MessageKeys.forgotPasswordTitle.tr,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: AppColors.ceruleanBlueColor,
+              color: AppColors.mainColor,
             ),
       ),
     );

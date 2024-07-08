@@ -65,7 +65,7 @@ class CheckoutPromoCodeWidgetState extends State<CheckoutPromoCodeWidget> {
                                             .titleMedium
                                             ?.copyWith(
                                                 color: AppColors
-                                                    .ceruleanBlueColor)),
+                                                    .mainColor)),
                                   ),
                             errorText: _checkoutController.isPromoCodeError.value
                                     ? MessageKeys.noFound.tr

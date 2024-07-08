@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Text(
         MessageKeys.appName.tr,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: AppColors.ceruleanBlueColor,
+              color: AppColors.mainColor,
             ),
       ),
     );
@@ -100,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Text(
             MessageKeys.forgotPasswordButtonTitle.tr,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                 ),
           ),
         ),
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Text(
           MessageKeys.registerNoAccountTitle.tr,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.ceruleanBlueColor,
+                color: AppColors.mainColor,
               ),
         ),
         TextButton(
@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Text(
             MessageKeys.registerButtonTitle.tr,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                   fontWeight: FontWeight.bold,
                 ),
           ),

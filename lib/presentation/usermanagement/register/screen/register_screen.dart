@@ -78,7 +78,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: Text(
         MessageKeys.registerTitle.tr,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: AppColors.ceruleanBlueColor,
+              color: AppColors.mainColor,
             ),
       ),
     );

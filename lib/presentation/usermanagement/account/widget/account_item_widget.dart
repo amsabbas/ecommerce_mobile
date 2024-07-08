@@ -43,7 +43,7 @@ class AccountItemWidget extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium
-                      ?.copyWith(color: AppColors.ceruleanBlueColor),
+                      ?.copyWith(color: AppColors.mainColor),
                 ),
               ],
             ),

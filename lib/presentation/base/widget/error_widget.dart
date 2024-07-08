@@ -30,7 +30,7 @@ class AppErrorWidget extends StatelessWidget {
           Text(
             MessageKeys.unKnown.tr,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: AppColors.blackColor,
+              color: AppColors.mainColor,
             ),
           ),
           const SizedBox(

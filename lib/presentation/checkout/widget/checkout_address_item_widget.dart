@@ -21,7 +21,7 @@ class CheckoutAddressItemWidget extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .titleMedium
-                  ?.copyWith(color: AppColors.ceruleanBlueColor,fontWeight: FontWeight.bold)),
+                  ?.copyWith(color: AppColors.mainColor,fontWeight: FontWeight.bold)),
           const SizedBox(
             height: 16,
           ),
@@ -61,13 +61,13 @@ class CheckoutAddressItemWidget extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleSmall
-                ?.copyWith(color: AppColors.blackColor,fontWeight: FontWeight.bold)),
+                ?.copyWith(color: AppColors.mainColor,fontWeight: FontWeight.bold)),
 
         Text(value,
             style: Theme.of(context)
                 .textTheme
                 .titleSmall
-                ?.copyWith(color: AppColors.blackColor)),
+                ?.copyWith(color: AppColors.mainColor)),
       ],
     );
   }

@@ -14,14 +14,14 @@ class CustomTheme {
         primaryColor: AppColors.whiteColor,
         inputDecorationTheme: const InputDecorationTheme(
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: AppColors.ceruleanBlueColor),
+            borderSide: BorderSide(color: AppColors.mainColor),
           ),
-          labelStyle: TextStyle(color: AppColors.ceruleanBlueColor),
+          labelStyle: TextStyle(color: AppColors.mainColor),
         ),
         useMaterial3: false,
         scaffoldBackgroundColor: AppColors.whiteColor,
         radioTheme: RadioThemeData(
-          fillColor: WidgetStateProperty.all(AppColors.ceruleanBlueColor),
+          fillColor: WidgetStateProperty.all(AppColors.mainColor),
         ),
         appBarTheme: const AppBarTheme(
             systemOverlayStyle: SystemUiOverlayStyle(
@@ -33,13 +33,13 @@ class CustomTheme {
               statusBarBrightness: Brightness.light, // For iOS (dark icons)
             ),
             backgroundColor: AppColors.whiteColor,
-            foregroundColor: AppColors.blackColor,
+            foregroundColor: AppColors.mainColor,
             centerTitle: true),
         navigationBarTheme: NavigationBarThemeData(
             labelTextStyle: WidgetStateProperty.all<TextStyle>(TextStyle(
                 fontFamily: appFont,
                 fontSize: 12,
-                color: AppColors.ceruleanBlueColor))),
+                color: AppColors.mainColor))),
         textTheme: TextTheme(
           bodyMedium: TextStyle(fontFamily: appFont),
           bodySmall: TextStyle(fontFamily: appFont),
@@ -58,19 +58,19 @@ class CustomTheme {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
-            backgroundColor: AppColors.ceruleanBlueColor,
+            backgroundColor: AppColors.mainColor,
           ),
         ),
         checkboxTheme: CheckboxThemeData(
           fillColor: WidgetStateProperty.all(AppColors.whiteColor),
-          checkColor: WidgetStateProperty.all(AppColors.blackColor),
+          checkColor: WidgetStateProperty.all(AppColors.mainColor),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(4.0),
             ),
-            side: const BorderSide(color: AppColors.ceruleanBlueColor),
+            side: const BorderSide(color: AppColors.mainColor),
           ),
         ));
   }

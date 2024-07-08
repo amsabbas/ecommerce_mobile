@@ -22,7 +22,7 @@ class AddressItemWidget extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColors.ceruleanBlueColor,width: 0.5),
+          border: Border.all(color: AppColors.mainColor,width: 0.5),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -50,7 +50,7 @@ class AddressItemWidget extends StatelessWidget {
                       },
                       icon: const Icon(
                         Icons.delete,
-                        color: AppColors.blackColor,
+                        color: AppColors.mainColor,
                       ))
                 ],
               ),
@@ -79,7 +79,7 @@ class AddressItemWidget extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall
-                        ?.copyWith(color: AppColors.blackColor),
+                        ?.copyWith(color: AppColors.mainColor),
                   ),
                 ],
               ),
@@ -97,13 +97,13 @@ class AddressItemWidget extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleSmall
-                ?.copyWith(color: AppColors.blackColor,fontWeight: FontWeight.bold)),
+                ?.copyWith(color: AppColors.mainColor,fontWeight: FontWeight.bold)),
 
         Text(value,
             style: Theme.of(context)
                 .textTheme
                 .titleSmall
-                ?.copyWith(color: AppColors.blackColor)),
+                ?.copyWith(color: AppColors.mainColor)),
       ],
     );
   }

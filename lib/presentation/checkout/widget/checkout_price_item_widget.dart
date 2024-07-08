@@ -21,13 +21,13 @@ class CheckoutPriceItemWidget extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                   fontWeight: FontWeight.bold),
             ),
             Text(
               "$value ${MessageKeys.currency.tr}",
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.ceruleanBlueColor,
+                    color: AppColors.mainColor,
                   ),
             ),
           ],

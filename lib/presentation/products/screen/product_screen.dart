@@ -90,7 +90,7 @@ class _ProductScreenState extends State<ProductScreen> {
           children: [
             Text(productModel.getNameByLocale(Get.locale.toString())!,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: AppColors.ceruleanBlueColor,
+                    color: AppColors.mainColor,
                     fontWeight: FontWeight.bold),
                 textAlign: TextAlign.start,
                 maxLines: 1),
@@ -98,7 +98,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium
-                    ?.copyWith(color: AppColors.ceruleanBlueColor),
+                    ?.copyWith(color: AppColors.mainColor),
                 textAlign: TextAlign.start,
                 maxLines: 5),
             const SizedBox(height: 16),

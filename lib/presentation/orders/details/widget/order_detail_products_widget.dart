@@ -19,7 +19,7 @@ class OrderDetailProductsWidget extends StatelessWidget {
         children: [
           Text(MessageKeys.productsTitle.tr,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                   fontWeight: FontWeight.bold)),
           _productsWidget(context)
         ],
@@ -36,11 +36,11 @@ class OrderDetailProductsWidget extends StatelessWidget {
           children: [
             Text(orderInfo[index].product.getNameByLocale(Get.locale.toString()) ?? "",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.ceruleanBlueColor,
+                      color: AppColors.mainColor,
                     )),
             Text("x${orderInfo[index].quantity}",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.ceruleanBlueColor,
+                      color: AppColors.mainColor,
                     )),
           ],
         );

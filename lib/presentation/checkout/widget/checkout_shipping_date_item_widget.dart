@@ -18,14 +18,14 @@ class CheckoutDateItemWidget extends StatelessWidget {
         children: [
           Text(MessageKeys.deliveryDateTitle.tr,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                   fontWeight: FontWeight.bold)),
           const SizedBox(
             height: 8,
           ),
           Text(date,
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: AppColors.blackColor,
+                    color: AppColors.mainColor,
                   )),
         ],
       ),

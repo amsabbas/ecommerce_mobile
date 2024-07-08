@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeAdsWidget> {
           dotHeight: 8,
           dotWidth: 8,
           type: WormType.thin,
-          activeDotColor: AppColors.blackColor,
+          activeDotColor: AppColors.mainColor,
           dotColor: AppColors.darkGrayColor,
         ),
       ),

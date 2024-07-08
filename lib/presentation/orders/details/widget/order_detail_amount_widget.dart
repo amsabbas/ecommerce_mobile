@@ -44,11 +44,11 @@ class OrderDetailAmountWidget extends StatelessWidget {
       children: [
         Text(title,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: AppColors.ceruleanBlueColor,
+                color: AppColors.mainColor,
                 fontWeight: FontWeight.bold)),
         Text(value,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                 )),
       ],
     );

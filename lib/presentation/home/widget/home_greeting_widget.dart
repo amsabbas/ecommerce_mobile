@@ -42,7 +42,7 @@ class _HomeGreetingWidgetState extends State<HomeGreetingWidget> {
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium
-                          ?.copyWith(color: AppColors.ceruleanBlueColor),
+                          ?.copyWith(color: AppColors.mainColor),
                     ),
                   ),
                   if (userModel != null)
@@ -54,7 +54,7 @@ class _HomeGreetingWidgetState extends State<HomeGreetingWidget> {
                             .textTheme
                             .titleMedium
                             ?.copyWith(
-                                color: AppColors.ceruleanBlueColor,
+                                color: AppColors.mainColor,
                                 fontWeight: FontWeight.bold),
                       ),
                     ),

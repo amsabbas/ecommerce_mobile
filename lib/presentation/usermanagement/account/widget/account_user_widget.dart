@@ -49,7 +49,7 @@ class AccountUserWidget extends StatelessWidget {
                               .textTheme
                               .bodyMedium
                               ?.copyWith(
-                                  color: AppColors.ceruleanBlueColor,
+                                  color: AppColors.mainColor,
                                   fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -61,7 +61,7 @@ class AccountUserWidget extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style:
                               Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                    color: AppColors.ceruleanBlueColor,
+                                    color: AppColors.mainColor,
                                   ),
                         ),
                       ),

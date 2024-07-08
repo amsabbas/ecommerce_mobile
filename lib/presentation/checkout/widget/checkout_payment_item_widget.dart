@@ -18,11 +18,11 @@ class CheckoutPaymentItemWidget extends StatelessWidget {
         children: [
           Text(MessageKeys.paymentTitle.tr,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                   fontWeight: FontWeight.bold)),
           Text(paymentType,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.ceruleanBlueColor,
+                    color: AppColors.mainColor,
                   )),
         ],
       ),

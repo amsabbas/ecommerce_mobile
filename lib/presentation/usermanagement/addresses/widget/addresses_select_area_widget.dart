@@ -88,7 +88,7 @@ class _AddressesSelectAreaWidgetState extends State<AddressesSelectAreaWidget> {
       style: Theme.of(context)
           .textTheme
           .titleLarge
-          ?.copyWith(color: AppColors.ceruleanBlueColor),
+          ?.copyWith(color: AppColors.mainColor),
     );
   }
 
@@ -102,14 +102,14 @@ class _AddressesSelectAreaWidgetState extends State<AddressesSelectAreaWidget> {
       validator: (value) => _addressesController
           .validateTextField(value?.getNameByLocale(Get.locale.toString())),
       padding: EdgeInsets.zero,
-      iconEnabledColor: AppColors.ceruleanBlueColor,
+      iconEnabledColor: AppColors.mainColor,
       value: _areaValue,
       hint: Text(
         MessageKeys.areasTitle.tr,
         style: Theme.of(context)
             .textTheme
             .titleSmall
-            ?.copyWith(color: AppColors.eclipseColor),
+            ?.copyWith(color: AppColors.mainColor),
       ),
       items: widget.areas.map((AreaModel value) {
         return DropdownMenuItem<AreaModel>(
@@ -118,7 +118,7 @@ class _AddressesSelectAreaWidgetState extends State<AddressesSelectAreaWidget> {
               style: Theme.of(context)
                   .textTheme
                   .titleSmall
-                  ?.copyWith(color: AppColors.eclipseColor)),
+                  ?.copyWith(color: AppColors.mainColor)),
         );
       }).toList(),
       onChanged: (val) {

@@ -41,7 +41,7 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: AppColors.ceruleanBlueColor,
+                    backgroundColor: AppColors.mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
@@ -58,7 +58,7 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium
-                      ?.copyWith(color: AppColors.ceruleanBlueColor),
+                      ?.copyWith(color: AppColors.mainColor),
                   textAlign: TextAlign.start,
                   maxLines: 1),
               const SizedBox(width: 8),
@@ -72,7 +72,7 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: AppColors.ceruleanBlueColor,
+                    backgroundColor: AppColors.mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),

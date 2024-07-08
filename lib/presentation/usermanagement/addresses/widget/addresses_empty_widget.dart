@@ -28,7 +28,7 @@ class AddressesEmptyWidget extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge
-                ?.copyWith(color: AppColors.ceruleanBlueColor),
+                ?.copyWith(color: AppColors.mainColor),
           ),
         ),
         const SizedBox(

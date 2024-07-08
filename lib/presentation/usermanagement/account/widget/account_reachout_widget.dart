@@ -24,7 +24,7 @@ class AccountReachOutWidget extends StatelessWidget {
           Text(
             MessageKeys.reachOutTitle.tr,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: AppColors.ceruleanBlueColor,
+                color: AppColors.mainColor,
                 fontWeight: FontWeight.bold),
           ),
           const SizedBox(
@@ -32,7 +32,7 @@ class AccountReachOutWidget extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.ceruleanBlueColor,width: 0.5),
+              border: Border.all(color: AppColors.mainColor,width: 0.5),
               borderRadius: BorderRadius.circular(6),
             ),
             child: Column(

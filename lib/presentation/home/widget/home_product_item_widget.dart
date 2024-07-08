@@ -67,7 +67,7 @@ class ProductItemWidget extends StatelessWidget {
         children: [
           Text(product.getNameByLocale(Get.locale.toString())!,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.start,
               maxLines: 1),

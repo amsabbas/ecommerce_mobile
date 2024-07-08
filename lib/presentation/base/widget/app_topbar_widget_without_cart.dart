@@ -22,7 +22,7 @@ class AppTopBarWithoutCartWidget extends StatelessWidget
           ? IconButton(
               icon: const Icon(
                 Icons.arrow_back,
-                color: AppColors.ceruleanBlueColor,
+                color: AppColors.mainColor,
               ),
               onPressed: () => Get.back(),
             )
@@ -33,7 +33,7 @@ class AppTopBarWithoutCartWidget extends StatelessWidget
           Text(
             title,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.ceruleanBlueColor,
+                color: AppColors.mainColor,
                 fontWeight: FontWeight.bold),
           ),
         ],

@@ -65,11 +65,11 @@ class MyOrderItemWidget extends StatelessWidget {
           children: [
             Text(MessageKeys.orderNumberTitle.tr,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.ceruleanBlueColor,
+                    color: AppColors.mainColor,
                     fontWeight: FontWeight.bold)),
             Text("#${orderModel.id}",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.ceruleanBlueColor,
+                      color: AppColors.mainColor,
                     )),
           ],
         ),
@@ -98,7 +98,7 @@ class MyOrderItemWidget extends StatelessWidget {
         Text(
             "${MessageKeys.orderDateTitle.tr} ${orderModel.date.getFormattedDate()}",
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                 )),
       ],
     );
@@ -116,7 +116,7 @@ class MyOrderItemWidget extends StatelessWidget {
       children: [
         Text("${MessageKeys.orderQuantityTitle.tr} ${_getQuantity()}",
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: AppColors.ceruleanBlueColor,
+                  color: AppColors.mainColor,
                 )),
       ],
     );

@@ -40,12 +40,12 @@ class _HomeCategoryItemWidgetState extends State<HomeCategoryItemWidget> {
                   return Container(
                     decoration: BoxDecoration(
                       color:
-                          isSelected ? AppColors.blackColor : AppColors.black12,
+                          isSelected ? AppColors.mainColor : AppColors.black12,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12.0, vertical: 2),
+                          horizontal: 12.0, vertical: 6),
                       child: Text(
                         widget.category.getNameByLocale(Get.locale.toString()),
                         style: Theme.of(context)

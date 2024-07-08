@@ -23,7 +23,7 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: showBackIcon
           ? IconButton(
-              icon: const Icon(Icons.arrow_back,color: AppColors.ceruleanBlueColor,),
+              icon: const Icon(Icons.arrow_back,color: AppColors.mainColor,),
               onPressed: () => Get.back(),
             )
           : null,
@@ -33,7 +33,7 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
           Text(
             title,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.ceruleanBlueColor,
+                color: AppColors.mainColor,
                 fontWeight: FontWeight.bold),
           ),
         ],

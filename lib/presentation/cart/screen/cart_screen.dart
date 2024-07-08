@@ -29,7 +29,9 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   late final CartController _cartController;
   late final UserController _userController;
-  late final Worker _deleteCartWorker, checkCartAvailabilityWorker;
+  late final Worker _deleteCartWorker,
+      _checkCartAvailabilityWorker,
+      _userWorker;
 
   @override
   void initState() {
@@ -51,7 +53,7 @@ class _CartScreenState extends State<CartScreen> {
                   },
                   onLoadingFinish: () => CustomLoading.dismissLoading(context))
             });
-    checkCartAvailabilityWorker = ever(
+    _checkCartAvailabilityWorker = ever(
         _cartController.checkCartAvailabilityState,
         (ResultData res) => {
               res.handleState(
@@ -62,6 +64,11 @@ class _CartScreenState extends State<CartScreen> {
                         binding: CheckoutBindings());
                   },
                   onLoadingFinish: () => CustomLoading.dismissLoading(context))
+            });
+    _userWorker = ever(
+        _userController.userState,
+        (UserModel? userModel) => {
+              if (userModel != null) {_cartController.getMyCarts()}
             });
   }
 
@@ -165,6 +172,7 @@ class _CartScreenState extends State<CartScreen> {
   void dispose() {
     super.dispose();
     _deleteCartWorker.dispose();
-    checkCartAvailabilityWorker.dispose();
+    _checkCartAvailabilityWorker.dispose();
+    _userWorker.dispose();
   }
 }

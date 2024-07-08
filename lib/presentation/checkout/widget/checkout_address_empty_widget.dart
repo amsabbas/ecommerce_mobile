@@ -22,7 +22,7 @@ class CheckoutAddressEmptyWidget extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge
-                ?.copyWith(color: AppColors.ceruleanBlueColor),
+                ?.copyWith(color: AppColors.mainColor),
             textAlign: TextAlign.center,
           ),
         ),

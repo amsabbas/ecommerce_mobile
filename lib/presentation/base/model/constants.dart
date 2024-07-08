@@ -8,7 +8,7 @@ const String rejectedStatus = 'rejected';
 const String baseURL = "http://172.18.42.93:3000/";
 
 //firebase
-const String firebaseApiKey = "AIzaSyAt4d2f85aYI0Fpn4dQrvxg1o_7SwJJ9RU";
-const String firebaseAppId = "1:681909148680:android:c37cd6bc323af72744c5bd";
+const String firebaseApiKey = "AIzaSyAIMFNbvpwTHdbpX7o_nBWmy-JmODVMfCc";
+const String firebaseAppId = "1:681909148680:ios:7995feef6a89692a44c5bd";
 const String firebaseMessagingSenderId = "681909148680";
 const String firebaseProjectId = "ecommerce-57aeb";
