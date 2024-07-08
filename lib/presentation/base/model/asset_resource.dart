@@ -5,13 +5,11 @@ class AssetResource {
 
   //general
   static const String appLogoImagePath = "${imagePath}base/app_logo.png";
-  static const String imagePlaceHolderImagePath =
-      "${imagePath}base/image_placeholder.svg";
   static const String profileNotLoggedImagePath =
-      "${imagePath}base/ic_account_not_logged.svg";
+      "${imagePath}base/ic_attention.svg";
   static const String errorImagePath = "${imagePath}base/ic_error.svg";
   static const String noDataImagePath =
-      "${imagePath}base/ic_account_not_logged.svg";
+      "${imagePath}base/ic_attention.svg";
   static const String cartImagePath = "${imagePath}base/ic_cart.svg";
 
   //home

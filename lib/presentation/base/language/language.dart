@@ -293,7 +293,7 @@ class Language extends Translations {
           MessageKeys.homeTitle: "الرئيسية",
           MessageKeys.ordersTitle: "الطلبات",
           MessageKeys.cartTitle: "السلة",
-          MessageKeys.accountTitle: "الحساب",
+          MessageKeys.accountTitle: "حسابي",
           MessageKeys.changeLanguageDialogTitle: "تغيير اللغة",
           MessageKeys.englishTitle: "الإنجليزية",
           MessageKeys.arabicTitle: "العربية",

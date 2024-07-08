@@ -35,23 +35,26 @@ class _HomeCategoryItemWidgetState extends State<HomeCategoryItemWidget> {
             GetX<HomeController>(
                 init: _homeController,
                 builder: (controller) {
+                  bool isSelected = _homeController.selectedCategory.value ==
+                      widget.category.id;
                   return Container(
                     decoration: BoxDecoration(
-                      color: _homeController.selectedCategory.value ==
-                              widget.category.id
-                          ? AppColors.blackColor
-                          : AppColors.darkGrayColor,
+                      color:
+                          isSelected ? AppColors.blackColor : AppColors.black12,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 2),
                       child: Text(
                         widget.category.name,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium
                             ?.copyWith(
-                                color: AppColors.whiteColor,
+                                color: isSelected
+                                    ? AppColors.whiteColor
+                                    : AppColors.darkGrayColor,
                                 fontWeight: FontWeight.bold),
                       ),
                     ),
