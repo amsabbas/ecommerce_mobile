@@ -118,7 +118,7 @@ class _ProductScreenState extends State<ProductScreen> {
                   ),
                 if (isProductAvailable)
                   Text(
-                    "${productModel.price!.roundDouble()} $currency",
+                    "${productModel.price!.roundDouble()} ${MessageKeys.currency.tr}",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context)

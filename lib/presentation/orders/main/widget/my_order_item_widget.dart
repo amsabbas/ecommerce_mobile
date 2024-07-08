@@ -105,7 +105,7 @@ class MyOrderItemWidget extends StatelessWidget {
   }
 
   Widget _orderPrice(context) {
-    return Text("${orderModel.total} ${currency}",
+    return Text("${orderModel.total} ${MessageKeys.currency.tr}",
         style: Theme.of(context).textTheme.titleSmall?.copyWith(
               color: AppColors.greenColor,
             ));

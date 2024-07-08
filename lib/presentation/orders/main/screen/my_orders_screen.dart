@@ -46,11 +46,13 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
               UserModel? userModel = _userController.userState.value;
               if (userModel != null) {
                 return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 8),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8),
                     child: GetX<OrdersController>(
                         init: _ordersController,
-                        builder: (controller) => controller.ordersState
-                            .handleStateInWidget(
+                        builder: (controller) =>
+                            controller.ordersState
+                                .handleStateInWidget(
                                 onSuccess: (context, data) => myOrdersWidget(),
                                 onLoading: (context, data) =>
                                     loadingWidget(context),
@@ -80,21 +82,28 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
         ],
       );
     } else {
-      return SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: List<Widget>.generate(
-                  response.length,
-                  (index) => MyOrderItemWidget(
-                        orderModel: response[index],
-                      )),
-            ),
-          ],
+      return RefreshIndicator(
+        onRefresh: () async {
+          _ordersController.getMyOrders();
+        },
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: List<Widget>.generate(
+                    response.length,
+                        (index) =>
+                        MyOrderItemWidget(
+                          orderModel: response[index],
+                        )),
+              ),
+            ],
+          ),
         ),
       );
     }

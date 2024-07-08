@@ -86,7 +86,7 @@ class ProductItemWidget extends StatelessWidget {
                 ),
               if (isProductAvailable)
                 Text(
-                  "${product.price!.roundDouble()} $currency",
+                  "${product.price!.roundDouble()} ${MessageKeys.currency.tr}",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context)

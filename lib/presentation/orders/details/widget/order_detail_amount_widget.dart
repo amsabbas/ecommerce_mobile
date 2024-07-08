@@ -26,13 +26,13 @@ class OrderDetailAmountWidget extends StatelessWidget {
       child: Column(
         children: [
           _getAmountWidget(context, MessageKeys.subTotalTitle.tr,
-              "${subTotal.roundDouble()} $currency"),
+              "${subTotal.roundDouble()} ${MessageKeys.currency.tr}"),
           _getAmountWidget(context, MessageKeys.deliveryFeesTitle.tr,
-              "${deliveryFees.roundDouble()} $currency"),
+              "${deliveryFees.roundDouble()} ${MessageKeys.currency.tr}"),
           _getAmountWidget(context, MessageKeys.discountTitle.tr,
-              "${discount.roundDouble()} $currency"),
+              "${discount.roundDouble()} ${MessageKeys.currency.tr}"),
           _getAmountWidget(context, MessageKeys.totalAmountTitle.tr,
-              "${totalAmount.roundDouble()} $currency")
+              "${totalAmount.roundDouble()} ${MessageKeys.currency.tr}")
         ],
       ),
     );

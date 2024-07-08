@@ -1,6 +1,8 @@
+import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CheckoutPriceItemWidget extends StatelessWidget {
   final String title;
@@ -23,7 +25,7 @@ class CheckoutPriceItemWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             Text(
-              "$value $currency",
+              "$value ${MessageKeys.currency.tr}",
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: AppColors.ceruleanBlueColor,
                   ),
