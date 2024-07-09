@@ -7,7 +7,7 @@ import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/account_not_logged_widget.dart';
-import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
+import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget_without_cart.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/empty_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/error_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
@@ -75,7 +75,7 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppTopBarWidget(
+        appBar: AppTopBarWithoutCartWidget(
           title: MessageKeys.cartTitle.tr,
           showBackIcon: false,
         ),

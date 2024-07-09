@@ -1,18 +1,17 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/data/products/model/product_model.dart';
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
-import 'package:ecommerce_mobile/presentation/base/extension/double_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
-import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
-import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
 import 'package:ecommerce_mobile/presentation/products/controller/products_controller.dart';
-import 'package:ecommerce_mobile/presentation/products/widget/product_quantity_widget.dart';
+import 'package:ecommerce_mobile/presentation/products/widget/product_add_to_cart_button_widget.dart';
+import 'package:ecommerce_mobile/presentation/products/widget/product_details_widget.dart';
+import 'package:ecommerce_mobile/presentation/products/widget/product_image_widget.dart';
+import 'package:ecommerce_mobile/presentation/products/widget/product_view_my_cart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -58,81 +57,16 @@ class _ProductScreenState extends State<ProductScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              _productImage(),
-              _productDetailsWidget(),
+              ProductImageWidget(
+                productModel: productModel,
+              ),
+              ProductDetailsWidget(
+                productModel: productModel,
+              ),
               _addToMyCart()
             ],
           ),
         ));
-  }
-
-  Widget _productImage() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Center(
-          child: CachedNetworkImage(
-        imageUrl:
-            "$baseURL${productModel.photoUrl?.replaceAll("localhost:3000/", "")}",
-        // "$scheme://" + element.photoUrl,
-        fit: BoxFit.fitWidth,
-        height: 250,
-      )),
-    );
-  }
-
-  Widget _productDetailsWidget() {
-    bool isProductAvailable = productModel.isAvailable!;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-      child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(productModel.getNameByLocale(Get.locale.toString())!,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: AppColors.mainColor,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.start,
-                maxLines: 1),
-            Text(productModel.getDescByLocale(Get.locale.toString())!,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(color: AppColors.mainColor),
-                textAlign: TextAlign.start,
-                maxLines: 5),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (!isProductAvailable)
-                  Text(
-                    MessageKeys.outOfStockTitle.tr,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge
-                        ?.copyWith(color: AppColors.redColor),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                if (isProductAvailable)
-                  Text(
-                    "${productModel.price!.roundDouble()} ${MessageKeys.currency.tr}",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge
-                        ?.copyWith(color: AppColors.greenColor),
-                  ),
-                ProductQuantityWidget(
-                  productID: productModel.id!,
-                )
-              ],
-            )
-          ]),
-    );
   }
 
   Widget _addToMyCart() {
@@ -142,29 +76,13 @@ class _ProductScreenState extends State<ProductScreen> {
           UserModel? userModel = _userController.userState.value;
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24),
-            child: ElevatedButton(
-              onPressed: userModel == null || !productModel.isAvailable!
-                  ? null
-                  : () {
-                      _productsController.addProductToMyCart(productModel.id!);
-                    },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.add_shopping_cart),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      MessageKeys.addToMyCartButtonTitle.tr,
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(color: AppColors.whiteColor),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            child: ProductAddToCartButtonWidget(
+                onPressed: userModel == null || !productModel.isAvailable!
+                    ? null
+                    : () {
+                        _productsController
+                            .addProductToMyCart(productModel.id!);
+                      }),
           );
         });
   }
@@ -177,8 +95,11 @@ class _ProductScreenState extends State<ProductScreen> {
 
   void _showSuccess() {
     _userController.refreshProductQuantity();
-    CustomSnackBar.showSuccessSnackBar(
-        MessageKeys.success.tr, MessageKeys.addToMyCartSuccessMessage.tr);
+    Get.bottomSheet(isScrollControlled: true,
+        StatefulBuilder(builder: (context, setState) {
+      return const FractionallySizedBox(
+          heightFactor: 0.5, child: ProductViewMyCartWidget());
+    }));
   }
 
   @override

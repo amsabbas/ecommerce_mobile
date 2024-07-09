@@ -127,6 +127,7 @@ class MessageKeys {
 
   static const String orderSuccessMessage = "orderSuccessMessage";
   static const String continueShoppingButtonTitle = "continueShoppingButtonTitle";
+  static const String viewMyCartButtonTitle = "viewMyCartButtonTitle";
 }
 
 class Language extends Translations {
@@ -249,6 +250,7 @@ class Language extends Translations {
           MessageKeys.checkoutNoAddresses: "In order to create an order you need to add address",
           MessageKeys.orderSuccessMessage: "Your order has been placed successfully",
           MessageKeys.continueShoppingButtonTitle: "Continue Shopping",
+          MessageKeys.viewMyCartButtonTitle: "View My Cart",
         },
         'ar': {
           MessageKeys.appName: 'متجر الكتروني',
@@ -365,6 +367,7 @@ class Language extends Translations {
           MessageKeys.checkoutNoAddresses: "لإنشاء طلب يجب عليك اضافة عنوان",
           MessageKeys.orderSuccessMessage: "تم تقديم طلبك بنجاح",
           MessageKeys.continueShoppingButtonTitle: "متابعة التسوق",
+          MessageKeys.viewMyCartButtonTitle: "عرض سلة التسوق",
         }
       };
 }
