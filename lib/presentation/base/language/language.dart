@@ -124,6 +124,9 @@ class MessageKeys {
   static const String checkoutPromoCodeTitle = "checkoutPromoCodeTitle";
   static const String checkoutSuccessMessage = "checkoutSuccessMessage";
   static const String checkoutNoAddresses = "checkoutNoAddresses";
+
+  static const String orderSuccessMessage = "orderSuccessMessage";
+  static const String continueShoppingButtonTitle = "continueShoppingButtonTitle";
 }
 
 class Language extends Translations {
@@ -244,6 +247,8 @@ class Language extends Translations {
           MessageKeys.checkoutPromoCodeTitle: "Promo Code",
           MessageKeys.checkoutSuccessMessage: "Your order has been placed successfully",
           MessageKeys.checkoutNoAddresses: "In order to create an order you need to add address",
+          MessageKeys.orderSuccessMessage: "Your order has been placed successfully",
+          MessageKeys.continueShoppingButtonTitle: "Continue Shopping",
         },
         'ar': {
           MessageKeys.appName: 'متجر الكتروني',
@@ -358,6 +363,8 @@ class Language extends Translations {
           MessageKeys.checkoutPromoCodeTitle: "كود الخصم",
           MessageKeys.checkoutSuccessMessage: "تم تقديم طلبك بنجاح",
           MessageKeys.checkoutNoAddresses: "لإنشاء طلب يجب عليك اضافة عنوان",
+          MessageKeys.orderSuccessMessage: "تم تقديم طلبك بنجاح",
+          MessageKeys.continueShoppingButtonTitle: "متابعة التسوق",
         }
       };
 }

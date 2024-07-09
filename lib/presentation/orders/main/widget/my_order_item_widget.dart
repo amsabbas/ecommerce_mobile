@@ -2,7 +2,6 @@ import 'package:ecommerce_mobile/data/orders/model/order_model.dart';
 import 'package:ecommerce_mobile/presentation/base/extension/date_string_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/extension/string_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
-import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/orders/details/screen/order_details_screen.dart';
 import 'package:flutter/material.dart';

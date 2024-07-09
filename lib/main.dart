@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var theme =
+    ThemeData theme =
         CustomTheme.lightTheme(_settingsController.getLanguage() == "ar");
     return GetMaterialApp(
       locale: _locale,

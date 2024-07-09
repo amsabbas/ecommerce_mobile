@@ -14,6 +14,7 @@ import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget_with
 import 'package:ecommerce_mobile/presentation/base/widget/error_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
 import 'package:ecommerce_mobile/presentation/checkout/controller/checkout_controller.dart';
+import 'package:ecommerce_mobile/presentation/checkout/screen/checkout_success_screen.dart';
 import 'package:ecommerce_mobile/presentation/checkout/widget/checkout_address_empty_widget.dart';
 import 'package:ecommerce_mobile/presentation/checkout/widget/checkout_address_item_widget.dart';
 import 'package:ecommerce_mobile/presentation/checkout/widget/checkout_payment_item_widget.dart';
@@ -130,7 +131,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               CheckoutDateItemWidget(
                 date: settingModel?.deliveryTime.toString() ?? "",
               ),
-               CheckoutPaymentItemWidget(
+              CheckoutPaymentItemWidget(
                 paymentType: MessageKeys.cash.tr,
               ),
               const CheckoutPromoCodeWidget(),
@@ -193,15 +194,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   }
 
   void _showOrderSuccess() {
-    _orderAction();
-    CustomSnackBar.showSuccessSnackBar(
-        MessageKeys.success.tr, MessageKeys.checkoutSuccessMessage.tr);
-  }
-
-  void _orderAction() {
     _userController.refreshProductQuantity();
-    Navigator.pop(context);
-    Navigator.pop(context);
+    Get.offAll(const CheckoutSuccessScreen());
   }
 
   @override

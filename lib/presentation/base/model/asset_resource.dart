@@ -2,6 +2,7 @@ class AssetResource {
   static const String englishFontName = "poppins";
   static const String arabicFontName = "cairo";
   static const String imagePath = "assets/images/";
+  static const String animationPath = "assets/animation/";
 
   //general
   static const String appLogoImagePath = "${imagePath}base/app_logo.png";
@@ -37,4 +38,7 @@ class AssetResource {
       "${imagePath}account/ic_instagram.svg";
   static const String accountLogoutImagePath =
       "${imagePath}account/ic_logout.svg";
+
+  //animation
+  static const String doneAnimationPath = "${animationPath}done.json";
 }

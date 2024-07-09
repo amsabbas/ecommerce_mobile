@@ -1,6 +1,5 @@
 import 'package:ecommerce_mobile/presentation/base/extension/double_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
-import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
