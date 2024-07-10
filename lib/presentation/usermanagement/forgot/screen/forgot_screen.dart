@@ -129,7 +129,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
                 enableSuggestions: false,
-                validator: FormBuilderValidators.required(),
+                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_forgotController.emailController.text = value ?? ''),
               ),

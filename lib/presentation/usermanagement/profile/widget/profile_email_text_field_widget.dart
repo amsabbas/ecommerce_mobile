@@ -30,6 +30,7 @@ class _ProfileEmailTextFieldWidgetState
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
       child: TextFormField(
           initialValue: widget.email,
+          validator: (value) => _profileController.validateTextField(value),
           enabled: false,
           inputFormatters: [
             LengthLimitingTextInputFormatter(50),

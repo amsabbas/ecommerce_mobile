@@ -63,11 +63,14 @@ class CheckoutAddressItemWidget extends StatelessWidget {
                 .titleSmall
                 ?.copyWith(color: AppColors.mainColor,fontWeight: FontWeight.bold)),
 
-        Text(value,
-            style: Theme.of(context)
-                .textTheme
-                .titleSmall
-                ?.copyWith(color: AppColors.mainColor)),
+        Expanded(
+          child: Text(value,
+              maxLines: 1,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall
+                  ?.copyWith(color: AppColors.mainColor)),
+        ),
       ],
     );
   }

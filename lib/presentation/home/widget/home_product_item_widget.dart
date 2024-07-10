@@ -61,40 +61,43 @@ class ProductItemWidget extends StatelessWidget {
 
   Widget _productDetailsWidget(context, ProductModel product) {
     bool isProductAvailable = product.isAvailable!;
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(product.getNameByLocale(Get.locale.toString())!,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.mainColor, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.start,
-              maxLines: 1),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (!isProductAvailable)
-                Text(
-                  MessageKeys.outOfStockTitle.tr,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge
-                      ?.copyWith(color: AppColors.redColor),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              if (isProductAvailable)
-                Text(
-                  "${product.price!.roundDouble()} ${MessageKeys.currency.tr}",
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(color: AppColors.greenColor),
-                ),
-            ],
-          )
-        ]);
+    return Expanded(
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(product.getNameByLocale(Get.locale.toString())!,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: AppColors.mainColor, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.start,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (!isProductAvailable)
+                  Text(
+                    MessageKeys.outOfStockTitle.tr,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(color: AppColors.redColor),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                if (isProductAvailable)
+                  Text(
+                    "${product.price!.roundDouble()} ${MessageKeys.currency.tr}",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.copyWith(color: AppColors.greenColor),
+                  ),
+              ],
+            )
+          ]),
+    );
   }
 }

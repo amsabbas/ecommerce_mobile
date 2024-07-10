@@ -29,6 +29,7 @@ class _ProfileMobileTextFieldWidgetState
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
       child: TextFormField(
           style: Theme.of(context).inputDecorationTheme.labelStyle,
+          validator: (value) => _profileController.validateTextField(value),
           initialValue: widget.mobile,
           inputFormatters: [
             LengthLimitingTextInputFormatter(50),

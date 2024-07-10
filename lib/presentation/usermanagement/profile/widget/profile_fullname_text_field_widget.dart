@@ -30,6 +30,7 @@ class _ProfileFullNameTextFieldWidgetState
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8),
       child: TextFormField(
           initialValue: widget.fullname,
+          validator: (value) => _profileController.validateTextField(value),
           onSaved: (value) {
             if (value != null && value.isNotEmpty) {
               _profileController.name = value;

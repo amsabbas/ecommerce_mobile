@@ -128,7 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
                 enableSuggestions: false,
-                validator: FormBuilderValidators.required(),
+                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_registerController.emailController.text = value ?? ''),
               ),
@@ -145,7 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
                 enableSuggestions: false,
-                validator: FormBuilderValidators.required(),
+                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_registerController.nameController.text = value ?? ''),
               ),
@@ -163,7 +163,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
                 enableSuggestions: false,
-                validator: FormBuilderValidators.required(),
+                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_registerController.phoneController.text = value ?? ''),
               ),
@@ -181,7 +181,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 enableSuggestions: false,
                 obscureText: true,
-                validator: FormBuilderValidators.required(),
+                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_registerController.passwordController.text = value ?? ''),
               ),

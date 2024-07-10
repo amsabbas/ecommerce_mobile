@@ -34,10 +34,13 @@ class OrderDetailProductsWidget extends StatelessWidget {
         return Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(orderInfo[index].product.getNameByLocale(Get.locale.toString()) ?? "",
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.mainColor,
-                    )),
+            Expanded(
+              child: Text(orderInfo[index].product.getNameByLocale(Get.locale.toString()) ?? "",
+                  maxLines: 1,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: AppColors.mainColor,
+                      )),
+            ),
             Text("x${orderInfo[index].quantity}",
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: AppColors.mainColor,

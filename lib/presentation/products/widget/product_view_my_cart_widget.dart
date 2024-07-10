@@ -22,16 +22,18 @@ class ProductViewMyCartWidget extends StatelessWidget {
           children: [
             Text(
               MessageKeys.addToMyCartSuccessMessage.tr,
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                color: AppColors.mainColor,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 24),
-            _buttonWidget(context, MessageKeys.continueShoppingButtonTitle.tr,
+            _textButtonWidget(context,AppColors.mainColor, MessageKeys.continueShoppingButtonTitle.tr,
                 () {
               Get.back();
             }),
             const SizedBox(height: 16),
-            _buttonWidget(context, MessageKeys.viewMyCartButtonTitle.tr, () {
+            _buttonWidget(context,AppColors.mainColor, MessageKeys.viewMyCartButtonTitle.tr, () {
               Get.back();
               Get.to(() => const CartScreen(), binding: CartBindings());
             }),
@@ -42,8 +44,42 @@ class ProductViewMyCartWidget extends StatelessWidget {
     );
   }
 
-  Widget _buttonWidget(BuildContext context, String title, Function onPressed) {
+  Widget _textButtonWidget(BuildContext context,Color color, String title, Function onPressed) {
+    return OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+      onPressed: () {
+        onPressed.call();
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              title,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(color: AppColors.mainColor),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buttonWidget(BuildContext context,Color color, String title, Function onPressed) {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
       onPressed: () {
         onPressed.call();
       },

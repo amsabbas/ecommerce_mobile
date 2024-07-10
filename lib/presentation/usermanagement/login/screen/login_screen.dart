@@ -178,7 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
                 enableSuggestions: false,
-                validator: FormBuilderValidators.required(),
+                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_loginController.emailController.text = value ?? ''),
               ),
@@ -196,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 enableSuggestions: false,
                 obscureText: true,
-                validator: FormBuilderValidators.required(),
+                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_loginController.passwordController.text = value ?? ''),
               ),

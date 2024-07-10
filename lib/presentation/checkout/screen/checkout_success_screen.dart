@@ -34,17 +34,11 @@ class _CheckoutSuccessScreenState extends State<CheckoutSuccessScreen> {
               Text(
                 MessageKeys.orderSuccessMessage.tr,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: AppColors.greenColor, fontWeight: FontWeight.bold),
+                    color: AppColors.mainColor, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 24),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.greenColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
                 onPressed: () {
                   Get.offAll(const HomeContainerScreen());
                 },

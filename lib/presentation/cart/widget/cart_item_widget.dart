@@ -69,6 +69,7 @@ class CartItemWidget extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: AppColors.mainColor, fontWeight: FontWeight.bold),
               textAlign: TextAlign.start,
+              overflow: TextOverflow.ellipsis,
               maxLines: 1),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
