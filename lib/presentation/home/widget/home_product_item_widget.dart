@@ -39,7 +39,9 @@ class ProductItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 16,)
+          const SizedBox(
+            height: 16,
+          )
         ],
       ),
     );
@@ -49,13 +51,11 @@ class ProductItemWidget extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8.0),
       child: CachedNetworkImage(
-              imageUrl:
-        "$baseURL${product.photoUrl?.replaceAll("localhost:3000/", "")}",
-              // "$scheme://" + element.photoUrl,
-              fit: BoxFit.fitHeight,
-              height: 100,
-              width: 100,
-            ),
+        imageUrl: "$scheme://${product.photoUrl!}",
+        fit: BoxFit.fitHeight,
+        height: 100,
+        width: 100,
+      ),
     );
   }
 
@@ -67,8 +67,7 @@ class ProductItemWidget extends StatelessWidget {
         children: [
           Text(product.getNameByLocale(Get.locale.toString())!,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.mainColor,
-                  fontWeight: FontWeight.bold),
+                  color: AppColors.mainColor, fontWeight: FontWeight.bold),
               textAlign: TextAlign.start,
               maxLines: 1),
           Row(
@@ -98,5 +97,4 @@ class ProductItemWidget extends StatelessWidget {
           )
         ]);
   }
-
 }

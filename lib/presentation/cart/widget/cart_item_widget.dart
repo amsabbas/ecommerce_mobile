@@ -40,13 +40,11 @@ class CartItemWidget extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: CachedNetworkImage(
-                                          imageUrl:
-                      "$baseURL${cartModel.product.photoUrl?.replaceAll("localhost:3000/", "")}",
-                                          // "$scheme://" + element.photoUrl,
-                                          fit: BoxFit.fitHeight,
-                                          height: 100,
-                                          width: 100,
-                                        ),
+                      imageUrl: "$scheme://${cartModel.product.photoUrl!}",
+                      fit: BoxFit.fitHeight,
+                      height: 100,
+                      width: 100,
+                    ),
                   ),
                   const SizedBox(width: 16),
                   Expanded(
@@ -69,8 +67,7 @@ class CartItemWidget extends StatelessWidget {
         children: [
           Text(product.getNameByLocale(Get.locale.toString())!,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.mainColor,
-                  fontWeight: FontWeight.bold),
+                  color: AppColors.mainColor, fontWeight: FontWeight.bold),
               textAlign: TextAlign.start,
               maxLines: 1),
           Row(

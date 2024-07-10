@@ -5,7 +5,7 @@ const String rejectedStatus = 'rejected';
 
 
 //baseURL
-const String baseURL = "http://172.18.42.93:3000/";
+const String baseURL = "http://64.227.65.185:3000/";
 
 //firebase
 const String firebaseApiKey = "AIzaSyAIMFNbvpwTHdbpX7o_nBWmy-JmODVMfCc";

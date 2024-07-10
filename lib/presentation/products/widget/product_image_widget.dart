@@ -14,9 +14,7 @@ class ProductImageWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Center(
           child: CachedNetworkImage(
-        imageUrl:
-            "$baseURL${productModel.photoUrl?.replaceAll("localhost:3000/", "")}",
-        // "$scheme://" + element.photoUrl,
+        imageUrl: "$scheme://${productModel.photoUrl!}",
         fit: BoxFit.fitWidth,
         height: 250,
       )),
