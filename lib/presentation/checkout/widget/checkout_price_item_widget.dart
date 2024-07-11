@@ -6,9 +6,13 @@ import 'package:get/get.dart';
 class CheckoutPriceItemWidget extends StatelessWidget {
   final String title;
   final String value;
+  final Color color;
 
   const CheckoutPriceItemWidget(
-      {super.key, required this.title, required this.value});
+      {super.key,
+      required this.title,
+      required this.value,
+      required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +24,13 @@ class CheckoutPriceItemWidget extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.mainColor,
-                  fontWeight: FontWeight.bold),
+                  color: AppColors.mainColor, fontWeight: FontWeight.bold),
             ),
             Text(
               "$value ${MessageKeys.currency.tr}",
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.mainColor,
+                    color: color,
+             
                   ),
             ),
           ],

@@ -28,7 +28,6 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
             )
           : null,
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,

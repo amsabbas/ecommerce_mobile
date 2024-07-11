@@ -28,7 +28,6 @@ class AppTopBarWithoutCartWidget extends StatelessWidget
             )
           : null,
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,

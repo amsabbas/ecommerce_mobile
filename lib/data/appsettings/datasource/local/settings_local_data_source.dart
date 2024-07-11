@@ -22,6 +22,6 @@ class SettingsLocalDataSource {
   }
 
   String getLanguage() {
-    return prefs.getString(languageCode) ?? "en";
+    return prefs.getString(languageCode) ?? "ar";
   }
 }

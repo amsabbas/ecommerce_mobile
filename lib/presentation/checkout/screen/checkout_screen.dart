@@ -7,6 +7,7 @@ import 'package:ecommerce_mobile/presentation/base/controller/user_controller.da
 import 'package:ecommerce_mobile/presentation/base/extension/double_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/refresh_status.dart';
+import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
@@ -143,21 +144,29 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CheckoutPriceItemWidget(
-                              title: MessageKeys.subTotalTitle.tr,
-                              value: _checkoutController.orderPrice.value
-                                  .roundDouble()),
+                            title: MessageKeys.subTotalTitle.tr,
+                            value: _checkoutController.orderPrice.value
+                                .roundDouble(),
+                            color: AppColors.mainColor,
+                          ),
                           CheckoutPriceItemWidget(
-                              title: MessageKeys.deliveryFeesTitle.tr,
-                              value: _checkoutController.deliveryPrice.value
-                                  .roundDouble()),
+                            title: MessageKeys.deliveryFeesTitle.tr,
+                            value: _checkoutController.deliveryPrice.value
+                                .roundDouble(),
+                            color: AppColors.mainColor,
+                          ),
                           CheckoutPriceItemWidget(
-                              title: MessageKeys.discountTitle.tr,
-                              value: _checkoutController.discount.value
-                                  .roundDouble()),
+                            title: MessageKeys.discountTitle.tr,
+                            value: _checkoutController.discount.value
+                                .roundDouble(),
+                            color: AppColors.redColor,
+                          ),
                           CheckoutPriceItemWidget(
-                              title: MessageKeys.totalAmountTitle.tr,
-                              value: _checkoutController.totalPrice.value
-                                  .roundDouble()),
+                            title: MessageKeys.totalAmountTitle.tr,
+                            value: _checkoutController.totalPrice.value
+                                .roundDouble(),
+                            color: AppColors.mainColor,
+                          ),
                           CheckoutSubmitOrderButtonWidget(callback: () {
                             _checkoutController.createOrder();
                           })
