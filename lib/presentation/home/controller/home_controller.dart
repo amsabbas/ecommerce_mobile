@@ -4,6 +4,7 @@ import 'package:ecommerce_mobile/data/categories/interactor/category_interactor.
 import 'package:ecommerce_mobile/data/categories/model/category_model.dart';
 import 'package:ecommerce_mobile/data/products/interactor/products_interactor.dart';
 import 'package:ecommerce_mobile/data/products/model/product_model.dart';
+import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:get/get.dart';
 
 import '../../../data/base/utils/app_logger.dart';
@@ -31,13 +32,15 @@ class HomeController extends GetxController {
       adsState.setLoading();
       categoriesState.setLoading();
       adsState.setSuccess(await adsInteractor.getAllAds());
-      categoriesState.setSuccess(await categoryInteractor.getAllCategories());
-      List<CategoryModel> categories = categoriesState.value.data;
+      List<CategoryModel> categories =
+          await categoryInteractor.getAllCategories();
       if (categories.isNotEmpty) {
-        productsState.setSuccess(await productsInteractor
-            .getAllProductsByCategoryID(categories[0].id));
-        selectedCategory.value = categories[0].id;
+        categories.insert(
+            0, CategoryModel(id: -1, name: "All", nameAr: "الكل"));
+        productsState.setSuccess(await productsInteractor.getAllProducts());
+        selectedCategory.value = -1;
       }
+      categoriesState.setSuccess(categories);
       homeState.setSuccess(null);
     } catch (error, errorStack) {
       AppLogger.error(error: error, errorStack: errorStack);
@@ -49,13 +52,28 @@ class HomeController extends GetxController {
 
   void setSelectedCategoryID(int categoryId) {
     selectedCategory.value = categoryId;
-    getProductsByCategoryID(categoryId);
+    if (categoryId == -1) {
+      getProducts();
+    } else {
+      getProductsByCategoryID(categoryId);
+    }
   }
 
   void getProductsByCategoryID(int categoryID) async {
     try {
       productsState.setLoading();
-      productsState.setSuccess(await productsInteractor.getAllProductsByCategoryID(categoryID));
+      productsState.setSuccess(
+          await productsInteractor.getAllProductsByCategoryID(categoryID));
+    } catch (error, errorStack) {
+      AppLogger.error(error: error, errorStack: errorStack);
+      productsState.setError(error);
+    }
+  }
+
+  void getProducts() async {
+    try {
+      productsState.setLoading();
+      productsState.setSuccess(await productsInteractor.getAllProducts());
     } catch (error, errorStack) {
       AppLogger.error(error: error, errorStack: errorStack);
       productsState.setError(error);
