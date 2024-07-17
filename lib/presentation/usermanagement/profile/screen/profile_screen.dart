@@ -5,7 +5,7 @@ import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
-import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
+import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget_without_cart.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/controller/profile_controller.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/widget/profile_email_text_field_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/widget/profile_fullname_text_field_widget.dart';
@@ -47,7 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppTopBarWidget(
+      appBar: AppTopBarWithoutCartWidget(
           title: MessageKeys.profileTitle.tr, showBackIcon: true),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

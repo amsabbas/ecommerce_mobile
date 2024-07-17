@@ -3,7 +3,7 @@ import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
-import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
+import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget_without_cart.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/addresses/controller/addresses_controller.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/addresses/widget/address_add_button_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/addresses/widget/addresses_apartment_no_text_field_widget.dart';
@@ -45,7 +45,7 @@ class _AddressInfoScreenState extends State<AddressInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppTopBarWidget(
+      appBar: AppTopBarWithoutCartWidget(
         title: MessageKeys.shippingAddressTitle.tr,
         showBackIcon: true,
       ),

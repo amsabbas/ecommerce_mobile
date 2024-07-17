@@ -40,7 +40,7 @@ class _HomeCategoryItemWidgetState extends State<HomeCategoryItemWidget> {
                   return Container(
                     decoration: BoxDecoration(
                       color:
-                          isSelected ? AppColors.mainColor : AppColors.black12,
+                          isSelected ? AppColors.mainColor : AppColors.lightGrayColor,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Padding(

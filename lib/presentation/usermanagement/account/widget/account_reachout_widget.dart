@@ -30,10 +30,12 @@ class AccountReachOutWidget extends StatelessWidget {
           const SizedBox(
             height: 8.0,
           ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.mainColor,width: 0.5),
-              borderRadius: BorderRadius.circular(6),
+          Card(
+            margin: const EdgeInsets.all(0),
+            color: AppColors.lightWhiteColor,
+            elevation: 0.2,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
             ),
             child: Column(
               children: [

@@ -32,7 +32,7 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
               SizedBox(
                 width: 30,
                 height: 30,
-                child: ElevatedButton(
+                child: OutlinedButton(
                   onPressed: () {
                     if (_productsController.quantity.value > 1) {
                       _productsController.quantity.value -= 1;
@@ -41,14 +41,13 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: AppColors.mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
                   child: const Icon(
                     Icons.remove,
-                    color: AppColors.whiteColor,
+                    color: AppColors.mainColor,
                     size: 15,
                   ),
                 ),
@@ -65,21 +64,20 @@ class _ProductQuantityWidgetState extends State<ProductQuantityWidget> {
               SizedBox(
                 width: 30,
                 height: 30,
-                child: ElevatedButton(
+                child: OutlinedButton(
                   onPressed: () {
                     _productsController.quantity.value += 1;
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: AppColors.mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
                   child: const Icon(
                     Icons.add,
-                    color: AppColors.whiteColor,
+                    color: AppColors.mainColor,
                     size: 15,
                   ),
                 ),

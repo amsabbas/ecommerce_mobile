@@ -349,7 +349,7 @@ class Language extends Translations {
           MessageKeys.noCartTitle: "لا يوجد عناصر في سلة التسوق",
           MessageKeys.orderNumberTitle: "رقم الطلب:",
           MessageKeys.orderQuantityTitle: "الكمية:",
-          MessageKeys.discountTitle: "الخصم:",
+          MessageKeys.discountTitle: "الخصم",
           MessageKeys.orderDateTitle: "تاريخ الطلب:",
           MessageKeys.orderDetailsTitle: "تفاصيل الطلب",
           MessageKeys.subTotalTitle: "المجموع الفرعي",

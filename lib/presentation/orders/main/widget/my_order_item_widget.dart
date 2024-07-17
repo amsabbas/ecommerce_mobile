@@ -21,10 +21,12 @@ class MyOrderItemWidget extends StatelessWidget {
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.darkGrayColor),
+        child: Card(
+          margin: const EdgeInsets.all(0),
+          color: AppColors.lightWhiteColor,
+          elevation: 0.2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),

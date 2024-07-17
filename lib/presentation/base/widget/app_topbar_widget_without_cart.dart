@@ -27,17 +27,13 @@ class AppTopBarWithoutCartWidget extends StatelessWidget
               onPressed: () => Get.back(),
             )
           : null,
-      title: Row(
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.mainColor,
-                fontWeight: FontWeight.bold),
-          ),
-        ],
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            color: AppColors.mainColor,
+            fontWeight: FontWeight.bold),
       ),
-      centerTitle: false,
+      centerTitle: true,
     );
   }
 }

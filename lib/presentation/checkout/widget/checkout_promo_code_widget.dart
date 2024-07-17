@@ -70,18 +70,20 @@ class CheckoutPromoCodeWidgetState extends State<CheckoutPromoCodeWidget> {
                             errorText: _checkoutController.isPromoCodeError.value
                                     ? MessageKeys.noFound.tr
                                     : null,
+                            focusedBorder: const OutlineInputBorder(
+                                borderSide: BorderSide(color: AppColors.lightGrayColor)),
                             enabledBorder: OutlineInputBorder(
                                 borderSide:
                                     _checkoutController.isPromoCodeAdded.value
                                         ? const BorderSide(
                                             color: AppColors.greenColor)
-                                        : const BorderSide()),
+                                        : const BorderSide(color: AppColors.lightGrayColor)),
                             border: OutlineInputBorder(
                                 borderSide:
                                     _checkoutController.isPromoCodeAdded.value
                                         ? const BorderSide(
                                             color: AppColors.greenColor)
-                                        : const BorderSide()),
+                                        : const BorderSide(color: AppColors.lightGrayColor)),
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 4),
                             labelText: MessageKeys.checkoutPromoCodeTitle.tr),

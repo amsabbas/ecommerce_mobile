@@ -36,7 +36,7 @@ class _HomeContainerScreenState extends State<HomeContainerScreen> {
               _currentPage = index;
             });
           },
-          indicatorColor: AppColors.black12,
+          indicatorColor: AppColors.lightGrayColor,
           backgroundColor: Colors.white,
           elevation: 2,
           selectedIndex: _currentPage,

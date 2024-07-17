@@ -14,7 +14,7 @@ class ProductDetailsWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     bool isProductAvailable = productModel.isAvailable!;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,

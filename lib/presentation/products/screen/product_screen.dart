@@ -75,7 +75,7 @@ class _ProductScreenState extends State<ProductScreen> {
         builder: (controller) {
           UserModel? userModel = _userController.userState.value;
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24),
+            padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 24),
             child: ProductAddToCartButtonWidget(
                 onPressed: userModel == null || !productModel.isAvailable!
                     ? null

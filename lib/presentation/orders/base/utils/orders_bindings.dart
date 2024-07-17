@@ -16,7 +16,6 @@ class OrdersBindings extends Bindings {
         OrdersRepository(remoteDataSource: Get.find<OrdersRemoteDataSource>()));
     Get.lazyPut(
         () => OrderInteractor(repository: Get.find<OrdersRepository>()));
-    Get.lazyPut(
-        () => OrdersController(interactor: Get.find<OrderInteractor>()));
+    Get.put(OrdersController(interactor: Get.find<OrderInteractor>()));
   }
 }

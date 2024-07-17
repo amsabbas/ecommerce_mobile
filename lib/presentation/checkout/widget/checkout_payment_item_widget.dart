@@ -39,11 +39,10 @@ class CheckoutPaymentItemWidget extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: AppColors.mainColor),
                             color: checkoutController.paymentMethod.value ==
                                     cashPayment
                                 ? AppColors.mainColor
-                                : AppColors.transparentColor,
+                                : AppColors.lightWhiteColor,
                           ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,7 +63,7 @@ class CheckoutPaymentItemWidget extends StatelessWidget {
                                 width: 8,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Text(
                                   MessageKeys.cash.tr,
                                   style: Theme.of(context)
@@ -94,17 +93,16 @@ class CheckoutPaymentItemWidget extends StatelessWidget {
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color: AppColors.mainColor),
                             color: checkoutController.paymentMethod.value ==
                                     visaPayment
                                 ? AppColors.mainColor
-                                : AppColors.transparentColor,
+                                : AppColors.lightWhiteColor,
                           ),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: SvgPicture.asset(
                                     AssetResource.checkoutVisaImagePath,
                                     colorFilter: ColorFilter.mode(
@@ -119,7 +117,7 @@ class CheckoutPaymentItemWidget extends StatelessWidget {
                                 width: 8,
                               ),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Text(
                                   MessageKeys.visa.tr,
                                   style: Theme.of(context)

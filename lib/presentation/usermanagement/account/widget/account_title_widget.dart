@@ -1,4 +1,3 @@
-
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
@@ -23,16 +22,17 @@ class AccountTitleWidget extends StatelessWidget {
           Text(
             MessageKeys.accountTitle.tr,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: AppColors.mainColor,
-                fontWeight: FontWeight.bold),
+                color: AppColors.mainColor, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 8.0,
           ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.mainColor,width: 0.5),
-              borderRadius: BorderRadius.circular(6),
+          Card(
+            margin: const EdgeInsets.all(0),
+            color: AppColors.lightWhiteColor,
+            elevation: 0.2,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
             ),
             child: Column(
               children: [
@@ -40,8 +40,13 @@ class AccountTitleWidget extends StatelessWidget {
                     title: MessageKeys.profileTitle.tr,
                     imagePath: AssetResource.accountImagePath,
                     tapCallback: () {
-                      Get.to(() => const ProfileScreen(), binding: UserBindings());
+                      Get.to(() => const ProfileScreen(),
+                          binding: UserBindings());
                     }),
+                const Divider(
+                  color: AppColors.lightGrayColor,
+                  height: 1,
+                ),
                 AccountItemWidget(
                     title: MessageKeys.myAddressesTitle.tr,
                     imagePath: AssetResource.accountAddressesImagePath,

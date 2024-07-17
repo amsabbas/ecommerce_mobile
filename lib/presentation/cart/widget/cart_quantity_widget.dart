@@ -59,7 +59,7 @@ class _CartQuantityWidgetState extends State<CartQuantityWidget> {
               SizedBox(
                 width: 30,
                 height: 30,
-                child: ElevatedButton(
+                child: OutlinedButton(
                   onPressed: () {
                     if (_cartItemController.quantity.value > 1) {
                       _cartItemController.quantity.value -= 1;
@@ -71,14 +71,13 @@ class _CartQuantityWidgetState extends State<CartQuantityWidget> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: AppColors.mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
                   child: const Icon(
                     Icons.remove,
-                    color: AppColors.whiteColor,
+                    color: AppColors.mainColor,
                     size: 15,
                   ),
                 ),
@@ -95,7 +94,7 @@ class _CartQuantityWidgetState extends State<CartQuantityWidget> {
               SizedBox(
                 width: 30,
                 height: 30,
-                child: ElevatedButton(
+                child: OutlinedButton(
                   onPressed: () {
                     _cartItemController.quantity.value += 1;
                     _cartItemController.addProductToMyCart(widget.productID);
@@ -103,14 +102,13 @@ class _CartQuantityWidgetState extends State<CartQuantityWidget> {
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: AppColors.mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                   ),
                   child: const Icon(
                     Icons.add,
-                    color: AppColors.whiteColor,
+                    color: AppColors.mainColor,
                     size: 15,
                   ),
                 ),
