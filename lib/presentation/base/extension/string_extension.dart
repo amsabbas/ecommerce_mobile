@@ -24,6 +24,14 @@ extension StringExtension on String? {
     }
   }
 
+  String getPayment() {
+    if (this == "cash") {
+      return MessageKeys.cash.tr;
+    } else {
+      return MessageKeys.visa.tr;
+    }
+  }
+
   Color getStatusColor() {
     if (this == pendingStatus) {
       return AppColors.orangeColor;

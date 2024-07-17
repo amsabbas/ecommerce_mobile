@@ -4,7 +4,6 @@ import 'package:ecommerce_mobile/data/categories/interactor/category_interactor.
 import 'package:ecommerce_mobile/data/categories/model/category_model.dart';
 import 'package:ecommerce_mobile/data/products/interactor/products_interactor.dart';
 import 'package:ecommerce_mobile/data/products/model/product_model.dart';
-import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:get/get.dart';
 
 import '../../../data/base/utils/app_logger.dart';

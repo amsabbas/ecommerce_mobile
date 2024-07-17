@@ -6,6 +6,7 @@ import 'package:ecommerce_mobile/presentation/base/controller/app_settings_contr
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/extension/double_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/model/refresh_status.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
@@ -16,6 +17,7 @@ import 'package:ecommerce_mobile/presentation/base/widget/error_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
 import 'package:ecommerce_mobile/presentation/checkout/controller/checkout_controller.dart';
 import 'package:ecommerce_mobile/presentation/checkout/screen/checkout_success_screen.dart';
+import 'package:ecommerce_mobile/presentation/checkout/screen/checkout_web_view_screen.dart';
 import 'package:ecommerce_mobile/presentation/checkout/widget/checkout_address_empty_widget.dart';
 import 'package:ecommerce_mobile/presentation/checkout/widget/checkout_address_item_widget.dart';
 import 'package:ecommerce_mobile/presentation/checkout/widget/checkout_payment_item_widget.dart';
@@ -132,9 +134,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               CheckoutDateItemWidget(
                 date: settingModel?.deliveryTime.toString() ?? "",
               ),
-              CheckoutPaymentItemWidget(
-                paymentType: MessageKeys.cash.tr,
-              ),
+              const CheckoutPaymentItemWidget(),
               const CheckoutPromoCodeWidget(),
               GetX<CheckoutController>(
                   init: _checkoutController, //here
@@ -203,8 +203,15 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   }
 
   void _showOrderSuccess() {
-    _userController.refreshProductQuantity();
-    Get.offAll(const CheckoutSuccessScreen());
+    if (_checkoutController.paymentMethod.value == visaPayment) {
+      Get.to(() => CheckoutWebViewScreen(
+          transactionUrl: _checkoutController.submitOrderState.value.data,
+          successRedirectUrl: successPaymentURL));
+      return;
+    } else {
+      _userController.refreshProductQuantity();
+      Get.offAll(const CheckoutSuccessScreen());
+    }
   }
 
   @override

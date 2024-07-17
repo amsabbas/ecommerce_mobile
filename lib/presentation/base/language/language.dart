@@ -28,6 +28,7 @@ class MessageKeys {
   static const String accepted = "accepted";
   static const String rejected = "rejected";
   static const String cash = "cash";
+  static const String visa = "visa";
   static const String currency = "currency";
 
   static const String seeYouSoonTitle = "seeYouSoonTitle";
@@ -181,6 +182,7 @@ class Language extends Translations {
           MessageKeys.accepted: "Accepted",
           MessageKeys.rejected: "Rejected",
           MessageKeys.cash: "Cash",
+          MessageKeys.visa: "Visa",
           MessageKeys.currency: "EGP",
           MessageKeys.homeTitle: "Home",
           MessageKeys.ordersTitle: "Orders",
@@ -299,6 +301,7 @@ class Language extends Translations {
           MessageKeys.accepted: "مقبول",
           MessageKeys.rejected: "مرفوض",
           MessageKeys.cash: "نقدًا",
+          MessageKeys.visa: "فيزا",
           MessageKeys.currency: "ج.م",
           MessageKeys.homeTitle: "الرئيسية",
           MessageKeys.ordersTitle: "الطلبات",

@@ -41,4 +41,10 @@ class AssetResource {
 
   //animation
   static const String doneAnimationPath = "${animationPath}done.json";
+
+  //checkout
+  static const String checkoutCashImagePath =
+      "${imagePath}checkout/ic_cash.svg";
+  static const String checkoutVisaImagePath =
+      "${imagePath}checkout/ic_visa.svg";
 }

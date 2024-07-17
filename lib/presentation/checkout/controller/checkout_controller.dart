@@ -4,6 +4,7 @@ import 'package:ecommerce_mobile/data/checkout/model/cost_model.dart';
 import 'package:ecommerce_mobile/data/orders/interactor/order_interactor.dart';
 import 'package:ecommerce_mobile/data/user/interactor/user_interactor.dart';
 import 'package:ecommerce_mobile/data/user/model/address_model.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,6 +29,8 @@ class CheckoutController extends GetxController {
   Rx<double> deliveryPrice = 0.0.obs;
   Rx<double> discount = 0.0.obs;
   Rx<double> totalPrice = 0.0.obs;
+
+  Rx<String> paymentMethod = cashPayment.obs;
 
   CheckoutController(
       {required this.checkOutInteractor,
@@ -92,9 +95,27 @@ class CheckoutController extends GetxController {
   }
 
   void createOrder() async {
+    if (paymentMethod.value == visaPayment) {
+      createOnlineOrder();
+      return;
+    }
+
     try {
       submitOrderState.setLoading();
-      final response = await orderInteractor.createOrder(promoCodeController.text);
+      final response =
+          await orderInteractor.createOrder(promoCodeController.text);
+      submitOrderState.setSuccess(response);
+    } catch (error, errorStack) {
+      AppLogger.error(error: error, errorStack: errorStack);
+      submitOrderState.setError(error);
+    }
+  }
+
+  void createOnlineOrder() async {
+    try {
+      submitOrderState.setLoading();
+      final response =
+          await orderInteractor.createOnlineOrder(promoCodeController.text);
       submitOrderState.setSuccess(response);
     } catch (error, errorStack) {
       AppLogger.error(error: error, errorStack: errorStack);

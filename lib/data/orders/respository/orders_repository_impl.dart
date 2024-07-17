@@ -13,4 +13,8 @@ class OrdersRepository {
   Future createOrder(String? promoCode) async {
     return await remoteDataSource.createOrder(promoCode);
   }
+
+  Future<String> createOnlineOrder(String? promoCode) async {
+    return await remoteDataSource.createOnlineOrder(promoCode);
+  }
 }

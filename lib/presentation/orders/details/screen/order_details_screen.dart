@@ -1,6 +1,7 @@
 import 'package:ecommerce_mobile/data/appsettings/model/setting_model.dart';
 import 'package:ecommerce_mobile/data/orders/model/order_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/app_settings_controller.dart';
+import 'package:ecommerce_mobile/presentation/base/extension/string_extension.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
 import 'package:ecommerce_mobile/presentation/orders/details/widget/order_detail_amount_widget.dart';
@@ -61,7 +62,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   height: 16,
                 ),
                 OrderDetailPaymentWidget(
-                  paymentType: MessageKeys.cash.tr,
+                  paymentType: orderModel.paymentType.toLowerCase().getPayment(),
                 ),
                 OrderDetailAmountWidget(
                   deliveryFees: orderModel.deliveryFees,

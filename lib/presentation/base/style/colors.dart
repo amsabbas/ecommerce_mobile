@@ -9,4 +9,5 @@ class AppColors {
   static const Color orangeColor = Color.fromRGBO(243, 141, 30, 1);
   static const Color greenColor = Color.fromRGBO(52, 119, 107, 1);
   static const Color redColor = Color.fromRGBO(216, 33, 72, 1);
+  static const Color transparentColor = Colors.transparent;
 }

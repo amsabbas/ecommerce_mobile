@@ -11,4 +11,7 @@ class OrderInteractor {
 
   Future createOrder(String? promoCode) async =>
       await repository.createOrder(promoCode);
+
+  Future<String> createOnlineOrder(String? promoCode) async =>
+      await repository.createOnlineOrder(promoCode);
 }

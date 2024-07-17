@@ -26,4 +26,17 @@ class OrdersEndPoints {
         userToken: userToken,
         method: HttpMethod.post);
   }
+
+  static EndPoint createOnlineOrderEndPoint({
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? data,
+    required String? userToken
+  }) {
+    return EndPoint(
+        endpoint: "orders/createOnlineOrder",
+        headers: headers,
+        data: data,
+        userToken: userToken,
+        method: HttpMethod.post);
+  }
 }

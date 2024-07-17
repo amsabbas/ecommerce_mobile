@@ -22,4 +22,10 @@ class OrdersRemoteDataSource {
     return service.call(OrdersEndPoints.createOrderEndPoint(
         userToken: userToken, data: {"promoCode": promoCode}));
   }
+
+  Future<String> createOnlineOrder(String? promoCode) async {
+    String? userToken = authManager.getToken();
+    return service.call(OrdersEndPoints.createOnlineOrderEndPoint(
+        userToken: userToken, data: {"promoCode": promoCode})).then((value) => value.toString());
+  }
 }

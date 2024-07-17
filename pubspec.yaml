@@ -53,6 +53,7 @@ dependencies:
   firebase_messaging: ^15.0.2
   firebase_core: ^3.1.1
   lottie: ^3.1.2
+  webview_flutter: ^4.8.0
   cupertino_icons: ^1.0.6
 
 dev_dependencies:
@@ -76,6 +77,7 @@ flutter:
       - assets/images/base/
       - assets/images/home/
       - assets/images/account/
+      - assets/images/checkout/
       - assets/animation/
   fonts:
     - family: poppins
