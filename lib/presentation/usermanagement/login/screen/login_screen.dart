@@ -2,6 +2,7 @@ import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
@@ -95,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
         TextButton(
           onPressed: () {
-            Get.to(() => const ForgotScreen(), binding: UserBindings());
+            Get.to(() => const ForgotScreen(), binding: UserBindings(),transition: appTransition);
           },
           child: Text(
             MessageKeys.forgotPasswordButtonTitle.tr,
@@ -120,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         TextButton(
           onPressed: () {
-            Get.to(() => const RegisterScreen(), binding: UserBindings());
+            Get.to(() => const RegisterScreen(), binding: UserBindings(),transition: appTransition);
           },
           child: Text(
             MessageKeys.registerButtonTitle.tr,

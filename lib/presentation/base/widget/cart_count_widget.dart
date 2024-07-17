@@ -1,4 +1,5 @@
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/cart/screen/cart_screen.dart';
 import 'package:ecommerce_mobile/presentation/cart/utils/cart_bindings.dart';
@@ -21,7 +22,7 @@ class CartCountWidget extends StatelessWidget {
             height: 20,
           ),
           onPressed: () =>
-              Get.to(() => const CartScreen(), binding: CartBindings())),
+              Get.to(() => const CartScreen(), binding: CartBindings(),transition: appTransition)),
       if (productsQuantity != null && productsQuantity! > 0)
         ClipOval(
           child: Container(

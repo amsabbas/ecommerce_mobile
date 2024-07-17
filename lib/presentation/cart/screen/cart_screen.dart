@@ -3,6 +3,7 @@ import 'package:ecommerce_mobile/data/cart/model/cart_model.dart';
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
@@ -61,7 +62,7 @@ class _CartScreenState extends State<CartScreen> {
                   onError: () => _showSnackBarError(res.error as AppErrorModel),
                   onSuccess: () {
                     Get.to(() => const CheckoutScreen(),
-                        binding: CheckoutBindings());
+                        binding: CheckoutBindings(),transition: appTransition);
                   },
                   onLoadingFinish: () => CustomLoading.dismissLoading(context))
             });

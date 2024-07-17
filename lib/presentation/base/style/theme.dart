@@ -58,11 +58,12 @@ class CustomTheme {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
+            elevation: 0,
             backgroundColor: AppColors.mainColor,
           ),
         ),
         checkboxTheme: CheckboxThemeData(
-          fillColor: WidgetStateProperty.all(AppColors.whiteColor),
+          fillColor: WidgetStateProperty.all(AppColors.black12),
           checkColor: WidgetStateProperty.all(AppColors.mainColor),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(

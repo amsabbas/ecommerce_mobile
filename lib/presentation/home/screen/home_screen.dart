@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/error_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
@@ -104,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _checkNotificationData() {
     switch (_notificationController.notificationData.value.route) {
       case NotificationTypeNavigateRoutes.home:
-        Get.to(() => const HomeContainerScreen());
+        Get.to(() => const HomeContainerScreen(),transition: appTransition);
         break;
       default:
         break;

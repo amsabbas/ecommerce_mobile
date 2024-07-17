@@ -17,7 +17,11 @@ class ProductItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => const ProductScreen(), arguments: product);
+        Get.to(
+          () => const ProductScreen(),
+          arguments: product,
+          transition: appTransition,
+        );
       },
       child: Column(
         children: [

@@ -1,6 +1,7 @@
 import 'package:ecommerce_mobile/data/areas/model/area_model.dart';
 import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
@@ -157,7 +158,7 @@ class _AddressesSelectAreaWidgetState extends State<AddressesSelectAreaWidget> {
   void _showGetLocationSuccess(Position position) {
     Navigator.pop(context);
     Get.to(() => const MapScreen(),
-        arguments: [position.latitude, position.longitude]);
+        arguments: [position.latitude, position.longitude],transition: appTransition);
   }
 
   @override

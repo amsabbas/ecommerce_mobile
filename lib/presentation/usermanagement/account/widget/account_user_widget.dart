@@ -2,6 +2,7 @@
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/screen/profile_screen.dart';
@@ -22,7 +23,7 @@ class AccountUserWidget extends StatelessWidget {
           UserModel? userModel = userController.userState.value;
           return GestureDetector(
             onTap: () {
-              Get.to(() => const ProfileScreen(), binding: UserBindings());
+              Get.to(() => const ProfileScreen(), binding: UserBindings(),transition: appTransition);
             },
             child: Row(
               children: [

@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/addresses/screen/addresses_screen.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
@@ -41,7 +42,7 @@ class AccountTitleWidget extends StatelessWidget {
                     imagePath: AssetResource.accountImagePath,
                     tapCallback: () {
                       Get.to(() => const ProfileScreen(),
-                          binding: UserBindings());
+                          binding: UserBindings(),transition: appTransition);
                     }),
                 const Divider(
                   color: AppColors.lightGrayColor,
@@ -52,7 +53,7 @@ class AccountTitleWidget extends StatelessWidget {
                     imagePath: AssetResource.accountAddressesImagePath,
                     tapCallback: () {
                       Get.to(() => const AddressesScreen(),
-                          binding: UserBindings());
+                          binding: UserBindings(),transition: appTransition);
                     }),
               ],
             ),

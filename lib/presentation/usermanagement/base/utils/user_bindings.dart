@@ -6,7 +6,6 @@ import 'package:ecommerce_mobile/data/base/utils/auth_manager.dart';
 import 'package:ecommerce_mobile/data/user/datasource/user_remote_data_source.dart';
 import 'package:ecommerce_mobile/data/user/interactor/user_interactor.dart';
 import 'package:ecommerce_mobile/data/user/repository/user_repository_impl.dart';
-import 'package:ecommerce_mobile/presentation/areas/controller/areas_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/addresses/controller/addresses_controller.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/forgot/controller/forgot_controller.dart';
@@ -32,8 +31,6 @@ class UserBindings extends Bindings {
     Get.lazyPut(() =>
         AreasRepository(remoteDataSource: Get.find<AreasRemoteDataSource>()));
     Get.lazyPut(() => AreaInteractor(repository: Get.find<AreasRepository>()));
-    Get.lazyPut(
-        () => AreasController(areaInteractor: Get.find<AreaInteractor>()));
 
     Get.lazyPut(
       () => UserController(userInteractor: Get.find<UserInteractor>()),

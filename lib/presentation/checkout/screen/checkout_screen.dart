@@ -190,7 +190,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       padding: const EdgeInsets.all(32.0),
       child: CheckoutAddressEmptyWidget(
         addAddressCallback: () {
-          Get.to(() => const AddressesScreen(), binding: UserBindings());
+          Get.to(() => const AddressesScreen(), binding: UserBindings(),transition: appTransition);
         },
       ),
     );
@@ -206,7 +206,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     if (_checkoutController.paymentMethod.value == visaPayment) {
       Get.to(() => CheckoutWebViewScreen(
           transactionUrl: _checkoutController.submitOrderState.value.data,
-          successRedirectUrl: successPaymentURL));
+          successRedirectUrl: successPaymentURL),transition: appTransition);
       return;
     } else {
       _userController.refreshProductQuantity();

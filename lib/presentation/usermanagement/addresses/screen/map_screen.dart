@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget_without_cart.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/addresses/controller/addresses_controller.dart';
@@ -78,7 +79,7 @@ class _MapScreenState extends State<MapScreen> {
         onPressed: markers.isEmpty
             ? null
             : () {
-                Get.to(() => const AddressInfoScreen());
+                Get.to(() => const AddressInfoScreen(),transition: appTransition);
               },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

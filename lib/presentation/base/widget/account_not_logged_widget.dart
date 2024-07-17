@@ -1,5 +1,6 @@
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/base/utils/user_bindings.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/login/screen/login_screen.dart';
@@ -39,7 +40,7 @@ class AccountNotLoggedWidget extends StatelessWidget {
               padding: const EdgeInsets.all(32.0),
               child: ElevatedButton(
                 onPressed: () {
-                  Get.to(() => const LoginScreen(), binding: UserBindings());
+                  Get.to(() => const LoginScreen(), binding: UserBindings(),transition: appTransition);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

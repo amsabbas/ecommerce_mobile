@@ -8,78 +8,77 @@ class AccountDialogs {
 
   static void showLanguageDialog(
       BuildContext context, Function positiveCallBack) {
-    Future.delayed(
-      Duration.zero,
-      () => Get.dialog(
-        StatefulBuilder(
-          builder: (context, setState) {
-            return AlertDialog(
-              surfaceTintColor: AppColors.whiteColor,
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(4))),
-              title: Text(
-                MessageKeys.changeLanguageDialogTitle.tr,
-                style: Theme.of(context).textTheme.titleMedium,
+    Get.dialog(
+      StatefulBuilder(
+        builder: (context, setState) {
+          return AlertDialog(
+            surfaceTintColor: AppColors.whiteColor,
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(4))),
+            title: Text(
+              MessageKeys.changeLanguageDialogTitle.tr,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            content: SizedBox(
+              height: 100,
+              child: Column(
+                children: [
+                  Row(
+                    children: <Widget>[
+                      Radio(
+                        value: "en",
+                        groupValue: _groupValue,
+                        onChanged: (newValue) => {
+                          setState(() {
+                            _groupValue = newValue;
+                          })
+                        },
+                      ),
+                      Text(
+                        MessageKeys.englishTitle.tr,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Radio(
+                        value: "ar",
+                        groupValue: _groupValue,
+                        onChanged: (newValue) => {
+                          setState(() {
+                            _groupValue = newValue;
+                          })
+                        },
+                      ),
+                      Text(
+                        MessageKeys.arabicTitle.tr,
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              content: SizedBox(
-                height: 100,
-                child: Column(
-                  children: [
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          value: "en",
-                          groupValue: _groupValue,
-                          onChanged: (newValue) => {
-                            setState(() {
-                              _groupValue = newValue;
-                            })
-                          },
-                        ),
-                        Text(
-                          MessageKeys.englishTitle.tr,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Radio(
-                          value: "ar",
-                          groupValue: _groupValue,
-                          onChanged: (newValue) => {
-                            setState(() {
-                              _groupValue = newValue;
-                            })
-                          },
-                        ),
-                        Text(
-                          MessageKeys.arabicTitle.tr,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              actions: <Widget>[
-                TextButton(
-                    child: Text(MessageKeys.ok.tr,
-                        style: Theme.of(context).textTheme.bodyMedium),
-                    onPressed: () {
-                      Navigator.pop(context);
-                      positiveCallBack.call(_groupValue);
-                    }),
-                TextButton(
-                    child: Text(MessageKeys.cancel.tr,
-                        style: Theme.of(context).textTheme.bodyMedium),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    }),
-              ],
-            );
-          },
-        ),
-        barrierDismissible: false,
+            ),
+            actions: <Widget>[
+              TextButton(
+                  child: Text(MessageKeys.ok.tr,
+                      style: Theme.of(context).textTheme.bodyMedium),
+                  onPressed: () {
+                    Navigator.pop(context);
+                    positiveCallBack.call(_groupValue);
+                  }),
+              TextButton(
+                  child: Text(MessageKeys.cancel.tr,
+                      style: Theme.of(context).textTheme.bodyMedium),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+            ],
+          );
+        },
       ),
+      barrierColor: AppColors.black12,
+      transitionDuration: const Duration(milliseconds: 500),
+      barrierDismissible: false,
     );
   }
 }
