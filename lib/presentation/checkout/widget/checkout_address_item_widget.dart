@@ -23,7 +23,7 @@ class CheckoutAddressItemWidget extends StatelessWidget {
                   .titleMedium
                   ?.copyWith(color: AppColors.mainColor,fontWeight: FontWeight.bold)),
           const SizedBox(
-            height: 16,
+            height: 8,
           ),
           Card(
             margin: const EdgeInsets.all(0),
@@ -62,7 +62,7 @@ class CheckoutAddressItemWidget extends StatelessWidget {
         Text("$key: ",
             style: Theme.of(context)
                 .textTheme
-                .titleSmall
+                .titleMedium
                 ?.copyWith(color: AppColors.mainColor,fontWeight: FontWeight.bold)),
 
         Expanded(
@@ -70,7 +70,7 @@ class CheckoutAddressItemWidget extends StatelessWidget {
               maxLines: 1,
               style: Theme.of(context)
                   .textTheme
-                  .titleSmall
+                  .titleMedium
                   ?.copyWith(color: AppColors.mainColor)),
         ),
       ],

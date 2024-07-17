@@ -54,18 +54,24 @@ class _ProductScreenState extends State<ProductScreen> {
           title: MessageKeys.productDetailTitle.tr,
           showBackIcon: false,
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              ProductImageWidget(
-                productModel: productModel,
+        body: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ProductImageWidget(
+                      productModel: productModel,
+                    ),
+                    ProductDetailsWidget(
+                      productModel: productModel,
+                    ),
+                  ],
+                ),
               ),
-              ProductDetailsWidget(
-                productModel: productModel,
-              ),
-              _addToMyCart()
-            ],
-          ),
+            ),
+            _addToMyCart()
+          ],
         ));
   }
 

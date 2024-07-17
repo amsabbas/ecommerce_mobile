@@ -30,8 +30,8 @@ class ProductDetailsWidget extends StatelessWidget{
                     .titleMedium
                     ?.copyWith(color: AppColors.mainColor),
                 textAlign: TextAlign.start,
-                maxLines: 5),
-            const SizedBox(height: 16),
+                maxLines: 7),
+            const SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,

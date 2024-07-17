@@ -17,7 +17,7 @@ class CheckoutPaymentItemWidget extends StatelessWidget {
         init: checkoutController,
         builder: (controller) {
           return Padding(
-            padding: const EdgeInsets.only(right: 24.0,left: 24.0, top: 12),
+            padding: const EdgeInsets.only(right: 24.0,left: 24.0, top: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
