@@ -96,7 +96,8 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
         TextButton(
           onPressed: () {
-            Get.to(() => const ForgotScreen(), binding: UserBindings(),transition: appTransition);
+            Get.to(() => const ForgotScreen(),
+                binding: UserBindings(), transition: appTransition);
           },
           child: Text(
             MessageKeys.forgotPasswordButtonTitle.tr,
@@ -121,7 +122,8 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         TextButton(
           onPressed: () {
-            Get.to(() => const RegisterScreen(), binding: UserBindings(),transition: appTransition);
+            Get.to(() => const RegisterScreen(),
+                binding: UserBindings(), transition: appTransition);
           },
           child: Text(
             MessageKeys.registerButtonTitle.tr,
@@ -178,8 +180,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
-                enableSuggestions: false,
-                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
+                enableSuggestions: true,
+                validator: (value) => _loginController.validateEmail(value),
                 onSaved: (value) =>
                     (_loginController.emailController.text = value ?? ''),
               ),
@@ -197,7 +199,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 enableSuggestions: false,
                 obscureText: true,
-                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
+                validator: FormBuilderValidators.required(
+                    errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_loginController.passwordController.text = value ?? ''),
               ),

@@ -73,6 +73,7 @@ class MessageKeys {
 
   static const String emptyTextFieldValidationMessage =
       "emptyTextFieldValidationMessage";
+  static const String emailTextFieldValidationMessage = "emailTextFieldValidationMessage";
 
   static const String locationDisabledTitle = "locationDisabledTitle";
   static const String noAddresses = "noAddresses";
@@ -201,6 +202,7 @@ class Language extends Translations {
           MessageKeys.updateProfileSuccessMessage:
               "Profile updated successfully",
           MessageKeys.emptyTextFieldValidationMessage: "This field is required",
+          MessageKeys.emailTextFieldValidationMessage: "Email is not valid",
           MessageKeys.noAddresses: "No addresses found",
           MessageKeys.addAddressButtonTitle: "Add address",
           MessageKeys.selectLocationTitle: "Select Location",
@@ -320,6 +322,7 @@ class Language extends Translations {
           MessageKeys.updateProfileSuccessMessage:
               "تم تحديث الملف الشخصي بنجاح",
           MessageKeys.emptyTextFieldValidationMessage: "هذا الحقل مطلوب",
+          MessageKeys.emailTextFieldValidationMessage: "البريد الإلكتروني غير صحيح",
           MessageKeys.locationDisabledTitle:
               "خدمة تحديد الموقع على الجهاز معطلة، الرجاء تفعيلها",
           MessageKeys.noAddresses: "لم يتم العثور على عناوين",

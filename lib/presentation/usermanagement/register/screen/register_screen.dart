@@ -127,8 +127,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
-                enableSuggestions: false,
-                validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
+                enableSuggestions: true,
+                validator: (value) => _registerController.validateEmail(value),
                 onSaved: (value) =>
                     (_registerController.emailController.text = value ?? ''),
               ),
@@ -144,7 +144,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
-                enableSuggestions: false,
+                enableSuggestions: true,
                 validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_registerController.nameController.text = value ?? ''),
