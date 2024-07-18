@@ -3,6 +3,7 @@ import 'package:ecommerce_mobile/data/base/model/app_error_model.dart';
 import 'package:ecommerce_mobile/data/user/model/address_model.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/refresh_status.dart';
+import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_dialogs.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
@@ -168,6 +169,7 @@ class _AddressesScreenState extends State<AddressesScreen> {
 
   void _showAreasSheet(List<AreaModel> response) {
     Get.bottomSheet(isScrollControlled: true,
+        barrierColor: AppColors.black12,
         StatefulBuilder(builder: (context, setState) {
       return Wrap(
         children: [

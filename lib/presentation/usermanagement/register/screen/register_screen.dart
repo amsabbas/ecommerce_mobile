@@ -8,6 +8,7 @@ import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/register/controller/register_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
@@ -145,6 +146,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
                 enableSuggestions: true,
+                inputFormatters: [
+                  LengthLimitingTextInputFormatter(50),
+                ],
                 validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>
                     (_registerController.nameController.text = value ?? ''),
@@ -162,6 +166,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
+                inputFormatters: [
+                  LengthLimitingTextInputFormatter(15),
+                ],
                 enableSuggestions: false,
                 validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),
                 onSaved: (value) =>

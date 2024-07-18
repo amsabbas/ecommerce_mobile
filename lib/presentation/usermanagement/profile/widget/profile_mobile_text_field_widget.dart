@@ -32,7 +32,7 @@ class _ProfileMobileTextFieldWidgetState
           validator: (value) => _profileController.validateTextField(value),
           initialValue: widget.mobile,
           inputFormatters: [
-            LengthLimitingTextInputFormatter(50),
+            LengthLimitingTextInputFormatter(15),
           ],
           onSaved: (value) {
             if (value != null && value.isNotEmpty) {
