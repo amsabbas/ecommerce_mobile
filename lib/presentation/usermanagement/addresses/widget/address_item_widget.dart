@@ -36,24 +36,30 @@ class AddressItemWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _itemWidget(context, MessageKeys.streetNameTitle.tr, addressModel.streetName),
-                      _itemWidget(context, MessageKeys.buildingNoTitle.tr, addressModel.buildingNo),
-                      _itemWidget(context, MessageKeys.floorNoTitle.tr, addressModel.floorNo),
-                      _itemWidget(context, MessageKeys.apartmentNoTitle.tr, addressModel.apartmentNo),
+                      _itemWidget(context, MessageKeys.streetNameTitle.tr,
+                          addressModel.streetName),
+                      _itemWidget(context, MessageKeys.buildingNoTitle.tr,
+                          addressModel.buildingNo),
+                      _itemWidget(context, MessageKeys.floorNoTitle.tr,
+                          addressModel.floorNo),
+                      _itemWidget(context, MessageKeys.apartmentNoTitle.tr,
+                          addressModel.apartmentNo),
                     ],
                   ),
                   IconButton(
-                      onPressed: () {
-                        onDeleteCallback.call();
-                      },
-                      icon: const Icon(
-                        Icons.delete,
-                        color: AppColors.mainColor,
-                      ))
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(),
+                    onPressed: () {
+                      onDeleteCallback.call();
+                    },
+                    icon: const Icon(
+                      Icons.delete_rounded,
+                      color: AppColors.mainColor,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(
@@ -96,11 +102,8 @@ class AddressItemWidget extends StatelessWidget {
     return Row(
       children: [
         Text("$key: ",
-            style: Theme.of(context)
-                .textTheme
-                .titleSmall
-                ?.copyWith(color: AppColors.mainColor,fontWeight: FontWeight.bold)),
-
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                color: AppColors.mainColor, fontWeight: FontWeight.bold)),
         Text(value,
             style: Theme.of(context)
                 .textTheme

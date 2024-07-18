@@ -43,8 +43,14 @@ class CheckoutAddressItemWidget extends StatelessWidget {
                     children: [
                       _itemWidget(context, MessageKeys.streetNameTitle.tr, addressModel.streetName),
                       _itemWidget(context, MessageKeys.buildingNoTitle.tr, addressModel.buildingNo),
-                      _itemWidget(context, MessageKeys.floorNoTitle.tr, addressModel.floorNo),
-                      _itemWidget(context, MessageKeys.apartmentNoTitle.tr, addressModel.apartmentNo),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(child: _itemWidget(context, MessageKeys.floorNoTitle.tr, addressModel.floorNo)),
+                          const SizedBox(width: 4,),
+                          Expanded(child: _itemWidget(context, MessageKeys.apartmentNoTitle.tr, addressModel.apartmentNo)),
+                        ],
+                      ),
                     ],
                   ),
                 ],
@@ -71,7 +77,7 @@ class CheckoutAddressItemWidget extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .titleMedium
-                  ?.copyWith(color: AppColors.mainColor)),
+                  ?.copyWith(color: AppColors.mainColor),overflow: TextOverflow.ellipsis),
         ),
       ],
     );

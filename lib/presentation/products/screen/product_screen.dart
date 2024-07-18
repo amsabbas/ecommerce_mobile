@@ -3,6 +3,7 @@ import 'package:ecommerce_mobile/data/products/model/product_model.dart';
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_loading.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/custom_snack_bar.dart';
 import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
@@ -102,6 +103,7 @@ class _ProductScreenState extends State<ProductScreen> {
   void _showSuccess() {
     _userController.refreshProductQuantity();
     Get.bottomSheet(isScrollControlled: true,
+        barrierColor: AppColors.black12,
         StatefulBuilder(builder: (context, setState) {
       return const FractionallySizedBox(
           heightFactor: 0.5, child: ProductViewMyCartWidget());

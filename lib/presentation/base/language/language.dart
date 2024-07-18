@@ -299,7 +299,7 @@ class Language extends Translations {
               "تهانينا! لقد تم إنشاء حسابك بنجاح",
           MessageKeys.pending: "قيد الانتظار",
           MessageKeys.accepted: "مقبول",
-          MessageKeys.rejected: "مرفوض",
+          MessageKeys.rejected: "تم الالغاء",
           MessageKeys.cash: "نقدًا",
           MessageKeys.visa: "فيزا",
           MessageKeys.currency: "ج.م",
