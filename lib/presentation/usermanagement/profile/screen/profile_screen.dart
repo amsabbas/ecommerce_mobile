@@ -9,6 +9,7 @@ import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget_with
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/controller/profile_controller.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/widget/profile_email_text_field_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/widget/profile_fullname_text_field_widget.dart';
+import 'package:ecommerce_mobile/presentation/usermanagement/profile/widget/profile_image_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/widget/profile_mobile_text_field_widget.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/widget/profile_save_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -63,6 +64,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        const ProfileImageWidget(),
                         ProfileFullNameTextFieldWidget(
                             fullname: userModel?.name),
                         ProfileMobileTextFieldWidget(mobile: userModel?.phone),

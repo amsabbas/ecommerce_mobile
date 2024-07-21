@@ -1,12 +1,12 @@
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
 import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
-import 'package:ecommerce_mobile/presentation/base/widget/app_topbar_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/error_widget.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/controller/home_controller.dart';
 import 'package:ecommerce_mobile/presentation/home/screen/home_container_screen.dart';
 import 'package:ecommerce_mobile/presentation/home/widget/home_ads_widget.dart';
+import 'package:ecommerce_mobile/presentation/home/widget/home_app_topbar_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/widget/home_categories_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/widget/home_greeting_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/widget/home_products_widget.dart';
@@ -51,9 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppTopBarWidget(
+        appBar: HomeAppTopBarWidget(
           title: MessageKeys.appName.tr,
-          showBackIcon: false,
         ),
         body: GetX<HomeController>(
           init: _homeController,
@@ -67,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _successWidget() {
-    return const Padding(
+    return  const Padding(
       padding: EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

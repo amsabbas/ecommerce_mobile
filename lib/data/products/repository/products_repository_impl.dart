@@ -6,8 +6,8 @@ class ProductsRepository {
 
   ProductsRepository({required this.remoteDataSource});
 
-  Future<List<ProductModel>> getAllProducts() async {
-    return await remoteDataSource.getAllProducts();
+  Future<List<ProductModel>> getAllProducts(String? keyword) async {
+    return await remoteDataSource.getAllProducts(keyword);
   }
 
   Future<List<ProductModel>> getAllProductsByCategoryID(int categoryID) async {

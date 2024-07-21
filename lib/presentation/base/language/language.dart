@@ -30,6 +30,7 @@ class MessageKeys {
   static const String cash = "cash";
   static const String visa = "visa";
   static const String currency = "currency";
+  static const String search = "search";
 
   static const String seeYouSoonTitle = "seeYouSoonTitle";
   static const String homeWelcomeTitle = "homeWelcomeTitle";
@@ -115,6 +116,7 @@ class MessageKeys {
   static const String deliveryDateTitle = "deliveryDateTitle";
 
   static const String productsTitle = "productsTitle";
+  static const String emptyProductsTitle = "emptyProductsTitle";
 
   static const String outOfStockTitle = "outOfStockTitle";
 
@@ -181,10 +183,11 @@ class Language extends Translations {
               "Congratulations! Your account has been successfully created",
           MessageKeys.pending: "Pending",
           MessageKeys.accepted: "Accepted",
-          MessageKeys.rejected: "Rejected",
+          MessageKeys.rejected: "Canceled",
           MessageKeys.cash: "Cash",
           MessageKeys.visa: "Visa",
           MessageKeys.currency: "EGP",
+          MessageKeys.search: "Search",
           MessageKeys.homeTitle: "Home",
           MessageKeys.ordersTitle: "Orders",
           MessageKeys.cartTitle: "Cart",
@@ -242,6 +245,7 @@ class Language extends Translations {
           MessageKeys.paymentTitle: "Payment",
           MessageKeys.deliveryDateTitle: "Delivery date/time",
           MessageKeys.productsTitle: "Products",
+          MessageKeys.emptyProductsTitle: "No products found",
           MessageKeys.outOfStockTitle: "Currently unavailable",
           MessageKeys.addToMyCartButtonTitle: "Add to my cart",
           MessageKeys.productDetailTitle: "Product Detail",
@@ -305,6 +309,7 @@ class Language extends Translations {
           MessageKeys.cash: "نقدًا",
           MessageKeys.visa: "فيزا",
           MessageKeys.currency: "ج.م",
+          MessageKeys.search: "بحث",
           MessageKeys.homeTitle: "الرئيسية",
           MessageKeys.ordersTitle: "الطلبات",
           MessageKeys.cartTitle: "السلة",
@@ -361,6 +366,7 @@ class Language extends Translations {
           MessageKeys.paymentTitle: "طريقة الدفع",
           MessageKeys.deliveryDateTitle: "تاريخ/وقت التسليم",
           MessageKeys.productsTitle: "المنتجات",
+          MessageKeys.emptyProductsTitle: "لا يوجد منتجات",
           MessageKeys.outOfStockTitle: "غير متوفر",
           MessageKeys.addToMyCartButtonTitle: "أضف إلى سلة التسوق",
           MessageKeys.productDetailTitle: "تفاصيل المنتج",

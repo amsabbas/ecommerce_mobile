@@ -12,10 +12,10 @@ class HomeProductsWidget extends StatefulWidget {
 
   @override
   State<HomeProductsWidget> createState() =>
-      _HomeBestSellingProductsWidgetState();
+      _HomeProductsWidgetState();
 }
 
-class _HomeBestSellingProductsWidgetState extends State<HomeProductsWidget> {
+class _HomeProductsWidgetState extends State<HomeProductsWidget> {
   late final HomeController _homeController;
 
   @override
