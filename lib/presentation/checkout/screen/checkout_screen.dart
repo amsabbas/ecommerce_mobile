@@ -186,8 +186,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   }
 
   Widget _errorAddressWidget() {
-    return Padding(
-      padding: const EdgeInsets.all(32.0),
+    return Center(
       child: CheckoutAddressEmptyWidget(
         addAddressCallback: () {
           Get.to(() => const AddressesScreen(), binding: UserBindings(),transition: appTransition);

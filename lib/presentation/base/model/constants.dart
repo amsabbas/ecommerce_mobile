@@ -9,8 +9,8 @@ const String visaPayment = 'visa';
 
 //URLs
 const String scheme = 'http';
-const String baseURL = "http://64.227.65.185:3000/";
-const String successPaymentURL = "http://64.227.65.185:3000/orders/paySuccess";
+const String baseURL = "$scheme://64.227.65.185:3000/";
+const String successPaymentURL = "$scheme://64.227.65.185:3000/orders/paySuccess";
 
 
 //firebase

@@ -30,6 +30,7 @@ class MessageKeys {
   static const String cash = "cash";
   static const String visa = "visa";
   static const String currency = "currency";
+  static const String minutes = "minutes";
   static const String search = "search";
 
   static const String seeYouSoonTitle = "seeYouSoonTitle";
@@ -187,6 +188,7 @@ class Language extends Translations {
           MessageKeys.cash: "Cash",
           MessageKeys.visa: "Visa",
           MessageKeys.currency: "EGP",
+          MessageKeys.minutes: "minutes",
           MessageKeys.search: "Search",
           MessageKeys.homeTitle: "Home",
           MessageKeys.ordersTitle: "Orders",
@@ -309,6 +311,7 @@ class Language extends Translations {
           MessageKeys.cash: "نقدًا",
           MessageKeys.visa: "فيزا",
           MessageKeys.currency: "ج.م",
+          MessageKeys.minutes: "دقيقة",
           MessageKeys.search: "بحث",
           MessageKeys.homeTitle: "الرئيسية",
           MessageKeys.ordersTitle: "الطلبات",

@@ -1,4 +1,5 @@
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
+import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/cart_count_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/screen/home_search_screen.dart';
@@ -40,7 +41,7 @@ class HomeAppTopBarWidget extends StatelessWidget
                 color: AppColors.mainColor,
                 size: 24,
               ),
-              onPressed: () => Get.to(() => const HomeSearchScreen()),
+              onPressed: () => Get.to(() => const HomeSearchScreen(),transition: appTransition),
             ),
           ],
         ),

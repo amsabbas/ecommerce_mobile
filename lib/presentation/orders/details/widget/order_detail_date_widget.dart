@@ -21,7 +21,7 @@ class OrderDetailDateWidget extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: AppColors.mainColor,
                   fontWeight: FontWeight.bold)),
-          Text(date,
+          Text("$date ${MessageKeys.minutes.tr}",
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: AppColors.mainColor,
                   )),

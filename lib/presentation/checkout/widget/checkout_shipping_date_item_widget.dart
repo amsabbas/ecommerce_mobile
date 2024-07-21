@@ -23,7 +23,7 @@ class CheckoutDateItemWidget extends StatelessWidget {
           const SizedBox(
             height: 4,
           ),
-          Text(date,
+          Text("$date ${MessageKeys.minutes.tr}",
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: AppColors.mainColor,
                   )),
