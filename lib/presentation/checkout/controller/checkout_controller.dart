@@ -123,6 +123,20 @@ class CheckoutController extends GetxController {
     }
   }
 
+  void reset()
+  {
+    if (isPromoCodeError.value) {
+      promoCodeController.text = "";
+      isPromoCodeAdded.value = false;
+      isPromoCodeError.value = false;
+      orderPrice.value = 0.0;
+      deliveryPrice.value = 0.0;
+      discount.value = 0.0;
+      totalPrice.value = 0.0;
+    }
+    paymentMethod.value = cashPayment;
+  }
+
   @override
   void dispose() {
     super.dispose();

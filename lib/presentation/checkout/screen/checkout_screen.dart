@@ -54,6 +54,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     _appSettingsController = Get.find();
     _checkoutController = Get.find();
     _userController = Get.find();
+    _checkoutController.reset();
     _checkoutController.calculateCost();
     _checkoutController.getPrimaryAddress();
 

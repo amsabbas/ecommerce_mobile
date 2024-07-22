@@ -1,4 +1,3 @@
-
 import 'package:ecommerce_mobile/data/user/model/user_model.dart';
 import 'package:ecommerce_mobile/presentation/base/controller/user_controller.dart';
 import 'package:ecommerce_mobile/presentation/base/model/asset_resource.dart';
@@ -10,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:widget_circular_animator/widget_circular_animator.dart';
 
 class AccountUserWidget extends StatelessWidget {
   const AccountUserWidget({super.key});
@@ -23,19 +23,30 @@ class AccountUserWidget extends StatelessWidget {
           UserModel? userModel = userController.userState.value;
           return GestureDetector(
             onTap: () {
-              Get.to(() => const ProfileScreen(), binding: UserBindings(),transition: appTransition);
+              Get.to(() => const ProfileScreen(),
+                  binding: UserBindings(), transition: appTransition);
             },
             child: Row(
               children: [
-
-                SvgPicture.asset(
-                 AssetResource.accountUserImagePath,
-                  width: 50,
-                  height: 50,
+                WidgetCircularAnimator(
+                  size: 50,
+                  innerIconsSize: 3,
+                  outerIconsSize: 3,
+                  innerAnimation: Curves.easeInOutBack,
+                  outerAnimation: Curves.easeInOutBack,
+                  innerColor: AppColors.mainColor,
+                  outerColor: AppColors.mainColor,
+                  innerAnimationSeconds: 10,
+                  outerAnimationSeconds: 10,
+                  child: SvgPicture.asset(
+                    AssetResource.accountUserImagePath,
+                    width: 50,
+                    height: 50,
+                  ),
                 ),
-
-                const SizedBox(width: 16.0,),
-
+                const SizedBox(
+                  width: 16.0,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

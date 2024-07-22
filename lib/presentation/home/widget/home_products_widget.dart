@@ -3,6 +3,7 @@ import 'package:ecommerce_mobile/presentation/base/utils/result.dart';
 import 'package:ecommerce_mobile/presentation/base/widget/loading_widget.dart';
 import 'package:ecommerce_mobile/presentation/home/widget/home_product_item_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 import '../controller/home_controller.dart';
@@ -11,8 +12,7 @@ class HomeProductsWidget extends StatefulWidget {
   const HomeProductsWidget({super.key});
 
   @override
-  State<HomeProductsWidget> createState() =>
-      _HomeProductsWidgetState();
+  State<HomeProductsWidget> createState() => _HomeProductsWidgetState();
 }
 
 class _HomeProductsWidgetState extends State<HomeProductsWidget> {
@@ -38,20 +38,20 @@ class _HomeProductsWidgetState extends State<HomeProductsWidget> {
             if (productResponseModel?.isEmpty == true) {
               return Container();
             } else {
-              return ListView(
-                children: _getProductsWidget(productResponseModel),
-              );
+              return ListView.builder(
+                  itemCount: productResponseModel!.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return AnimationConfiguration.staggeredList(
+                      position: index,
+                      duration: const Duration(milliseconds: 375),
+                      child: FadeInAnimation(
+                        child: ProductItemWidget(
+                            product: productResponseModel[index]),
+                      ),
+                    );
+                  });
             }
           }
         });
-  }
-
-  List<Widget> _getProductsWidget(List<ProductModel>? responseModel) {
-    List<Widget> widgets = List.empty(growable: true);
-
-    for (var element in responseModel ?? []) {
-      widgets.add(ProductItemWidget(product: element));
-    }
-    return widgets;
   }
 }
