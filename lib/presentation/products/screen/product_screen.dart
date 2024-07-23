@@ -53,7 +53,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
         appBar: AppTopBarWidget(
           title: MessageKeys.productDetailTitle.tr,
-          showBackIcon: false,
+          showBackIcon: true,
         ),
         body: Column(
           children: [

@@ -6,6 +6,7 @@ import 'package:ecommerce_mobile/presentation/base/model/constants.dart';
 import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/products/screen/product_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:get/get.dart';
 
 class ProductItemWidget extends StatelessWidget {
@@ -15,7 +16,7 @@ class ProductItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return Bounceable(
       onTap: () {
         Get.to(
           () => const ProductScreen(),

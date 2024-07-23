@@ -56,7 +56,7 @@ class CustomTheme {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(32.0),
             ),
             elevation: 0,
             backgroundColor: AppColors.mainColor,
@@ -69,7 +69,7 @@ class CustomTheme {
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4.0),
+              borderRadius: BorderRadius.circular(32.0),
             ),
             side: const BorderSide(color: AppColors.mainColor),
           ),

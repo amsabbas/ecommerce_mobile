@@ -28,7 +28,7 @@ class ProductViewMyCartWidget extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 36),
             _textButtonWidget(context,AppColors.mainColor, MessageKeys.continueShoppingButtonTitle.tr,
                 () {
               Get.back();
@@ -47,11 +47,6 @@ class ProductViewMyCartWidget extends StatelessWidget {
 
   Widget _textButtonWidget(BuildContext context,Color color, String title, Function onPressed) {
     return OutlinedButton(
-      style: OutlinedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
       onPressed: () {
         onPressed.call();
       },
@@ -77,9 +72,6 @@ class ProductViewMyCartWidget extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
       ),
       onPressed: () {
         onPressed.call();

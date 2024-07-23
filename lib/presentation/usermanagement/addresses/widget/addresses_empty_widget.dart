@@ -12,49 +12,52 @@ class AddressesEmptyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset(
-          AssetResource.noDataImagePath,
-          width: 130,
-          height: 130,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
-          child: Text(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            AssetResource.noDataImagePath,
+            width: 130,
+            height: 130,
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Text(
             MessageKeys.noAddresses.tr,
             style: Theme.of(context)
                 .textTheme
-                .titleLarge
+                .titleMedium
                 ?.copyWith(color: AppColors.mainColor),
           ),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        ElevatedButton(
-          onPressed: () {
-            addAddressCallback.call();
-          },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Text(
-                  MessageKeys.addAddressButtonTitle.tr,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(color: AppColors.whiteColor),
-                ),
-              ),
-            ],
+          const SizedBox(
+            height: 24,
           ),
-        )
-      ],
+          OutlinedButton(
+            onPressed: () {
+              addAddressCallback.call();
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    MessageKeys.addAddressButtonTitle.tr,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.copyWith(color: AppColors.mainColor),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }

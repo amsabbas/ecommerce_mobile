@@ -1,4 +1,5 @@
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,6 +46,7 @@ class _ProfileMobileTextFieldWidgetState
             hintText: "xxxxxxxxxx",
             floatingLabelBehavior: FloatingLabelBehavior.always,
             border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.phone,color: AppColors.mainColor,size: 20),
           ),
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number),

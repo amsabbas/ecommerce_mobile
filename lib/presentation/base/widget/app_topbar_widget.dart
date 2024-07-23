@@ -23,7 +23,7 @@ class AppTopBarWidget extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: showBackIcon
           ? IconButton(
-              icon: const Icon(Icons.arrow_back,color: AppColors.mainColor,),
+              icon: const Icon(Icons.arrow_back_ios_outlined,color: AppColors.mainColor,),
               onPressed: () => Get.back(),
             )
           : null,

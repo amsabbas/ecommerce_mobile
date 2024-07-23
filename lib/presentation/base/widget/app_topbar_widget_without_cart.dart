@@ -21,7 +21,7 @@ class AppTopBarWithoutCartWidget extends StatelessWidget
       leading: showBackIcon
           ? IconButton(
               icon: const Icon(
-                Icons.arrow_back,
+                Icons.arrow_back_ios_outlined,
                 color: AppColors.mainColor,
               ),
               onPressed: () => Get.back(),

@@ -127,6 +127,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
                   hintText: MessageKeys.email.tr,
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
+                  prefixIcon: const Icon(Icons.email,color: AppColors.mainColor,size: 20),
                 ),
                 enableSuggestions: false,
                 validator: FormBuilderValidators.required(errorText: MessageKeys.emptyTextFieldValidationMessage.tr),

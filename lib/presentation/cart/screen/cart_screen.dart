@@ -78,7 +78,7 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
         appBar: AppTopBarWithoutCartWidget(
           title: MessageKeys.cartTitle.tr,
-          showBackIcon: false,
+          showBackIcon: true,
         ),
         body: GetX<UserController>(
             init: _userController,

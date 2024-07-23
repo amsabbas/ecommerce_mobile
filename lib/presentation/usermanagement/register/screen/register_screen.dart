@@ -127,6 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   hintText: MessageKeys.email.tr,
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
+                  prefixIcon: const Icon(Icons.email,color: AppColors.mainColor,size: 20),
                 ),
                 enableSuggestions: true,
                 validator: (value) => _registerController.validateEmail(value),
@@ -144,6 +145,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   hintText: MessageKeys.name.tr,
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
+                  prefixIcon: const Icon(Icons.account_box,color: AppColors.mainColor,size: 20),
                 ),
                 enableSuggestions: true,
                 inputFormatters: [
@@ -165,6 +167,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   hintText: MessageKeys.phone.tr,
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
+                  prefixIcon: const Icon(Icons.phone,color: AppColors.mainColor,size: 20),
                 ),
                 inputFormatters: [
                   LengthLimitingTextInputFormatter(15),
@@ -185,6 +188,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   hintText: MessageKeys.password.tr,
                   border: const OutlineInputBorder(),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
+                  prefixIcon: const Icon(Icons.password,color: AppColors.mainColor,size: 20),
                 ),
                 enableSuggestions: false,
                 obscureText: true,

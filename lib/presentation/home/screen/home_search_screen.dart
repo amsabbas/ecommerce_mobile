@@ -30,6 +30,13 @@ class _HomeSearchScreenState extends State<HomeSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios_outlined,
+              color: AppColors.mainColor,
+            ),
+            onPressed: () => Get.back(),
+          ),
           title: AnimatedSearchBar(
               label: MessageKeys.search.tr,
               labelAlignment: Get.locale?.languageCode == "ar"
@@ -57,7 +64,8 @@ class _HomeSearchScreenState extends State<HomeSearchScreen> {
               ),
               onChanged: (value) {
                 if (value.isEmpty) {
-                  _homeController.searchProductsState.setSuccess(List<ProductModel>.empty());
+                  _homeController.searchProductsState
+                      .setSuccess(List<ProductModel>.empty());
                 }
               },
               onFieldSubmitted: (value) {

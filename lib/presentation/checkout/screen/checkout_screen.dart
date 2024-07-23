@@ -187,12 +187,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   }
 
   Widget _errorAddressWidget() {
-    return Center(
-      child: CheckoutAddressEmptyWidget(
-        addAddressCallback: () {
-          Get.to(() => const AddressesScreen(), binding: UserBindings(),transition: appTransition);
-        },
-      ),
+    return CheckoutAddressEmptyWidget(
+      addAddressCallback: () {
+        Get.to(() => const AddressesScreen(), binding: UserBindings(),transition: appTransition);
+      },
     );
   }
 

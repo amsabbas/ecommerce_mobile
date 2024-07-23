@@ -1,5 +1,6 @@
 
 import 'package:ecommerce_mobile/presentation/base/language/language.dart';
+import 'package:ecommerce_mobile/presentation/base/style/colors.dart';
 import 'package:ecommerce_mobile/presentation/usermanagement/profile/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,12 +36,14 @@ class _ProfileEmailTextFieldWidgetState
           inputFormatters: [
             LengthLimitingTextInputFormatter(50),
           ],
+
           autovalidateMode: AutovalidateMode.onUserInteraction,
           decoration: InputDecoration(
             hintText: MessageKeys.email.tr,
             labelText: MessageKeys.email.tr,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             border: const OutlineInputBorder(),
+            prefixIcon: const Icon(Icons.email,color: AppColors.darkGrayColor,size: 20),
           ),
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.text),
